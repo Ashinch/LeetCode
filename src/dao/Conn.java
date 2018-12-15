@@ -1,5 +1,5 @@
 package dao;
 
 public class Conn {
-    // conn
+    // conn 连接
 }
