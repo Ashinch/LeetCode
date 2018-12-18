@@ -23,6 +23,24 @@ public class UserDao extends BaseDao {
 		return false;
 	}
 	
+	//  用户登录（String username, String password）
+	public static boolean loginUser(String username, String password) {
+		try {
+			String sql = "select * from tb_user where username='" + username + "'";
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			
+			if (rs.next()) {
+				if (rs.getString("password").equals(password)) {return true;}
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+	
 	//  添加用户（UserBean）
 	public static boolean addUser(UserBean user) {
 		try {
