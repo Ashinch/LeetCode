@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+//  Servlet»ùÀà
 public class BaseServlet extends HttpServlet {
+	
+	//  Get
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
@@ -25,6 +28,7 @@ public class BaseServlet extends HttpServlet {
 		}
 	}
 
+	//  Post
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		

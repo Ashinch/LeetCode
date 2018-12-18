@@ -2,6 +2,7 @@ package dao;
 import java.sql.*;
 import domain.*;
 
+//  ÓÃ»§Dao
 public class UserDao extends BaseDao {
 	private static Connection conn = initConn();
 	

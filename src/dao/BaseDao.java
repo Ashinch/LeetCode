@@ -3,10 +3,12 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+//  Dao基类
 public class BaseDao {
 	protected static Connection initConn() {
 		Connection conn = null;
 		
+		//  连接 Connection 类
 		try {
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 	    	String url = "jdbc:sqlserver://127.0.0.1:1433;DatabaseName=leetcode";

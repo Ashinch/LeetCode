@@ -11,6 +11,7 @@ import domain.UserBean;
 
 public class UserServlet extends BaseServlet {
 	
+	//  µÇÂ¼
 	public void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -22,6 +23,7 @@ public class UserServlet extends BaseServlet {
 		}
 	}
 	
+	//  ×¢²á
 	public void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserBean user = new UserBean();
 		user.setUsername(request.getParameter("username"));
