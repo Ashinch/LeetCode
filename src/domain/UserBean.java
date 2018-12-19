@@ -14,21 +14,24 @@ public class UserBean {
 	int warm_win;
 	int random_win;
 	int virtual_win;
-	int weekly_win;
-	String question;
-	String code;
-	String title;
-	String contents;
-	String classify;
-	int sender;
-	String date;
-	int theme;
-	int sequence;
-	String image;
-	String video;
 	
 	public int getId() {
 		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getFace() {
 		return face;
@@ -96,85 +99,6 @@ public class UserBean {
 	public void setWeekly_win(int weeklyWin) {
 		weekly_win = weeklyWin;
 	}
-	public String getQuestion() {
-		return question;
-	}
-	public void setQuestion(String question) {
-		this.question = question;
-	}
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getContents() {
-		return contents;
-	}
-	public void setContents(String contents) {
-		this.contents = contents;
-	}
-	public String getClasss() {
-		return classify;
-	}
-	public void setClasss(String classify) {
-		this.classify = classify;
-	}
-	public int getSender() {
-		return sender;
-	}
-	public void setSender(int sender) {
-		this.sender = sender;
-	}
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
-	}
-	public int getTheme() {
-		return theme;
-	}
-	public void setTheme(int theme) {
-		this.theme = theme;
-	}
-	public int getSequence() {
-		return sequence;
-	}
-	public void setSequence(int sequence) {
-		this.sequence = sequence;
-	}
-	public String getImage() {
-		return image;
-	}
-	public void setImage(String image) {
-		this.image = image;
-	}
-	public String getVideo() {
-		return video;
-	}
-	public void setVideo(String video) {
-		this.video = video;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	int weekly_win;
+	
 }
