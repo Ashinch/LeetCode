@@ -27,7 +27,6 @@ public class UserBean {
 	String image;
 	String video;
 	
-	
 	public int getId() {
 		return id;
 	}
