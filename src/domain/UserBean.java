@@ -12,6 +12,7 @@ public class UserBean {
 	int virtual_count;
 	int weekly_count;
 	int warm_win;
+
 	public int getId() {
 		return id;
 	}
