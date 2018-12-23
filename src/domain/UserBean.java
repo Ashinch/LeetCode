@@ -1,6 +1,17 @@
 package domain;
 
-public class UserBean {
+/**************************
+* 说明：    用户表Bean
+***************************
+* 类名：    UserBean
+* 包名：    domain
+***************************/
+public class UserBean extends BaseBean{
+	
+	//  表名
+	String tableName = "tb_user";
+	
+	//  必须跟数据库顺序字段名一致
 	int id;
 	String username;
 	String password;
@@ -12,7 +23,17 @@ public class UserBean {
 	int virtual_count;
 	int weekly_count;
 	int warm_win;
-
+	int random_win;
+	int virtual_win;
+	int weekly_win;
+	
+	//  读写器
+	public String getTableName() {
+		return tableName;
+	}
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+	}
 	public int getId() {
 		return id;
 	}
@@ -97,10 +118,4 @@ public class UserBean {
 	public void setWeekly_win(int weeklyWin) {
 		weekly_win = weeklyWin;
 	}
-	int random_win;
-	int virtual_win;
-	int weekly_win;
-	
-	
-	
 }

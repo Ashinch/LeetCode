@@ -48,7 +48,7 @@ public class PostCompiler {
             conn.setDoOutput(true);
             conn.setDoInput(true);
 
-            String data = "language=" + language + "&code=" + URLEncoder.encode(Base64Code.encodeData(code),"utf-8");
+            String data = "language=" + language + "&code=" + URLEncoder.encode(Base64Factory.encodeData(code),"utf-8");
             conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
             conn.setRequestProperty("Origin", "http://www.dooccn.com");
             conn.setRequestProperty("Host", "runcode-api2-ng.dooccn.com");
@@ -77,7 +77,7 @@ public class PostCompiler {
 	            	} 
 	            	
 	            	byte[] in_b = swapStream.toByteArray();
-	            	jsonString = Gzip.uncompress(in_b, "utf-8");
+	            	jsonString = GzipFactory.uncompress(in_b, "utf-8");
 	                conn.disconnect(); // Ïú»ÙÁ¬½Ó  
 	
 	                break;

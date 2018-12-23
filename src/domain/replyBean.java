@@ -1,13 +1,25 @@
 package domain;
 
-public class replyBean {
+/**************************
+* 说明：    回复表Bean
+***************************
+* 类名：    replyBean
+* 包名：    domain
+***************************/
+public class replyBean extends BaseBean{
 
+	//  表名
+	String tableName = "tb_reply";
+	
+	//  必须跟数据库顺序字段名一致
 	int id;
 	int theme;
 	String contents;
 	int sequence;
 	int sender;
 	String date;
+	
+	//  读写器
 	public int getId() {
 		return id;
 	}
@@ -44,5 +56,10 @@ public class replyBean {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	
+	public String getTableName() {
+		return tableName;
+	}
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+	}
 }
