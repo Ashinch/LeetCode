@@ -6,7 +6,7 @@ package domain;
 * 类名：    PaperBean
 * 包名：    domain
 ***************************/
-public class PaperBean extends BaseBean{
+public class paperBean extends BaseBean{
 
 	//  表名
 	String tableName = "tb_paper";

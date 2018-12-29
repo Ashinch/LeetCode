@@ -1,0 +1,45 @@
+@font-face {
+	font-family:"思源黑体 CN";
+	src:url("font/SourceHanSansCN-Regular.otf");
+}
+*{
+	margin: 0px;
+	padding: 0px;
+	
+}
+body{
+	background-image:url("img/homepage/bg_index.png");
+}
+#top: {
+width: 1920px;
+height: 80px;
+position: relative;			
+
+clear: both;
+}	
+#top_nav{
+	position: absolute;
+	top: 15px;
+	left: 445px;
+	
+
+}
+#top li{
+	float:left;
+	padding-left: 10px;
+	
+}
+ul{
+	list-style-type: none;
+}
+a{
+	display: black;
+	padding-right: 173px;
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+	font-family:"思源黑体 CN";				
+	font-size: 24px;
+	line-height: 53px;
+
+}
