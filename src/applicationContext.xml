@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd 
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd ">
+
+	<!-- 配置DataSource数据源 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url" value="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=leetcode" />
+		<property name="username" value="user2" />
+		<property name="password" value="user2" />
+	</bean>
+
+	<!-- 配置SqlSessionFactoryBean -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!--
+		<property name="configLocation" value="classpath:mybatis.xml" />
+		-->
+		<!-- mapper和resultmap配置路径 -->
+		<property name="mapperLocations">
+			<list>
+				<!-- 表示在com.hoo.resultmap包或以下所有目录中，以-resultmap.xml结尾所有文件 -->
+				<value>classpath:Mappers/*.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="Dao"/>
+        
+    </bean>
+</beans>

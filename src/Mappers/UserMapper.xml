@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<!--
+		为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+		例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
+	-->
+<mapper namespace="Dao.UserDao">
+	<select id="getUserByName" resultType="Models.User">
+		select * from tb_user
+		where username=#{name}
+     </select>
+	<select id="getUserById" resultType="Models.User">
+		select * from tb_user
+		where
+		id=#{id}
+     </select>
+	<select id="getRank500" resultType="Models.User">
+		select * from tb_user where
+		rank&lt;=500 order by rank asc
+     </select>
+
+	<insert id="addUser">
+		insert into tb_user (username
+		,password
+		,face
+		,rank
+		,points
+		,warm_count
+		,random_count
+		,virtual_count
+		,weekly_count
+		,warm_win
+		,random_win
+		,weekly_win
+		,virtual_win)
+		values (#{username}
+		,#{password}
+		,#{face}
+		,#{rank}
+		,#{points}
+		,#{warm_count}
+		,#{random_count}
+		,#{virtual_count}
+		,#{weekly_count}
+		,#{warm_win}
+		,#{random_win}
+		,#{weekly_win}
+		,#{virtual_win})
+    </insert>
+	<update id="updateUser">
+		update tb_user set username=#{username}
+		,password=#{password}
+		,face=#{face}
+		,rank=#{rank}
+		,points=#{points}
+		,warm_count=#{warm_count}
+		,random_count=#{random_count}
+		,virtual_count=#{virtual_count}
+		,weekly_count=#{weekly_count}
+		,warm_win=#{warm_win}
+		,random_win=#{random_win}
+		,weekly_win=#{weekly_win}
+		,virtual_win=#{virtual_win}
+		where
+		id=#{id}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
