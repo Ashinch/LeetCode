@@ -1,0 +1,124 @@
+#content {animation:content 1.2s;}
+@keyframes content {
+  0% {opacity:0}
+100% {opacity:1}
+}
+
+
+body {
+    background-color: rgb(26, 26, 26);
+    background-image: url("../images/discovery/bg_discovery.png");
+    background-repeat: no-repeat;
+}
+
+#content {
+    width: 1718px;
+    margin-left: 120px;
+    margin-top: 82px;
+}
+
+#nav {
+    float: left;
+    height: 47px;
+    width: 1000px;
+}
+
+#nav ul {
+    list-style: none;
+}
+
+#nav ul li {
+    float: left;
+    /* padding-right: 80px; */
+}
+
+#nav ul li a {
+    font-family: "思源黑体 CN";
+    font-size: 22px;
+    font-weight: 300;
+    color: #888888;
+    text-decoration: none;
+    padding-right: 80px;
+}
+
+#search {
+    float: right;
+    /* position: absolute;
+    right: 0px;
+    top: 0px; */
+    width: 450px;
+    background-image: url("../images/discovery/edit_search.png");
+    background-repeat: no-repeat;
+}
+
+#text {
+    height: 56px;
+    width: 425px;
+    border: none;
+    outline: none;
+    padding-left: 30px;
+    background-color: rgba(0, 0, 0, 0.0);
+    font-weight: 300;
+    font-size: 16px;
+    color: #888888;
+}
+
+#but {
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    top: 173px;
+    right: 106px;
+    border: none;
+    background-image: url("../images/discovery/icon_search.png");
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+.item1 span {
+    display: block;
+    width: 50px;
+    margin-top: 17px;
+    border-radius: 2PX;
+    height: 4px;
+    background-color: #8A7154;
+}
+
+#nav ul .item1 a {
+    color: #BBBBBB;
+}
+
+#list {
+    width: 1764px;
+    height: 696px;
+    margin-top: 120px;
+    margin-left: 0px;
+    /* padding-top: 100px;	 */
+    overflow-y: scroll;
+}
+
+.listitem {
+    width: 250px;
+    height: 244px;
+    margin: 0px 36px 50px 0px;
+    display: inline-block;
+}
+
+.listtop {
+    height: 160px;
+    background-color: #353535;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.listbottom {
+    height: 84px;
+    background-color: #1A1A1A;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.listtext {
+    font-family: "思源黑体 CN";
+    font-size: 19px;
+    font-weight: 300;
+    color: #BBBBBB;
+    padding: 14px;
+}

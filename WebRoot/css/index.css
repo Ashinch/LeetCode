@@ -1,0 +1,55 @@
+body {
+	background-color:rgb(26,26,26);
+	background-image: url("../images/index/bg_index.png");
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+#area {
+	position: absolute;
+	top: 277px;
+	left: 102px;
+	width: 326px;
+	height: 114px;
+	background-image: url("../images/index/bg_area.png");
+
+}
+
+.left {
+	width: 120px;
+	margin-top: 20px;
+	float: left;
+	padding-left: 34px;
+	font-size: 14px;
+	font-family: "思源黑体 CN";
+	color: #888888;
+}
+
+.right {
+	width: 50px;
+	margin-top: 20px;
+	padding-right: 19px;
+	float: right;
+	font-size: 14px;
+	font-family: "思源黑体 CN";
+	color: #888888;
+}
+
+.left1 {
+	margin-top: 18px;
+	margin-right: 20px;
+	margin-left: 34px;
+	float: left;
+	color: rgb(138, 113, 84);
+	
+	/* font-weight: 900;等于font-weight: heavy; */
+	
+	/* 300 Light
+	   400 Normal
+	   700 Bold
+	   900 Heavy */
+	   
+	font-weight: 900;
+	font-size: 30px;
+	font-family: "思源黑体 CN";
+}

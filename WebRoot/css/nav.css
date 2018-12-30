@@ -1,0 +1,55 @@
+@font-face {
+	font-family: "思源黑体 CN";
+	src: url("font/SourceHanSansCN-Regular.otf");
+	src: url("font/SourceHanSansCN-Bold.otf");
+	src: url("font/SourceHanSansCN-Light.otf");
+	src: url("font/SourceHanSansCN-Heavy.otf");
+	src: url("font/SourceHanSansCN-Normal.otf");
+}
+#top {animation:top 0.5s;}
+@keyframes top {
+  0% {opacity:0}
+100% {opacity:1}
+}
+* {
+	margin: 0px;
+	padding: 0px;
+
+}
+
+#top {
+	width: 1920px;
+	height: 80px;
+	position: relative;
+
+	clear: both;
+}
+
+#top_nav {
+	position: absolute;
+	top: 15px;
+	left: 445px;
+}
+
+#top li {
+	float: left;
+	padding-left: 10px;
+
+}
+
+ul {
+	list-style-type: none;
+}
+
+#top_nav a {
+	display: black;
+	padding-right: 173px;
+	text-decoration: none;
+	color: #BBB;
+	text-align: center;
+	font-family: "思源黑体 CN";
+	font-size: 24px;
+	font-weight:400;
+	line-height: 53px;
+
+}

@@ -1,0 +1,89 @@
+#content {animation:content 1.2s;}
+@keyframes content {
+  0% {opacity:0}
+100% {opacity:1}
+}
+
+body {
+    background-color:rgb(26,26,26);
+    background-image: url("../images/contest/bg_contest.png");
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.card1 {
+    background-image: url("../images/contest/bg_warmup.png");
+    background-repeat: no-repeat;
+    width: 380px;
+    height: 600px;
+    position: absolute;
+    top: 283px;
+    left: 125px;
+}
+
+.card2 {
+
+    background-image: url("../images/contest/bg_random.png");
+    background-repeat: no-repeat;
+    width: 380px;
+    height: 600px;
+    position: absolute;
+    top: 283px;
+    left: 555px;
+}
+
+.card3 {
+    background-image: url("../images/contest/bg_virtual.png");
+    background-repeat: no-repeat;
+    width: 380px;
+    height: 600px;
+    position: absolute;
+    top: 283px;
+    left: 985px;
+}
+
+.card4 {
+    background-image: url("../images/contest/bg_weekly.png");
+    background-repeat: no-repeat;
+    width: 380px;
+    height: 600px;
+    position: absolute;
+    top: 283px;
+    left: 1415px;
+}
+
+.incard {
+    padding-top: 466px;
+    padding-right: 27px;
+    padding-left: 27px;
+    padding-bottom: 20px;
+    list-style: none;
+    clear: both;
+    position: relative;
+
+
+
+}
+
+.left {
+    width: 100px;
+    margin-top: 25px;
+    margin: 20px;
+    float: left;
+    font-size: 14px;
+    font-family: "思源黑体 CN";
+    color: #888888;
+
+
+}
+
+.right {
+    width: 30px;
+    margin-top: 25px;
+    margin: 20px;
+    float: right;
+    font-size: 14px;
+    font-family: "思源黑体 CN";
+    color: #888888;
+
+}

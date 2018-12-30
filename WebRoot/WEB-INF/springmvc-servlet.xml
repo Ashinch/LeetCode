@@ -15,6 +15,5 @@
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />  
     <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->  
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"  
-        p:prefix="/WEB-INF/views/" p:suffix=".jsp"/>  
-  
+        p:prefix="/WEB-INF/views/" p:suffix=".jsp"/>
 </beans> 
