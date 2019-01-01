@@ -44,7 +44,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="area">
 		<span class="left">2 DAY 18 HOURS</span>
 		<span class="right">预约</span>
+
 		<span class="left1">34 : 04</span>
+		
+	
+		<span class="right"><img src="images/index/icon_booking.png" alt="" style="margin-top: 6px;"></span>
 
 	</div>
 
