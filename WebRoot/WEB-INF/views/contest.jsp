@@ -44,36 +44,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="content">
 	<div class="card1">
 		<div class="incard">
-			<span class="left">win42 loss36 </span>
+			<span class="left" style="font-family: "思源黑体 CN";">WIN&nbsp;&nbsp;42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LOSS&nbsp;&nbsp;36</span>
 			<span class="right" style="width: 30px;">进入</span>
-			<span class="left" style="font-weight:bold;font-size: 30px;color: #8A7154;">NO.79 </span>
+			<span class="left" style="font-weight:900;font-size: 30px;color: #8A7154;">NO.79 </span>
 			<span class="right"><img src="images/contest/icon_fight.png" alt="" style="margin-left: 13px"></span>
 		</div>
 
 	</div>
 	<div class="card2">
 		<div class="incard">
-			<span class="left">win29 loss41 </span>
+			<span class="left" style="font-family: "思源黑体 CN";">WIN&nbsp;&nbsp;29&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LOSS&nbsp;&nbsp;41</span>
 			<span class="right" style="width: 30px;">进入</span>
-			<span class="left" style="font-weight:bold;font-size: 30px;color: #8A7154;">NO.90 </span>
+			<span class="left" style="font-weight:900;font-size: 30px;color: #8A7154;">NO.90 </span>
 			<span class="right"><img src="images/contest/icon_fight.png" alt="" style="margin-left: 13px"></span>
 		</div>
 
 	</div>
 	<div class="card3">
 		<div class="incard">
-			<span class="left">0 DAY 03 HOURS </span>
-			<span class="right" style="color: green";>已预约</span>
-			<span class="left" style="font-weight:bold;font-size: 30px;color: #8A7154;">16:39 </span>
+			<span class="left" style="font-family: "思源黑体 CN";">0&nbsp;&nbsp;DAY&nbsp;&nbsp;03&nbsp;&nbsp;HOURS</span>
+			<span class="right" style="font-family: "思源黑体 CN";color: green";>已预约</span>
+			<span class="left" style="font-weight:900;font-size: 30px;color: #8A7154;">16&nbsp;:&nbsp;39 </span>
 			<span class="right"><img src="images/index/icon_booking.png" alt="" style="margin-left: 14px"></span>
 		</div>
 
 	</div>
 	<div class="card4">
 		<div class="incard">
-			<span class="left">win42 loss36 </span>
-			<span class="right">未预约</span>
-			<span class="left" style="font-weight:bold;font-size: 30px;color: #8A7154;">34:04 </span>
+			<span class="left" style="font-family: "思源黑体 CN";">3&nbsp;&nbsp;DAY&nbsp;&nbsp;22&nbsp;&nbsp;HOURS</span>
+			<span class="right" style="font-family: "思源黑体 CN";">未预约</span>
+			<span class="left" style="font-weight:900;font-size: 30px;color: #8A7154;">34&nbsp;:&nbsp;04 </span>
 			<span class="right"><img src="images/index/icon_booking.png" alt="" style="margin-left: 14px"></span>
 		</div>
 
