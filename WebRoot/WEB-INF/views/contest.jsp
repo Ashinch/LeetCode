@@ -45,36 +45,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="card1">
 		<div class="incard">
 			<span class="left">win42 loss36 </span>
-			<span class="right">进入</span>
+			<span class="right" style="width: 30px;">进入</span>
 			<span class="left" style="font-weight:bold;font-size: 30px;color: #8A7154;">NO.79 </span>
-			<span class="right"><img src="images/contest/icon_fight.png" alt=""></span>
+			<span class="right"><img src="images/contest/icon_fight.png" alt="" style="margin-left: 13px"></span>
 		</div>
 
 	</div>
 	<div class="card2">
 		<div class="incard">
-			<span class="left">win42 loss36 </span>
-			<span class="right">进入</span>
-			<span class="left" style="font-weight:bold;font-size: 30px;color: #8A7154;">NO.79 </span>
-			<span class="right"><img src="images/contest/icon_fight.png" alt=""></span>
+			<span class="left">win29 loss41 </span>
+			<span class="right" style="width: 30px;">进入</span>
+			<span class="left" style="font-weight:bold;font-size: 30px;color: #8A7154;">NO.90 </span>
+			<span class="right"><img src="images/contest/icon_fight.png" alt="" style="margin-left: 13px"></span>
 		</div>
 
 	</div>
 	<div class="card3">
 		<div class="incard">
-			<span class="left">win42 loss36 </span>
-			<span class="right">进入</span>
-			<span class="left" style="font-weight:bold;font-size: 30px;color: #8A7154;">NO.79 </span>
-			<span class="right"><img src="images/contest/icon_fight.png" alt=""></span>
+			<span class="left">0 DAY 03 HOURS </span>
+			<span class="right" style="color: green";>已预约</span>
+			<span class="left" style="font-weight:bold;font-size: 30px;color: #8A7154;">16:39 </span>
+			<span class="right"><img src="images/index/icon_booking.png" alt="" style="margin-left: 14px"></span>
 		</div>
 
 	</div>
 	<div class="card4">
 		<div class="incard">
 			<span class="left">win42 loss36 </span>
-			<span class="right">进入</span>
-			<span class="left" style="font-weight:bold;font-size: 30px;color: #8A7154;">NO.79 </span>
-			<span class="right"><img src="images/contest/icon_fight.png" alt=""></span>
+			<span class="right">未预约</span>
+			<span class="left" style="font-weight:bold;font-size: 30px;color: #8A7154;">34:04 </span>
+			<span class="right"><img src="images/index/icon_booking.png" alt="" style="margin-left: 14px"></span>
 		</div>
 
 	</div>

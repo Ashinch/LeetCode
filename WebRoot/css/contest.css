@@ -53,6 +53,8 @@ body {
 }
 
 .incard {
+	width: 326px;
+	height: 114px;
     padding-top: 466px;
     padding-right: 27px;
     padding-left: 27px;
@@ -66,9 +68,9 @@ body {
 }
 
 .left {
-    width: 100px;
-    margin-top: 25px;
-    margin: 20px;
+    width: 145px;
+    margin-top: 20px;
+    margin: 10px;
     float: left;
     font-size: 14px;
     font-family: "思源黑体 CN";
@@ -79,11 +81,18 @@ body {
 
 .right {
     width: 30px;
-    margin-top: 25px;
-    margin: 20px;
+    margin-right: 1px;
+    margin-top: 18px;
+    margin-bottom: 20xp;   
     float: right;
     font-size: 14px;
     font-family: "思源黑体 CN";
     color: #888888;
 
+}
+span.right
+{
+	margin-top: 12px;
+	height: 14px;
+	width: 44px;
 }
