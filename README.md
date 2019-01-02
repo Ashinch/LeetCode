@@ -7,7 +7,6 @@
 myeclipse 8.5
 
 #### 项目架构
-项目采用：
 * jsp
 * ajax
 * spring+springmvc+mybatis (SSM) 框架
