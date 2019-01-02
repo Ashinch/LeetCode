@@ -5,9 +5,9 @@
 
 #### 软件架构
 项目采用：
-*. jsp
-*. ajax
-*. spring+springmvc+mybatis (SSM) 框架
+* jsp
+* ajax
+* spring+springmvc+mybatis (SSM) 框架
 
 #### 参与贡献
 
