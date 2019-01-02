@@ -16,6 +16,15 @@ public class UserController {
 	@Autowired
 	private UserDao userDao;
 	
+	
+	/**************************************************
+	 * 限定符：	公开
+	 * 说明：	跳转登录页面
+	 * 方法名：	goLogin
+	 **************************************************
+	 * 参数表：
+	 * @return 	String
+	 **************************************************/
 	@RequestMapping(value="/login")
 	public String goLogin() {
 		return "login";
