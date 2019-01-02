@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@page import="Models.User"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/xml"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
