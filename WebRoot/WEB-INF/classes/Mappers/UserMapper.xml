@@ -11,8 +11,7 @@
      </select>
 	<select id="getUserById" resultType="Models.User">
 		select * from tb_user
-		where
-		id=#{id}
+		where id=#{id}
      </select>
 	<select id="getRank500" resultType="Models.User">
 		select * from tb_user where
@@ -66,9 +65,6 @@
 		id=#{id}
 	</update>
 </mapper>
-
-
-
 
 
 
