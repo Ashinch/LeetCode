@@ -21,7 +21,7 @@ body {
 	float: left;
 	padding-left: 34px;
 	font-size: 14px;
-	font-family: "思源黑体 CN";
+	font-family: "鎬濇簮榛戜綋 CN";
 	color: #888888;
 }
 
@@ -31,7 +31,7 @@ body {
 	padding-right: 19px;
 	float: right;
 	font-size: 14px;
-	font-family: "思源黑体 CN";
+	font-family: "鎬濇簮榛戜綋 CN";
 	color: #888888;
 }
 
@@ -42,7 +42,7 @@ body {
 	float: left;
 	color: rgb(138, 113, 84);
 	
-	/* font-weight: 900;等于font-weight: heavy; */
+	/* font-weight: 900;????font-weight: heavy; */
 	
 	/* 300 Light
 	   400 Normal
@@ -51,7 +51,7 @@ body {
 	   
 	font-weight: 900;
 	font-size: 30px;
-	font-family: "思源黑体 CN";
+	font-family: "鎬濇簮榛戜綋 CN";
 }
 span.right
 {
