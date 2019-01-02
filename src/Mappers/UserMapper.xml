@@ -47,6 +47,7 @@
 		,#{weekly_win}
 		,#{virtual_win})
     </insert>
+    
 	<update id="updateUser">
 		update tb_user set username=#{username}
 		,password=#{password}
