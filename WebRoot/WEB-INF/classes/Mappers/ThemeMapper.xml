@@ -5,7 +5,34 @@
 		例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
 	-->
 <mapper namespace="Dao.ThemeDao">
+	<insert id="addTheme">
+		insert into tb_theme (
+		title,
+		contents,
+		classify,
+		sender,
+		date)
+		values(
+		#{title},
+		#{contents},
+		#{classify},
+		#{sender},
+		#{date},)
+	</insert>
 	
+	<select id="getAllTheme" resultType="Models.Theme">
+		select * from tb_theme 
+	</select>
+	
+	<select id="getThemeById" resultType="Models.Theme">
+		select * from tb_theme
+		where id=#{id}
+	</select>
+	
+	<select id="getAllThemeByClass" resultType="Models.Theme">
+		select classify from tb_theme
+		where classify=#{classify}
+	</select>
 </mapper>
 
 
