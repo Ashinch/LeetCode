@@ -6,5 +6,5 @@ import Models.*;
 
 public interface CourseDao {
 	public List<Course> getAllCourse();
-	public List<Course> getAllCourseByclass(String classify);
+	public List<Course> getAllCourseByClass(String classify);
 }

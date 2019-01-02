@@ -1,7 +1,11 @@
 package Dao;
 
-import Models.Reply;
+import java.util.List;
+import Models.Theme;
 
 public interface ThemeDao {
-	public Reply reply(int id);
+	public List<Theme> getAllTheme();
+	public Theme getThemeById(int id);
+	public List<Theme> getAllThemeByClass(String classify);
+	public int addTheme(Theme theme);
 }
