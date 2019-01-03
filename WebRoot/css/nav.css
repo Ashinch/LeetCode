@@ -1,5 +1,5 @@
 @font-face {
-	font-family: "思源黑体 CN";
+	font-family: "鎬濇簮榛戜綋 CN";
 	src: url("font/SourceHanSansCN-Regular.otf");
 	src: url("font/SourceHanSansCN-Bold.otf");
 	src: url("font/SourceHanSansCN-Light.otf");
@@ -47,7 +47,7 @@ ul {
 	text-decoration: none;
 	color: #BBB;
 	text-align: center;
-	font-family: "思源黑体 CN";
+	font-family: "鎬濇簮榛戜綋 CN";
 	font-size: 24px;
 	font-weight:400;
 	line-height: 53px;
