@@ -1,0 +1,297 @@
+@font-face {
+	font-family: "思源黑体 CN";
+	src: url("../font/SourceHanSansCN-Regular.otf");
+	src: url("../font/SourceHanSansCN-Bold.otf");
+	src: url("../font/SourceHanSansCN-Light.otf");
+	src: url("../font/SourceHanSansCN-Heavy.otf");
+	src: url("../font/SourceHanSansCN-Normal.otf");
+}
+body{
+	position: relative;
+	background-image: url(../images/community/bg_community.png);
+}
+#interior{
+	position: absolute;
+	top: 168px;
+	left: 63px;
+}
+#interior li {
+	float: left;
+	padding-left: 80px;
+
+}
+ul {
+	list-style-type: none;
+}
+
+#interior_nav a {
+	display: black;
+	text-decoration: none;
+	color: #BBB;
+	text-align: center;
+	font-family: "思源黑体 CN";
+	font-size: 22px;
+}
+#mark{
+	position: absolute;
+	background-color: #8A7154;
+	width: 50px;
+	height: 4px;
+	top: 215px;
+	left: 140px;
+	border-radius:2px;
+}
+#comment{
+	position: absolute;
+	width: 1100px;
+	height: 510px;
+	top: 269px;
+	left: 140px;
+}
+#one{
+	width: 1100px;
+	height: 102px;
+	background-color: #1C1C1C;
+	border-radius:10px 10px 0px 0px;
+	clear: both;
+}
+#two{
+	width: 1100px;
+	height: 102px;
+	background-color: #1F1F1F;
+}
+#three{
+	width: 1100px;
+	height: 102px;
+	background-color: #1C1C1C;
+}
+#one2{
+	width: 1100px;
+	height: 102px;
+	background-color: #1F1F1F;
+}
+#two3{
+	width: 1100px;
+	height: 102px;
+	background-color: #1C1C1C;
+}
+#four{
+	width: 1100px;
+	height: 102px;
+	background-color: #1F1F1F;
+	border-radius:0px 0px 10px 10px;
+}
+#one img{
+	margin-top:24px;
+	margin-left:38px; 
+	width: 50px;
+	height: 50px;
+	float:left;
+}
+#two img{
+	margin-top:24px;
+	margin-left:38px; 
+	width: 50px;
+	height: 50px;
+	float:left;
+}
+#three img{
+	margin-top:24px;
+	margin-left:38px; 
+	width: 50px;
+	height: 50px;
+	float:left;
+}
+#one2 img{
+	margin-top:24px;
+	margin-left:38px; 
+	width: 50px;
+	height: 50px;
+	float:left;
+}
+#two3 img{
+	margin-top:24px;
+	margin-left:38px; 
+	width: 50px;
+	height: 50px;
+	float:left;
+}
+#four img{
+	margin-top:24px;
+	margin-left:38px; 
+	width: 50px;
+	height: 50px;
+	float:left;
+}
+#comment ul{
+	float:left;
+}
+.suffix1{
+	margin-top:20px;
+	margin-left:10px;
+	font-family: "思源黑体 CN";
+	font-size: 20px;
+	color:#BBBBBB;
+}
+.suffix{
+	margin-top: 4px;
+	margin-left: 10px;
+	font-family: "思源黑体 CN";
+	font-size: 14px;
+	color:#606060;
+}
+#Read{
+	text-align: center;
+	float: right;
+	margin-right: 39px;
+}
+.Read1{
+	margin-top:20px;
+	font-family: "思源黑体 CN";
+	font-size: 14px;
+	color:#606060;
+}
+.Read2{
+	margin:0px auto;
+	font-family: "思源黑体 CN";
+}
+#hr
+{
+	float: right;
+	background-color: rgb(38,38,38);
+	width: 2px;
+	height:70px;
+	margin-top: 14px;
+	margin-right: 39px;
+}
+
+
+
+.dv-big-page{
+	position: absolute;
+	top: 881px;
+	left: 143px;
+	clear:both;
+	width: 280px;
+	height: 30px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.dv-page-position-box{
+	width:280px;
+	height:30px;
+}
+.dv-margin-left{
+	width: 210px;
+	height: 30px;
+}
+.dv-page-box{
+	float:left;
+	width: 280px;
+	height: 30px;
+}
+.li_prew{
+	width: 38px;
+	height: 28px;
+	text-align: center;
+	list-style: none;
+	cursor: pointer;
+	float: left;
+	font-family: "思源黑体 CN";
+	font-size: 16px;
+	color:#888888;
+	line-height:28px;
+}
+.li_btn{
+	width: 38px;
+	height: 28px;
+	text-align: center;
+	list-style: none;
+	cursor: pointer;
+	float: left;
+	font-family: "思源黑体 CN";
+	line-height:28px;
+	font-size: 16px;
+	color:#858585;
+}
+.li_btn:hover{
+	cursor: pointer;
+	line-height:28px;
+	font-family: "思源黑体 CN";
+	font-size: 16px;
+	color:#fff;
+}
+
+.li_next{
+	width: 38px;
+	height: 28px;
+	text-align: center;
+	list-style: none;
+	cursor: pointer;
+	float: left;
+	font-family: "思源黑体 CN";
+	line-height:28px;
+	font-size: 16px;
+	color:#888888;
+}
+.dv_btns_box{
+	width: 300px;
+}
+.li_next:hover,
+.li_prew:hover{
+	cursor: pointer;
+	line-height:28px;
+	font-family: "思源黑体 CN";
+	font-size: 16px;
+	color:#fff;
+}
+#div_li_btn_mid{
+	width: 280px;
+	height: 30px;
+	float: left;
+	overflow: hidden;
+}
+
+#page{
+	position: absolute;
+	top: 915px;
+	left: 409px;
+	width: 47px;
+	height: 20px;
+	font-size: 16px;
+	color: #8A7154;
+	font-family: "思源黑体 CN";
+	border-radius:5px 0px 0px 5px;
+	background-color: #232323;
+	text-align: center;
+	line-height:20px;
+}
+#GO{
+	position: absolute;
+	top: 915px;
+	left: 456px;
+	width: 47px;
+	height: 20px;
+	font-size: 16px;
+	color: #232323;
+	font-family: "思源黑体 CN";
+	border-radius:0px 5px 5px 0px;
+	background-color: #8A7154;
+	text-align: center;
+	line-height:20px;
+}
+#icon{
+	position: absolute;
+	top: 913px;
+	left: 608px;
+}
+#icon2{
+	position: absolute;
+	top: 913px;
+	left: 665px;
+}
+#btn_publish{
+	position: absolute;
+	top: 913px;
+	left: 1101px;
+}
