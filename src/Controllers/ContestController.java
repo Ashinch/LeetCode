@@ -22,6 +22,7 @@ import Models.User;
 public class ContestController {
 	@Autowired
 	private UserDao userDao;
+	@Autowired
 	private PaperDao paperDao;
 	
 	
@@ -50,8 +51,8 @@ public class ContestController {
 	 **************************************************/
 	@RequestMapping(value="/answer")
 	public String answer(HttpServletRequest request) {
-//		List<Paper> list = paperDao.getAllPaper();
-//		request.setAttribute("list", list);
+		List<Paper> list = paperDao.getAllPaper();
+		request.setAttribute("list", list);
 		return "answer";
 	}
 	

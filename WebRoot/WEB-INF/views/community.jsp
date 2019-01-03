@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-	<% List<Theme> list = (List<Theme>)request.getAttribute("list"); %>
+<% List<Theme> list = (List<Theme>)request.getAttribute("list"); %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";

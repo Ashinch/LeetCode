@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,9 +21,9 @@ import Models.Theme;
  ***************************/
 @Controller
 public class CommunityController {
-	
+	@Autowired
 	private ThemeDao themeDao;
-	private static List<Theme> list;
+	private static List<Theme> mList;
 	
 	/**************************************************
 	 * 限定符：	公开
@@ -32,16 +33,14 @@ public class CommunityController {
 	 * 参数表：
 	 * @return 	String	跳转到community.jsp
 	 **************************************************/
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/community")
 	public String index(HttpServletRequest request) {
 		int currentPage = 1;
-		if (list == null) {
-			list = themeDao.getAllTheme();
+		if (mList == null) {
+			mList = (List<Theme>) themeDao.getAllTheme();
 		}
-		@SuppressWarnings("unused")
-		List<Theme> themepage = (List<Theme>) Paging.ByList(list, 6, currentPage);
-		request.setAttribute("list", list);
+		List<Theme> pageList = Paging.ByTheme(mList, 6, currentPage);
+		request.setAttribute("list", pageList);
 		return "community";
 	}
 }

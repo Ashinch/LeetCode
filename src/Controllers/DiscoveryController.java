@@ -33,8 +33,8 @@ public class DiscoveryController {
 	 **************************************************/
 	@RequestMapping(value="/discovery")
 	public String index(HttpServletRequest request) {
-//		List<Course> list = courseDao.getAllCourse();
-//		request.setAttribute("list", list);
+		List<Course> list = courseDao.getAllCourse();
+		request.setAttribute("list", list);
 		return "discovery";
 	}
 	

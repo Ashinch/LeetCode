@@ -22,7 +22,7 @@ import Models.User;
 public class RankController {
 	@Autowired
 	private UserDao userDao;
-	private static List<User> list;
+	private static List<User> mList;
 	
 	/**************************************************
 	 * 限定符：	公开
@@ -33,14 +33,13 @@ public class RankController {
 	 * @param 	request		通过链接/rank
 	 * @return 	String		跳转到rank.jsp
 	 **************************************************/
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/rank")
 	public String index(HttpServletRequest request) {
 		int currentPage = 1;
-		if (list == null) {
-			list = userDao.getRank500();
+		if (mList == null) {
+			mList = userDao.getRank500();
 		}
-		List<User> pageList = (List<User>)Paging.ByList(list, 10, currentPage);
+		List<User> pageList = Paging.ByUser(mList, 10, currentPage);
 		request.setAttribute("list", pageList);
 		return "rank";
 	}
@@ -56,15 +55,14 @@ public class RankController {
 	 * @param 	currentPage		指定页面
 	 * @return 	String			跳转rank.jsp
 	 **************************************************/
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/getRankByCurrentPage")
 	public String getRankByCurrentPage(HttpServletRequest request, int currentPage) {
-		if (list == null) {
+		if (mList == null) {
 			@SuppressWarnings("unused")
 			List<User> list = userDao.getRank500();
 		}
   		currentPage = Integer.parseInt(request.getParameter("currentPage"));
-		List<User> pageList = (List<User>)Paging.ByList(list, 10, currentPage);
+		List<User> pageList = (List<User>)Paging.ByUser(mList, 10, currentPage);
 		request.setAttribute("list", pageList);
 		return "rank";
 	}
