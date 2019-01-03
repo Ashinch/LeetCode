@@ -50,8 +50,8 @@ public class ContestController {
 	 **************************************************/
 	@RequestMapping(value="/answer")
 	public String answer(HttpServletRequest request) {
-		List<Paper> list = paperDao.getAllPaper();
-		request.setAttribute("list", list);
+//		List<Paper> list = paperDao.getAllPaper();
+//		request.setAttribute("list", list);
 		return "answer";
 	}
 	
