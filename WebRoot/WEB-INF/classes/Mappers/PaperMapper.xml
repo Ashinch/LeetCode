@@ -5,7 +5,9 @@
 		例如namespace="me.gacl.mapping.userMapper"就是me.gacl.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
 	-->
 <mapper namespace="Dao.PaperDao">
-
+	<select id="getAllPaper" resultType="Models.Paper">
+		select * from tb_paper
+	</select>
 </mapper>
 
 

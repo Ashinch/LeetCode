@@ -9,8 +9,8 @@
 		select * from tb_course
 	</select>
 	
-	<select id="getAllCourse" resultType="Models.Course">
-		select classify from tb_course 
+	<select id="getAllCourseByClass" resultType="Models.Course">
+		select classify from tb_course
 		where classify=#{classify}
 	</select>
 	

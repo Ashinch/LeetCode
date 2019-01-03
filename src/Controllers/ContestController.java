@@ -1,12 +1,97 @@
 package Controllers;
 
+import java.util.List;
+
+import javax.jms.Session;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import Dao.PaperDao;
+import Dao.UserDao;
+import Models.Paper;
+import Models.User;
+
 @Controller
 public class ContestController {
+	@Autowired
+	private UserDao userDao;
+	private PaperDao paperDao;
+	
+	
+	/**************************************************
+	 * 限定符：	公开
+	 * 说明：	跳转竞赛页面
+	 * 方法名：	index
+	 **************************************************
+	 * 参数表：
+	 * @return 	String	跳转到contest.jsp
+	 **************************************************/
 	@RequestMapping(value="/contest")
 	public String index() {
 		return "contest";
+	}
+	
+	
+	/**************************************************
+	 * 限定符：	公开
+	 * 说明：	跳转答题页面
+	 * 方法名：	gotoAnswer
+	 **************************************************
+	 * 参数表：
+	 * @param 	request
+	 * @return 	String		跳转到answer.jsp
+	 **************************************************/
+	@RequestMapping(value="/answer")
+	public String Answer(HttpServletRequest request) {
+		List<Paper> list = paperDao.getAllPaper();
+		request.setAttribute("list", list);
+		return "answer";
+	}
+	
+	
+	/**************************************************
+	 * 限定符：	公开
+	 * 说明：	结算成绩更新用户信息并跳转结果页面
+	 * 方法名：	settlement
+	 **************************************************
+	 * 参数表：
+	 * @param 	request		通过链接/settlement?correct=
+	 * @param 	correct		正确答案数量
+	 * @return 	String		跳转settlement.jsp
+	 **************************************************/
+	@RequestMapping(value="/settlement")
+	public String settlement(HttpServletRequest request, int correct) {
+		int wrong = 10 - correct;
+		User user = (User) request.getSession().getAttribute("user");
+		user.setWeekly_count(user.getWeekly_count() + 1);
+		request.setAttribute("correct", correct);
+		request.setAttribute("rank", "none");
+		if (correct >= 5) {
+			user.setWeekly_win(user.getWeekly_win() +1);
+			request.setAttribute("score", "victory");
+			int points = user.getPoints() + correct - wrong;
+			if (points >= 100) {
+				user.setPoints(100 + points);
+				user.setRank(user.getRank() + 1);
+				request.setAttribute("rank", "up");
+			}else {
+				user.setPoints(user.getPoints() + correct);
+			}
+		}else {
+			request.setAttribute("score", "defeat");
+			int points = user.getPoints() + correct - wrong;
+			if (points <= 0) {
+				user.setPoints(100 + points);
+				user.setRank(user.getRank() - 1);
+				request.setAttribute("rank", "down");
+			}else {
+				user.setPoints(user.getPoints() + points);
+			}
+		}
+		userDao.updateUser(user);
+		return "settlement";
 	}
 }

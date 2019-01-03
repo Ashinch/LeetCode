@@ -1,7 +1,9 @@
 package Dao;
 
-import Models.Theme;
+import java.util.*;
+import Models.Reply;
 
 public interface ReplyDao {
-	
+	public List<Reply> getAllReplyByThemeId(int id);
+	public int addReply(Reply reply);
 }
