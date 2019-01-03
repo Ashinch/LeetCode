@@ -24,9 +24,12 @@
 		#{sender},
 		#{date})
 	</insert>
+	
+	<delete id="deleteReply">
+		delete from tb_reply 
+		where theme=#{theme}
+	</delete>
 </mapper>
-
-
 
 
 

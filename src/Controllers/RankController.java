@@ -56,9 +56,11 @@ public class RankController {
 	 * @param 	currentPage		指定页面
 	 * @return 	String			跳转rank.jsp
 	 **************************************************/
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/getRankByCurrentPage")
 	public String getRankByCurrentPage(HttpServletRequest request, int currentPage) {
 		if (list == null) {
+			@SuppressWarnings("unused")
 			List<User> list = userDao.getRank500();
 		}
   		currentPage = Integer.parseInt(request.getParameter("currentPage"));
