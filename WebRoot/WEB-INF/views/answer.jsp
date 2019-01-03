@@ -46,6 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="plugins/codemirror/addon/fold/xml-fold.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
 	<link rel="stylesheet" type="text/css" href="css/answer.css">
+	<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
   </head>
   
   <body>
@@ -58,7 +59,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<li><a href="./rank">排 行</a></li>
 		</ul>
 	</div>
-
+	
+	<div id="content">
 	<img class="logo1" src="images/answer/icon_feedback.png">
 	<img class="logo2" src="images/answer/icon_info.png">
 	<div id="first" >
@@ -193,6 +195,6 @@ int main()
 
 
 	</div>
-	
+	</div>
 </body>
 </html>

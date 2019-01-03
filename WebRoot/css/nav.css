@@ -1,16 +1,19 @@
 @font-face {
 	font-family: "思源黑体 CN";
-	src: url("font/SourceHanSansCN-Regular.otf");
-	src: url("font/SourceHanSansCN-Bold.otf");
-	src: url("font/SourceHanSansCN-Light.otf");
-	src: url("font/SourceHanSansCN-Heavy.otf");
-	src: url("font/SourceHanSansCN-Normal.otf");
+	src: url("../font/SourceHanSansCN-Regular.otf");
+	src: url("../font/SourceHanSansCN-Bold.otf");
+	src: url("../font/SourceHanSansCN-Light.otf");
+	src: url("../font/SourceHanSansCN-Heavy.otf");
+	src: url("../font/SourceHanSansCN-Normal.otf");
 }
+
 #top {animation:top 0.5s;}
+
 @keyframes top {
   0% {opacity:0}
 100% {opacity:1}
 }
+
 * {
 	margin: 0px;
 	padding: 0px;

@@ -21,6 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
 	<link href="css/nav.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/community.css">
+	<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
 
   </head>
 <body>
@@ -33,6 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<li><a href="./rank">排 行</a></li>
 		</ul>
 	</div>
+	<div id="content">
 	<div id="interior">
 		<ul id="interior_nav">
 			<li><a href="#">全部</a></li>
@@ -215,6 +217,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="btn_publish">
 		<img src="images/community/btn_publish.png" alt="">
 	</div>
-	
+	</div>
 </body>
 </html>

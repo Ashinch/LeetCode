@@ -6,9 +6,19 @@
 	src: url("../font/SourceHanSansCN-Heavy.otf");
 	src: url("../font/SourceHanSansCN-Normal.otf");
 }
+
+#content {animation:content 1.2s;}
+
+@keyframes content {
+  0% {opacity:0}
+100% {opacity:1}
+}
+
 body{
 	position: relative;
+	background-color: rgb(26, 26, 26);
 	background-image: url(../images/community/bg_community.png);
+	background-repeat: no-repeat;
 }
 #interior{
 	position: absolute;
