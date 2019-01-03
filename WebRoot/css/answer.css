@@ -1,0 +1,206 @@
+@font-face{
+	font-family:"鎬濇簮榛戜綋 CN";
+	src:url("font/SourceHanSansCN-Regular.otf");
+	src:url("font/SourceHanSansCN-ExtraLight.otf");
+	src:url("font/SourceHanSansCN-Heavy.otf");
+	src:url("font/SourceHanSansCN-Light.otf");
+	src:url("font/SourceHanSansCN-Medium.otf");
+	src:url("font/SourceHanSansCN-Normal.otf");
+	src:url("font/SourceHanSansCN-Regular.otf");
+}
+body{
+	background-image: url(../images/answer/bg_answer.png);
+	position: relative;
+}
+#first
+{
+	margin-top: 209px;
+	margin-left: 125px;
+	float: left;
+	width: 280px;
+	height: 600px;
+	background-repeat: no-repeat;
+}
+#second
+{
+	margin-top: 209px;
+	margin-left: 54px;
+	float: left;
+	width: 435px;
+	height: 590px;
+	background-color: #232323;
+}
+#second2
+{
+	margin-top:90px;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-bottom: 25px;
+	float: left;
+	width: 385px;
+	height: 475px;
+	background-color:#232323;
+	color: #606060;
+	font-family: "鎬濇簮榛戜綋 CN";
+
+}
+#third
+{
+
+	margin-top: 209px;
+	margin-left: 75px;
+	float: left;
+	width: 825px;
+	height: 590px;
+	background-color: #232323;
+
+}
+#third2
+{
+	margin-top: 90px;
+	margin-left: 25px;
+	float: left;
+	width: 775px;
+	height: 475px;
+	background-color: #232323;
+}
+.item_text{
+	line-height: 50px;
+	text-align: center;
+	margin: 0px auto;
+	display: block;
+	color: #888888;
+	font-family: "鎬濇簮榛戜綋 CN";
+}
+.title
+{
+	position: absolute;
+	top: 319px;
+	left: 485px;
+	font-size: 30px;
+	color: #BBBBBB;
+	font-family: "鎬濇簮榛戜綋 CN";
+	font-weight: 300;
+
+}
+.button1
+{
+	position:absolute;
+	top: 319px;
+	left: 1520px;
+	right: 330px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	background-image: url(../images/answer/icon_submit.png);
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	margin-left: 20px;
+	font-size: 12px;
+	color: #BBBBBB;
+	font-family: "鎬濇簮榛戜綋 CN";
+}
+
+.button2
+{
+	position:absolute;
+	top: 319px;
+	left: 1610px;
+	right: 240px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	background-image: url(../images/answer/icon_reset.png);
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	margin-left: 20px;
+	font-size: 12px;
+	color: #BBBBBB;
+	font-family: "鎬濇簮榛戜綋 CN";
+}
+
+.button3
+{
+	position:absolute;
+	top: 319px;
+	left: 1700px;
+	right: 150px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	background-image: url(../images/answer/icon_run.png);
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	margin-left: 20px;
+	font-size: 12px;
+	color: #BBBBBB;
+	font-family: "鎬濇簮榛戜綋 CN";
+}
+.seach
+{
+	position:absolute;
+	top: 319px;
+	left: 990px;
+	background-image: url(../images/answer/btn_language.png);
+	background-repeat: no-repeat;
+	line-height: 30px;
+	margin-left: 20px;
+	font-size: 14px;
+	width: 160px;
+	height: 30px;
+	color: #BBBBBB;
+	font-family: "鎬濇簮榛戜綋 CN";
+
+
+}
+.logo1
+{
+	position: absolute;
+	top: 168px;
+	left: 1683px;
+}
+.logo2
+{
+	position: absolute;
+	top: 168px;
+	left: 1765px;
+}
+.timep
+{
+	position: absolute;
+	top: 963px;
+	left: 173px;
+	line-height: 30px;
+	width: 120px;
+	height: 30px;
+	font-size: 30px;
+	color: #8A7154;
+	font-family: "思源黑体 CN";
+}
+#page1
+{
+	position: absolute;
+	top: 962px;
+	left: 1715px;
+	color: #8A7154;
+	font-size: 30px;
+	font-family: "思源黑体 CN";
+
+}
+#page2
+{
+	position: absolute;
+	top: 962px;
+	left: 1745px;
+	font-size: 30px;
+	font-weight: 30px;
+	color: #FFF;
+	font-family: "思源黑体 CN";
+
+}

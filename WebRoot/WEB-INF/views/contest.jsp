@@ -74,7 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<span class="left" style="font-family: "鎬濇簮榛戜綋 CN";">3&nbsp;&nbsp;DAY&nbsp;&nbsp;22&nbsp;&nbsp;HOURS</span>
 			<span class="right" style="font-family: "鎬濇簮榛戜綋 CN";">未预约</span>
 			<span class="left" style="font-weight:900;font-size: 30px;color: #8A7154;">34&nbsp;:&nbsp;04 </span>
-			<span class="right"><img src="images/index/icon_booking.png" alt="" style="margin-left: 14px"></span>
+			<a href="./answer"><span class="right"><img src="images/index/icon_booking.png" alt="" style="margin-left: 14px"></span></a>
 		</div>
 
 	</div>
