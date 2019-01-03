@@ -1,10 +1,8 @@
 package Controllers;
 
 import java.util.List;
-
 import javax.jms.Session;
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +12,12 @@ import Dao.UserDao;
 import Models.Paper;
 import Models.User;
 
+/**************************
+* 说明：    竞赛控制器
+***************************
+* 类名：    ContestController
+* 包名：    Controllers
+***************************/
 @Controller
 public class ContestController {
 	@Autowired
@@ -38,14 +42,14 @@ public class ContestController {
 	/**************************************************
 	 * 限定符：	公开
 	 * 说明：	跳转答题页面
-	 * 方法名：	gotoAnswer
+	 * 方法名：	answer
 	 **************************************************
 	 * 参数表：
 	 * @param 	request
 	 * @return 	String		跳转到answer.jsp
 	 **************************************************/
 	@RequestMapping(value="/answer")
-	public String Answer(HttpServletRequest request) {
+	public String answer(HttpServletRequest request) {
 		List<Paper> list = paperDao.getAllPaper();
 		request.setAttribute("list", list);
 		return "answer";

@@ -12,6 +12,12 @@ import util.Paging;
 import Dao.UserDao;
 import Models.User;
 
+/**************************
+* 说明：    排位控制器
+***************************
+* 类名：    RankController
+* 包名：    Controllers
+***************************/
 @Controller
 public class RankController {
 	@Autowired

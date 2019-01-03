@@ -1,9 +1,7 @@
 package Controllers;
 
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +10,12 @@ import Dao.CourseDao;
 import Dao.UserDao;
 import Models.Course;
 
+/**************************
+* 说明：    探索控制器
+***************************
+* 类名：    DiscoveryController
+* 包名：    Controllers
+***************************/
 @Controller
 public class DiscoveryController {
 	@Autowired
