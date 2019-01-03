@@ -78,7 +78,7 @@ public class ContestController {
 			request.setAttribute("score", "victory");
 			int points = user.getPoints() + correct - wrong;
 			if (points >= 100) {
-				user.setPoints(100 + points);
+				user.setPoints(0 + points);
 				user.setRank(user.getRank() + 1);
 				request.setAttribute("rank", "up");
 			}else {
