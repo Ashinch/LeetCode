@@ -11,12 +11,6 @@ import Dao.UserDao;
 import Models.User;
 
 
-/**************************
-* 说明：    用户控制器
-***************************
-* 类名：    UserController
-* 包名：    Controllers
-***************************/
 @Controller
 public class UserController {
 	@Autowired
@@ -49,7 +43,6 @@ public class UserController {
 			}
 		}
 		
-		
 		request.setAttribute("result", result + " " + username);
 		return "success";
 	}
@@ -71,7 +64,6 @@ public class UserController {
 		if (userDao.addUser(user) > 0){
 			result = "success";
 		}
-		
 		
 		request.setAttribute("result", result + " " + username);
 		return "success";
