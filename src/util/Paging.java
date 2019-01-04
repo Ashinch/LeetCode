@@ -26,10 +26,14 @@ public class Paging {
 	 **************************************************/
 	public static List<Theme> ByTheme(List<Theme> list, int pageSize, int currentPage) {
 		int recordCount = list.size();
+		@SuppressWarnings("unused")
 		int maxPage = recordCount % pageSize == 0 ? recordCount / pageSize : recordCount / pageSize + 1;
 		List<Theme> pageList = new ArrayList<Theme>();
 		for (int i = 0; i < pageSize; i++) {
-			pageList.add(list.get(currentPage * pageSize + 1 + i));
+			if ((currentPage - 1) * pageSize + i == list.size()) {
+				return pageList;
+			}
+			pageList.add(list.get((currentPage - 1) * pageSize + i));
 		}
 		return pageList;
 	}
@@ -50,7 +54,10 @@ public class Paging {
 		int maxPage = recordCount % pageSize == 0 ? recordCount / pageSize : recordCount / pageSize + 1;
 		List<User> pageList = new ArrayList<User>();
 		for (int i = 0; i < pageSize; i++) {
-			pageList.add(list.get(currentPage * pageSize + 1 + i));
+			if ((currentPage - 1) * pageSize + i == list.size()) {
+				return pageList;
+			}
+			pageList.add(list.get((currentPage - 1) * pageSize + i));
 		}
 		return pageList;
 	}

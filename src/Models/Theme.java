@@ -18,7 +18,28 @@ public class Theme {
 	String classify;
 	int sender;
 	String date;
+	String Reply_date;
+	int watch;
+	int comment;
 	
+	public String getReply_date() {
+		return Reply_date;
+	}
+	public void setReply_date(String replyDate) {
+		Reply_date = replyDate;
+	}
+	public int getWatch() {
+		return watch;
+	}
+	public void setWatch(int watch) {
+		this.watch = watch;
+	}
+	public int getComment() {
+		return comment;
+	}
+	public void setComment(int comment) {
+		this.comment = comment;
+	}
 	//  ¶ÁÐ´Æ÷
 	public int getId() {
 		return id;

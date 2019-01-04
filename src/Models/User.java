@@ -16,6 +16,7 @@ public class User {
 	String username;
 	String password;
 	String face;
+	String country;
 	int rank;
 	int points;
 	int warm_count;
@@ -28,6 +29,12 @@ public class User {
 	int weekly_win;
 	
 	//  ¶ÁÐ´Æ÷
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
 	public String getTableName() {
 		return tableName;
 	}

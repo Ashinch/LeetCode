@@ -43,4 +43,15 @@ public class CommunityController {
 		request.setAttribute("list", pageList);
 		return "community";
 	}
+	
+	@RequestMapping(value = "/goPage")
+	public String index(HttpServletRequest request,int currentPage) {
+		if (mList == null) {
+			mList = (List<Theme>) themeDao.getAllTheme();
+		}
+		List<Theme> pageList = Paging.ByTheme(mList, 6, currentPage);
+		request.setAttribute("list", pageList);
+		return "community";
+	}
+	
 }
