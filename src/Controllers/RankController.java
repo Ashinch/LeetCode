@@ -39,8 +39,8 @@ public class RankController {
 		if (mList == null) {
 			mList = userDao.getRank500();
 		}
-		List<User> pageList = Paging.ByUser(mList, 10, currentPage);
-		request.setAttribute("list", pageList);
+//		List<User> pageList = Paging.ByUser(mList, 10, currentPage);
+//		request.setAttribute("list", pageList);
 		return "rank";
 	}
 	

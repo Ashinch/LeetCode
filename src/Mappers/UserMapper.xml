@@ -22,6 +22,7 @@
 		insert into tb_user (username
 		,password
 		,face
+		,country
 		,rank
 		,points
 		,warm_count
@@ -35,6 +36,7 @@
 		values (#{username}
 		,#{password}
 		,#{face}
+		,#{country}
 		,#{rank}
 		,#{points}
 		,#{warm_count}
@@ -51,6 +53,7 @@
 		update tb_user set username=#{username}
 		,password=#{password}
 		,face=#{face}
+		,country=#{country}
 		,rank=#{rank}
 		,points=#{points}
 		,warm_count=#{warm_count}

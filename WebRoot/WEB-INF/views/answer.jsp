@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@page import="Models.Paper"%>
+<%@page import="util.StrFormat"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -8,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    
+    <% List<Paper> list = (List<Paper>) request.getAttribute("list");  %>
 <title>LeetCode｜答题</title>
     
 	<meta http-equiv="pragma" content="no-cache">
@@ -46,69 +48,91 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="plugins/codemirror/addon/fold/xml-fold.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
 	<link rel="stylesheet" type="text/css" href="css/answer.css">
+	<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	
+	<script>
+		function itemClick(num) {
+			switch(Number(num))
+			{
+				case 0:
+					document.getElementById("title").innerHTML="1 . <%= list.get(0).getTitle() %>";
+					document.getElementById("second2").innerHTML="<%= list.get(0).getContents() %>";
+					break;
+				case 1:
+					document.getElementById("title").innerHTML="2 . <%= list.get(1).getTitle() %>";
+					document.getElementById("second2").innerHTML="<%= list.get(1).getContents() %>";
+					break;
+			}
+		}
+	</script>
+	
   </head>
   
   <body>
 	<div id="top">
 		<ul id="top_nav">
-			<li><a href="./index">主 页</a></li>
+			<li><br></li><li><a href="./index">主 页</a></li>
 			<li><a href="./contest">竞 赛</a></li>
 			<li><a href="./discovery">探 索</a></li>
 			<li><a href="./community">社 区</a></li>
 			<li><a href="./rank">排 行</a></li>
 		</ul>
 	</div>
-
+	
+	
+	
+	<div id="content">
 	<img class="logo1" src="images/answer/icon_feedback.png">
 	<img class="logo2" src="images/answer/icon_info.png">
-	<div id="first" >
-		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_1.png);margin-bottom: 10px;">
-			<p class="item_text"> 一二三四五六七八</p>
+	<div id="first">
+		<div onclick="itemClick(0)" style="width: 260px;height: 50px; background-image: url(images/answer/item_1.png);margin-bottom: 10px;">
+			<p class="item_text"><%= StrFormat.maxLength(list.get(0).getTitle(),14) %></p>
 			
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 304px; left: 345px;">
 		</div>
-		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_2.png);margin-bottom: 10px;">
-			<p class="item_text"> 一二三四五六七八</p>
+		<div onclick="itemClick(1)" style="width: 260px;height: 50px; background-image: url(images/answer/item_2.png);margin-bottom: 10px;">
+			<p class="item_text"><%= StrFormat.maxLength(list.get(1).getTitle(),14) %></p>
 			
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 364px; left: 345px;">
 		</div>
-		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_3.png);margin-bottom: 10px;">
-			<p class="item_text"> 一二三四五六七八</p>
+		<div onclick="itemClick(2)" style="width: 260px;height: 50px; background-image: url(images/answer/item_3.png);margin-bottom: 10px;">
+			<p class="item_text"><%= StrFormat.maxLength(list.get(2).getTitle(),14) %></p>
 			
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 424px; left: 345px;">
 		</div>
-		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_4.png);margin-bottom: 10px;">
-			<p class="item_text"> 一二三四五六七八</p>
+		<div onclick="itemClick(3)" style="width: 260px;height: 50px; background-image: url(images/answer/item_4.png);margin-bottom: 10px;">
+			<p class="item_text"><%= StrFormat.maxLength(list.get(3).getTitle(),14) %></p>
 			
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 484px; left: 345px;">
 		</div>
-		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_5.png);margin-bottom: 10px;">
-			<p class="item_text"> 一二三四五六七八</p>
+		<div onclick="itemClick(4)" style="width: 260px;height: 50px; background-image: url(images/answer/item_5.png);margin-bottom: 10px;">
+			<p class="item_text"><%= StrFormat.maxLength(list.get(4).getTitle(),14) %></p>
 			
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 544px; left: 345px;">
 		</div>
-		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_6.png);margin-bottom: 10px;">
-			<p class="item_text"> 一二三四五六七八</p>
+		<div onclick="itemClick(5)" style="width: 260px;height: 50px; background-image: url(images/answer/item_6.png);margin-bottom: 10px;">
+			<p class="item_text"><%= StrFormat.maxLength(list.get(5).getTitle(),14) %></p>
 			
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 604px; left: 345px;">
 		</div>
-		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_7.png);margin-bottom: 10px;">
-			<p class="item_text"> 一二三四五六七八</p>
+		<div onclick="itemClick(6)" style="width: 260px;height: 50px; background-image: url(images/answer/item_7.png);margin-bottom: 10px;">
+			<p class="item_text"><%= StrFormat.maxLength(list.get(6).getTitle(),14) %></p>
 			
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 664px; left: 345px;">
 		</div>
-		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_8.png);margin-bottom: 10px;">
-			<p class="item_text"> 一二三四五六七八</p>
+		<div onclick="itemClick(7)" style="width: 260px;height: 50px; background-image: url(images/answer/item_8.png);margin-bottom: 10px;">
+			<p class="item_text"><%= StrFormat.maxLength(list.get(7).getTitle(),14) %></p>
 			
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 724px; left: 345px;">
 		</div>
-		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_9.png);margin-bottom: 10px;">
-			<p class="item_text"> 一二三四五六七八</p>
+		<div onclick="itemClick(8)" style="width: 260px;height: 50px; background-image: url(images/answer/item_9.png);margin-bottom: 10px;">
+			<p class="item_text"><%= StrFormat.maxLength(list.get(8).getTitle(),14) %></p>
 			
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 784px; left: 345px;">
 		</div>
-		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_10.png);margin-bottom: 10px;">
-			<p class="item_text"> 一二三四五六七八</p>
+		<div onclick="itemClick(9)" style="width: 260px;height: 50px; background-image: url(images/answer/item_10.png);margin-bottom: 10px;">
+			<p class="item_text"><%= StrFormat.maxLength(list.get(9).getTitle(),14) %></p>
 			
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 844px; left: 345px;">
 		</div>
@@ -130,7 +154,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<div id="second">
 
-	<p class="title"> 5.被围绕的区域</p>		
+	<p id="title">5.被围绕的区域</p>		
 		<div id="second2">
 			给定一个二维的矩阵，包含 'X' 和 'O'（字母 O）。找到所有被 'X' 围绕的区域，并将这些区域里所有的 'O' 用 'X' 填充。<br>
 			<br>
@@ -193,6 +217,50 @@ int main()
 
 
 	</div>
-	
+	</div>
+	<script type="text/javascript">
+		// $(function(){
+		// 	$('#first').click(function(){
+		// 		var Content = $("#second2").val();
+		// 		$.ajax({
+		// 			type:'post',
+		// 			url:"ajaxContent",
+		// 			dataType:"html",
+		// 			cache:false,
+		// 			success:function(data){
+		// 				$('#second2').innerHTML(data);
+		// 			},
+		// 			error:function(data){
+		// 				alert('error');
+		// 			}
+		// 		});
+		// 	});
+		// }
+
+		// function changeItem() {
+		// 	$('#first').click(function(){
+		// 		var successId = function(msg){
+		// 			document.getElementById('second2').innerHTML = msg;
+		// 		};
+
+		// 		$.ajax({
+		// 			type:'post',
+		// 			dataType: 'html',
+		// 			data:'item=1',
+		// 			url: 'ajaxContent',
+		// 			success:function(msg) {
+		// 				successId(msg);
+		// 			},
+		// 			error:function() {
+		// 				alert('error');
+		// 			},
+		// 			cache:false
+		// 		});
+		// 	});
+		// }
+
+		
+
+	</script>
 </body>
 </html>

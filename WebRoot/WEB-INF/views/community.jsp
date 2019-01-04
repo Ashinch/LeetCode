@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<% List<Theme> list = (List<Theme>)request.getAttribute("list"); %>
+<%@ page import="Models.Theme" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -21,6 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
 	<link href="css/nav.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/community.css">
+	<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
 
   </head>
 <body>
@@ -33,6 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<li><a href="./rank">排 行</a></li>
 		</ul>
 	</div>
+	<div id="content">
 	<div id="interior">
 		<ul id="interior_nav">
 			<li><a href="#">全部</a></li>
@@ -49,8 +51,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="one">
 			<img src="images/community/icon_face.png" alt="">
 			<ul id="content">
-				<li class="suffix1">请问爱是分配工具？</li>
-				<li class="suffix">发布于：2018-12-28 | 最近回复：SOEFN 13分钟前</li>
+				<li class="suffix1">${list[0].title }</li>
+				<li class="suffix">发布于：${list[0].date } | 最近回复：SOEFN 13分钟前</li>
 			</ul>	
 			<div id="Read">
 				<ul id="content">
@@ -74,8 +76,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="two">
 			<img src="images/community/icon_face.png" alt="">
 			<ul id="content">
-				<li class="suffix1">请问爱是分配工具？</li>
-				<li class="suffix">发布于：2018-12-28 | 最近回复：SOEFN 13分钟前</li>
+				<li class="suffix1">${list[1].title }</li>
+				<li class="suffix">发布于：${list[1].date } | 最近回复：SOEFN 13分钟前</li>
 			</ul>	
 			<div id="Read">
 				<ul id="content">
@@ -96,8 +98,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="three">
 			<img src="images/community/icon_face.png" alt="">
 			<ul id="content">
-				<li class="suffix1">请问爱是分配工具？</li>
-				<li class="suffix">发布于：2018-12-28 | 最近回复：SOEFN 13分钟前</li>
+				<li class="suffix1">${list[2].title }</li>
+				<li class="suffix">发布于：${list[2].date } | 最近回复：SOEFN 13分钟前</li>
 			</ul>	
 			<div id="Read">
 				<ul id="content">
@@ -118,8 +120,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="one2">
 			<img src="images/community/icon_face.png" alt="">
 			<ul id="content">
-				<li class="suffix1">请问爱是分配工具？</li>
-				<li class="suffix">发布于：2018-12-28 | 最近回复：SOEFN 13分钟前</li>
+				<li class="suffix1">${list[3].title }</li>
+				<li class="suffix">发布于：${list[3].date } | 最近回复：SOEFN 13分钟前</li>
 			</ul>	
 			<div id="Read">
 				<ul id="content">
@@ -140,8 +142,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="two3">
 			<img src="images/community/icon_face.png" alt="">
 			<ul id="content">
-				<li class="suffix1">请问爱是分配工具？</li>
-				<li class="suffix">发布于：2018-12-28 | 最近回复：SOEFN 13分钟前</li>
+				<li class="suffix1">${list[4].title }</li>
+				<li class="suffix">发布于：${list[4].date } | 最近回复：SOEFN 13分钟前</li>
 			</ul>	
 			<div id="Read">
 				<ul id="content">
@@ -162,8 +164,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="four">
 			<img src="images/community/icon_face.png" alt="">
 			<ul id="content">
-				<li class="suffix1">请问爱是分配工具？</li>
-				<li class="suffix">发布于：2018-12-28 | 最近回复：SOEFN 13分钟前</li>
+				<li class="suffix1">${list[5].title }</li>
+				<li class="suffix">发布于：${list[5].date } | 最近回复：SOEFN 13分钟前</li>
 			</ul>	
 			<div id="Read">
 				<ul id="content">
@@ -188,9 +190,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="dv-page-position-box">
 				<div id="div_li_btn_mid">
 					<div class="dv_btns_box">
-						<li class="li_btn">1</li>
-						<li class="li_btn">2</li>
-						<li class="li_btn">3</li>
+						<a href="./goPage?currentPage=1"><li class="li_btn">1</li></a>
+						<a href="./goPage?currentPage=2"><li class="li_btn">2</li></a>
+						<a href="./goPage?currentPage=3"><li class="li_btn">3</li></a>
 						<li class="li_btn">4</li>
 						<li class="li_btn">5</li>
 						<li class="li_btn">...</li>
@@ -215,6 +217,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="btn_publish">
 		<img src="images/community/btn_publish.png" alt="">
 	</div>
-	
+	</div>
 </body>
 </html>
