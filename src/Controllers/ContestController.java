@@ -3,9 +3,14 @@ package Controllers;
 import java.util.List;
 import javax.jms.Session;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.swing.text.AbstractDocument.Content;
+import net.sf.json.JSONObject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import Dao.PaperDao;
 import Dao.UserDao;
@@ -99,4 +104,13 @@ public class ContestController {
 		userDao.updateUser(user);
 		return "settlement";
 	}
+	
+	
+	@RequestMapping(value="/ajaxContent")
+	@ResponseBody
+	public String ajaxContent(HttpServletRequest request,HttpServletResponse response) {
+		response.setContentType("text/html;charset=utf-8"); 
+		return "≥…π¶¡À";
+	}
+	
 }
