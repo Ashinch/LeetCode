@@ -11,10 +11,6 @@ body {
     position: relative;
 }
 
-#top_nav a {
-  padding-right: 170px;
-}
-
 #content{
   width: 1585px;
   margin: 51px auto 0px;
