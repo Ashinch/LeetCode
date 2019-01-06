@@ -1,5 +1,6 @@
 package Controllers;
 
+import java.io.IOException;
 import java.util.List;
 import javax.jms.Session;
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +31,8 @@ public class ContestController {
 	@Autowired
 	private PaperDao paperDao;
 	
+	private static List<Paper> mList;
+	
 	
 	/**************************************************
 	 * 限定符：	公开
@@ -56,8 +59,10 @@ public class ContestController {
 	 **************************************************/
 	@RequestMapping(value="/answer")
 	public String answer(HttpServletRequest request) {
-		List<Paper> list = paperDao.getAllPaper();
-		request.setAttribute("list", list);
+		if (mList == null) {
+			mList = paperDao.getAllPaper();
+		}
+		request.setAttribute("list", mList);
 		return "answer";
 	}
 	
@@ -106,11 +111,16 @@ public class ContestController {
 	}
 	
 	
-	@RequestMapping(value="/ajaxContent")
-	@ResponseBody
-	public String ajaxContent(HttpServletRequest request,HttpServletResponse response) {
-		response.setContentType("text/html;charset=utf-8"); 
-		return "成功了";
+	@RequestMapping(value="/ajaxContentByItem")
+	public void ajaxContent(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		if (mList == null) {
+			mList = paperDao.getAllPaper();
+		}
+		int item = Integer.valueOf(request.getParameter("item"));
+		String title = mList.get(item).getTitle();
+		String content = mList.get(item).getContents();
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().print(Integer.toString(item + 1) + " . " + title + "$$" + content);
 	}
 	
 }

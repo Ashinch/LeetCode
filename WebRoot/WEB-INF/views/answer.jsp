@@ -51,21 +51,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
 	<script src="js/jquery-3.3.1.min.js"></script>
 	
-	<script>
-		function itemClick(num) {
-			switch(Number(num))
-			{
-				case 0:
-					document.getElementById("title").innerHTML="1 . <%= list.get(0).getTitle() %>";
-					document.getElementById("second2").innerHTML="<%= list.get(0).getContents() %>";
-					break;
-				case 1:
-					document.getElementById("title").innerHTML="2 . <%= list.get(1).getTitle() %>";
-					document.getElementById("second2").innerHTML="<%= list.get(1).getContents() %>";
-					break;
-			}
-		}
-	</script>
+	
 	
   </head>
   
@@ -209,57 +195,15 @@ int main()
 
         editor.setSize("782","475");
     </script>
-			</div>
-
-
-
-		</div>
-
-
-	</div>
-	</div>
-	<script type="text/javascript">
-		// $(function(){
-		// 	$('#first').click(function(){
-		// 		var Content = $("#second2").val();
-		// 		$.ajax({
-		// 			type:'post',
-		// 			url:"ajaxContent",
-		// 			dataType:"html",
-		// 			cache:false,
-		// 			success:function(data){
-		// 				$('#second2').innerHTML(data);
-		// 			},
-		// 			error:function(data){
-		// 				alert('error');
-		// 			}
-		// 		});
-		// 	});
-		// }
-
-		// function changeItem() {
-		// 	$('#first').click(function(){
-		// 		var successId = function(msg){
-		// 			document.getElementById('second2').innerHTML = msg;
-		// 		};
-
-		// 		$.ajax({
-		// 			type:'post',
-		// 			dataType: 'html',
-		// 			data:'item=1',
-		// 			url: 'ajaxContent',
-		// 			success:function(msg) {
-		// 				successId(msg);
-		// 			},
-		// 			error:function() {
-		// 				alert('error');
-		// 			},
-		// 			cache:false
-		// 		});
-		// 	});
-		// }
-
-		
+	<script>
+	
+		function itemClick(item) {
+            $.post("./ajaxContentByItem",{"item":item},function(data){
+             	var arr=data.split("$$");
+             	$("#title").html(arr[0]);
+            	$("#second2").html(arr[1]);
+            });
+		}
 
 	</script>
 </body>
