@@ -24,5 +24,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     
-   <form method="post" action="loginCheck" name="form1">Login<br><br><input type="text" name="username"><br><br><input type="text" name="password"><br><br><input type="submit" name="button1"><br></form></body>
+	   <form method="post" action="loginCheck" name="form1">Login<br><br>
+		   <input type="text" name="username"><br><br>
+		   <input type="text" name="password"><br><br>
+		   <input type="submit" name="button1"><br>
+	   </form>
+	   
+	   
+	   <form name="Form2" action="userface" method="post"  enctype="multipart/form-data">
+			<h1>使用spring mvc提供的类的方法上传文件</h1>
+			<input type="file" name="file"><br/>
+			<input type="submit" value="upload"/>
+		</form>
+   </body>
 </html>
