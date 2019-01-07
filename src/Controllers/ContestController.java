@@ -1,5 +1,6 @@
 package Controllers;
 
+import java.io.IOException;
 import java.util.List;
 import javax.jms.Session;
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import util.Compiler;
 
 import Dao.PaperDao;
 import Dao.UserDao;
@@ -29,6 +32,8 @@ public class ContestController {
 	private UserDao userDao;
 	@Autowired
 	private PaperDao paperDao;
+	
+	private static List<Paper> mList;
 	
 	
 	/**************************************************
@@ -56,8 +61,10 @@ public class ContestController {
 	 **************************************************/
 	@RequestMapping(value="/answer")
 	public String answer(HttpServletRequest request) {
-		List<Paper> list = paperDao.getAllPaper();
-		request.setAttribute("list", list);
+		if (mList == null) {
+			mList = paperDao.getAllPaper();
+		}
+		request.setAttribute("list", mList);
 		return "answer";
 	}
 	
@@ -106,11 +113,21 @@ public class ContestController {
 	}
 	
 	
-	@RequestMapping(value="/ajaxContent")
-	@ResponseBody
-	public String ajaxContent(HttpServletRequest request,HttpServletResponse response) {
-		response.setContentType("text/html;charset=utf-8"); 
-		return "≥…π¶¡À";
+	@RequestMapping(value="/ajaxContentByItem")
+	public void ajaxContentByItem(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		if (mList == null) {
+			mList = paperDao.getAllPaper();
+		}
+		int item = Integer.valueOf(request.getParameter("item"));
+		String title = mList.get(item).getTitle();
+		String content = mList.get(item).getContents();
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().print(Integer.toString(item + 1) + " . " + title + "$$" + content);
+	}
+	
+	@RequestMapping(value="/ajaxRunCode")
+	public void ajaxRunCode(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		Compiler.run("cpp", request.getParameter("code"));
 	}
 	
 }

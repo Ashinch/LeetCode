@@ -49,7 +49,8 @@ body{
 	margin-right: 25px;
 	margin-bottom: 25px;
 	float: left;
-	width: 385px;
+	/*width: 385px;*/
+	width: 400px;
 	height: 475px;
 	background-color:#232323;
 	color: #606060;
@@ -228,4 +229,17 @@ body{
 	color: #FFF;
 	font-family: "思源黑体 CN";
 	font-weight: 900;
+}
+
+#item {
+	width: 260px;
+	height: 50px; 
+	margin-bottom: 10px;
+}
+
+#item:hover {
+	/* box-sizing: border-box; */
+	border: 1.5px solid #8A7154;
+	border-radius: 10px;
+	cursor:pointer;
 }

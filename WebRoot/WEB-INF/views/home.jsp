@@ -27,7 +27,7 @@
 	</head>
 
 	<body>
-		<a href="./login">登录</a>&nbsp;&nbsp;<a href="./reg">注册</a>
+		<a href="./login">登录</a>&nbsp;&nbsp;<a href="./reg">注册</a>&nbsp;&nbsp;<a href="./ajax">ajax</a>
 		<br>
 		<%
 			List<User> list = (List<User>) request.getAttribute("list");
