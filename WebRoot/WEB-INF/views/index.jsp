@@ -43,12 +43,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              //定义变量 d,h,m,s保存倒计时的时间  
              var d,h,m,s;  
              if (leftTime>=0) {  
-                 d = Math.floor(leftTime/1000/60/60/24);  
-                 h = Math.floor(leftTime/1000/60/60%24);  
+                 //d = Math.floor(leftTime/1000/60/60/24);  
+                 //h = Math.floor(leftTime/1000/60/60%24);  
                  m = Math.floor(leftTime/1000/60%60);  
                  s = Math.floor(leftTime/1000%60);                     
              }  
              //将倒计时赋值到div中   
+             if (s<10) {
+             	s = "0" + s;
+             }
              document.getElementById("left1").innerHTML = m + " : " + s;
              //递归每秒调用countTime方法，显示动态时间效果  
              setTimeout(countTime,1000);  
