@@ -13,6 +13,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import util.Compiler;
+
 import Dao.PaperDao;
 import Dao.UserDao;
 import Models.Paper;
@@ -112,7 +114,7 @@ public class ContestController {
 	
 	
 	@RequestMapping(value="/ajaxContentByItem")
-	public void ajaxContent(HttpServletRequest request,HttpServletResponse response) throws IOException {
+	public void ajaxContentByItem(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		if (mList == null) {
 			mList = paperDao.getAllPaper();
 		}
@@ -121,6 +123,11 @@ public class ContestController {
 		String content = mList.get(item).getContents();
 		response.setContentType("text/html;charset=utf-8");
 		response.getWriter().print(Integer.toString(item + 1) + " . " + title + "$$" + content);
+	}
+	
+	@RequestMapping(value="/ajaxRunCode")
+	public void ajaxRunCode(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		Compiler.run("cpp", request.getParameter("code"));
 	}
 	
 }

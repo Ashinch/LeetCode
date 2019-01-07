@@ -230,3 +230,16 @@ body{
 	font-family: "思源黑体 CN";
 	font-weight: 900;
 }
+
+#item {
+	width: 260px;
+	height: 50px; 
+	margin-bottom: 10px;
+}
+
+#item:hover {
+	/* box-sizing: border-box; */
+	border: 1.5px solid #8A7154;
+	border-radius: 10px;
+	cursor:pointer;
+}
