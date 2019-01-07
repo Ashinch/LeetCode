@@ -212,7 +212,10 @@ int main()
 			$.ajax({
 				type: 'POST',
 				url: 'https://leetcode-cn.com/playground/api/runcode',
-				headers:{'accept': '*/*',
+				headers:{
+					'Access-Control-Allow-Origin':'*',
+					'Access-Control-Allow-Method':'POST,GET'
+					'accept': '*/*',
 					'accept-encoding': 'gzip, deflate, br',
 					'accept-language': 'zh-CN,zh;q=0.9',
 					'content-length': '123',
