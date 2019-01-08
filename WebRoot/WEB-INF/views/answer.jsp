@@ -159,11 +159,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 
-		<p class="button1" style="margin-left: 0px;" onclick="runCode()">提交</p>
+		<p class="button1" style="margin-left: 0px;">提交</p>
 
-		<p class="button2" style="margin-left: 0px;">重置</p>
+		<p onclick="checkCode()" class="button2" style="margin-left: 0px;" >重置</p>
 
-		<p class="button3" style="margin-left: 0px;">执行</p>
+		<p onclick="runCode()" class="button3" style="margin-left: 0px;" >执行</p>
 
 		<div id="third2">
 			
@@ -197,7 +197,8 @@ int main()
         editor.setSize("782","475");
     </script>
 	<script>
-	
+		var interpretId = "";
+		
 		function itemClick(item) {
             $.post("./ajaxContentByItem",{"item":item},function(data){
              	var arr=data.split("$$");
@@ -207,45 +208,19 @@ int main()
             
             document.getElementById("code").value;
 		}
-		
-		// function runCode() {
-		// 	var code = document.getElementById("code").value;
-		// 	$.ajax({
-		// 		type: 'POST',
-		// 		url: 'https://leetcode-cn.com/playground/api/runcode',
-		// 		headers:{
-		// 			'Access-Control-Allow-Origin':'*',
-		// 			'Access-Control-Allow-Method':'POST,GET'
-		// 			'accept': '*/*',
-		// 			'accept-encoding': 'gzip, deflate, br',
-		// 			'accept-language': 'zh-CN,zh;q=0.9',
-		// 			'content-length': '123',
-		// 			'content-type': 'application/json',
-		// 			'origin': 'https://leetcode-cn.com',
-		// 			'referer': 'https://leetcode-cn.com/playground/new/empty',
-		// 			'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.26 Safari/537.36 Core/1.63.6818.400 QQBrowser/10.3.3024.400',
-		// 			'x-csrftoken': 'aARwvEeJG1JtRbrEBpvidbdogmvSmn7lCcCUn7hsEzaGT51HRzvZYSAlJKnf9os1',
-		// 			'cookie':'_uab_collina=153719430667797976177566; gr_user_id=41a57e6c-4b4a-42de-af39-714eb878cd62; grwng_uid=60a23a4f-27e5-4cb2-9019-7e95c10e9df0; a2873925c34ecbd2_gr_last_sent_cs1=glaxy; O5LM_2132_nofavfid=1; O5LM_2132_ulastactivity=22922bkT0w44ncxn1FaQpAwqK51BWJAXpW3kh2FQlpoa\%2FSszGb5a; O5LM_2132_smile=1D1; O5LM_2132_forum_lastvisit=D_2_1545992121D_45_1545992129D_46_1545992134; O5LM_2132_visitedfid=46D45D2; csrftoken=aARwvEeJG1JtRbrEBpvidbdogmvSmn7lCcCUn7hsEzaGT51HRzvZYSAlJKnf9os1; LEETCODE_SESSION=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfYXV0aF91c2VyX2lkIjoiODk4NTgiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJhdXRoZW50aWNhdGlvbi5hdXRoX2JhY2tlbmRzLlBob25lQXV0aGVudGljYXRpb25CYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiNjc1YjJiZmRiNGUwMTgzZjc3NWNkNTU0ZGY0NDZjYzQxZDE4NTg1MyIsImlkIjo4OTg1OCwiZW1haWwiOiJHbGF4eWluZmluaXRlQG91dGxvb2suY29tIiwidXNlcm5hbWUiOiJHbGF4eSIsInVzZXJfc2x1ZyI6ImdsYXh5IiwiYXZhdGFyIjoiaHR0cHM6Ly9hc3NldHMubGVldGNvZGUtY24uY29tL2FsaXl1bi1sYy11cGxvYWQvdXNlcnMvZ2xheHkvYXZhdGFyXzE1Mjg0Mzc5MzUucG5nIiwicGhvbmVfdmVyaWZpZWQiOnRydWUsInRpbWVzdGFtcCI6IjIwMTgtMTItMjggMTQ6NDY6MzcuNzE5MTU0KzAwOjAwIiwiUkVNT1RFX0FERFIiOiI1OC41OS4xNTMuMTA3IiwiSURFTlRJVFkiOiJkZGIyNWUzODIzYTE2MTU2NzYwNTI5MWViZmVlNjVjMCIsIl9zZXNzaW9uX2V4cGlyeSI6MTIwOTYwMH0.0IlhT43t032tFFNebntLU5Ud-lRYmD6Fcks3pQ23QYg; Hm_lvt_fa218a3ff7179639febdb15e372f411c=1545911753,1545989811,1546238508; a2873925c34ecbd2_gr_session_id=bb29f3a7-68cd-4c92-9d96-ad64e2f40d8e; a2873925c34ecbd2_gr_last_sent_sid_with_cs1=bb29f3a7-68cd-4c92-9d96-ad64e2f40d8e; a2873925c34ecbd2_gr_session_id_bb29f3a7-68cd-4c92-9d96-ad64e2f40d8e=true; Hm_lpvt_fa218a3ff7179639febdb15e372f411c=1546238593; a2873925c34ecbd2_gr_cs1=glaxy'},
-		// 		data:"{'lang': 'cpp','typed_code': code,'data_input': ''}",
-		// 		success: function(data){
-		// 			console.log(data);
-		// 		},
-		// 		error: function(data){
-		// 			console.log(data);
-		// 		}
-		// 	});
-            
-		// }
 
 		function runCode() {
 			var code = document.getElementById("code").value;
-			$.get("./ajaxRunCode",{"lang":"cpp","code":code},function(data){
-             	// var arr=data.split("$$");
-             	// $("#title").html(arr[0]);
-            	// $("#second2").html(arr[1]);
+			$.Post("./ajaxRunCode",{"lang":"cpp","code":code},function(data){
+             	interpretId = data;
+			});
+		}
+		
+		function checkCode() {
+			$.Post("./ajaxCheckCode",{"interpretId":interpretId},function(data){
+				$("#code").html(data);
 			});
 			
-            
 		}
 		
 		function codeChange() {

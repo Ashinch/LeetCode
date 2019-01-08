@@ -127,7 +127,16 @@ public class ContestController {
 	
 	@RequestMapping(value="/ajaxRunCode")
 	public void ajaxRunCode(HttpServletRequest request,HttpServletResponse response) throws IOException {
-		Compiler.run("cpp", request.getParameter("code"));
+		String interpretId = Compiler.run("cpp", request.getParameter("code"));
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().print(interpretId);
+	}
+	
+	@RequestMapping(value="/ajaxCheckCode")
+	public void ajaxCheckCode(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		String result = Compiler.get(request.getParameter("interpretId"));
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().print(result);
 	}
 	
 }
