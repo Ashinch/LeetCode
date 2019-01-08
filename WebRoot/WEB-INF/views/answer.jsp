@@ -8,12 +8,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    
+
 <title>LeetCode｜答题</title>
-    
+
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="expires" content="0">
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<link rel="stylesheet" href="plugins/codemirror/lib/codemirror.css">
@@ -48,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/answer.css">
 	<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
   </head>
-  
+
   <body>
 	<div id="top">
 		<ul id="top_nav">
@@ -59,66 +59,66 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<li><a href="./rank">排 行</a></li>
 		</ul>
 	</div>
-	
+
 	<div id="content">
 	<img class="logo1" src="images/answer/icon_feedback.png">
 	<img class="logo2" src="images/answer/icon_info.png">
 	<div id="first" >
 		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_1.png);margin-bottom: 10px;">
 			<p class="item_text"> 一二三四五六七八</p>
-			
+
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 304px; left: 345px;">
 		</div>
 		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_2.png);margin-bottom: 10px;">
 			<p class="item_text"> 一二三四五六七八</p>
-			
+
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 364px; left: 345px;">
 		</div>
 		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_3.png);margin-bottom: 10px;">
 			<p class="item_text"> 一二三四五六七八</p>
-			
+
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 424px; left: 345px;">
 		</div>
 		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_4.png);margin-bottom: 10px;">
 			<p class="item_text"> 一二三四五六七八</p>
-			
+
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 484px; left: 345px;">
 		</div>
 		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_5.png);margin-bottom: 10px;">
 			<p class="item_text"> 一二三四五六七八</p>
-			
+
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 544px; left: 345px;">
 		</div>
 		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_6.png);margin-bottom: 10px;">
 			<p class="item_text"> 一二三四五六七八</p>
-			
+
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 604px; left: 345px;">
 		</div>
 		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_7.png);margin-bottom: 10px;">
 			<p class="item_text"> 一二三四五六七八</p>
-			
+
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 664px; left: 345px;">
 		</div>
 		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_8.png);margin-bottom: 10px;">
 			<p class="item_text"> 一二三四五六七八</p>
-			
+
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 724px; left: 345px;">
 		</div>
 		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_9.png);margin-bottom: 10px;">
 			<p class="item_text"> 一二三四五六七八</p>
-			
+
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 784px; left: 345px;">
 		</div>
 		<div  style="width: 260px;height: 50px; background-image: url(images/answer/item_10.png);margin-bottom: 10px;">
 			<p class="item_text"> 一二三四五六七八</p>
-			
+
 			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 844px; left: 345px;">
 		</div>
-		
+
 		<div>
 				<img src="images/answer/icon_time.png" alt="" style="margin-top: 75px;">
 				<p class="timep">16 : 39</p>
-				
+
 			</div>
 			<div>
 				<p id="page1">5&nbsp;/</p>
@@ -126,21 +126,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div>
 				<p id="page2">&nbsp;&nbsp;10</p>
 			</div>
-		
+
 	</div >
-	
+
 
 	<div id="second">
 
-	<p class="title"> 5.被围绕的区域</p>		
+	<p class="title"> 5.被围绕的区域</p>
 		<div id="second2">
 			给定一个二维的矩阵，包含 'X' 和 'O'（字母 O）。找到所有被 'X' 围绕的区域，并将这些区域里所有的 'O' 用 'X' 填充。<br>
 			<br>
 			 解释:<br> 被围绕的区间不会存在于边界上，换句话说，任何边界上的 'O' 都不会被填充为 'X'。 任何不在边界上，或不与边界上的 'O' 相连的 'O' 最终都会被填充为 'X'。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。<br><br> 示例:<br> X X X X&nbsp;
 			  X X X X <br>X O O X&nbsp; X X X X<br> X X O X&nbsp; X X X X<br> X O X X&nbsp; X O X X
-			
-		</div>		
-		
+   			X X X X <br>X O O X&nbsp; X X X X<br> X X O X&nbsp; X X X X<br> X O X X&nbsp; X O X X
+        X X X X <br>X O O X&nbsp; X X X X<br> X X O X&nbsp; X X X X<br> X O X X&nbsp; X O X X
+		</div>
+
 
 
 	</div>
@@ -157,7 +158,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<p class="button3" style="margin-left: 0px;">执行</p>
 
 		<div id="third2">
-			
+
 			<div id="third3">
 				<div class="code">
         <textarea id="code">#include <std>
@@ -166,7 +167,7 @@ int main()
     printf("1");
 }</textarea>
     </div>
-    
+
 
     <script>
         var editor = CodeMirror.fromTextArea(document.getElementById("code"), { //script_once_code为你的textarea的ID号
@@ -182,7 +183,7 @@ int main()
             theme: 'tomorrow-night-bright',      // 编辑器主题
             lineWrapping: true, //是否强制换行
             gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
-            
+
         });
 
         editor.setSize("782","475");

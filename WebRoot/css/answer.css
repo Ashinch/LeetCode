@@ -52,6 +52,7 @@ body{
 	height: 475px;
 	background-color:#232323;
 	color: #606060;
+	overflow-y: scroll;
 	font-family: "思源黑体 CN";
 
 }
