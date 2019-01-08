@@ -86,6 +86,30 @@ body {
 
 }
 
+#left1 {
+    width: 145px;
+    margin-top: 20px;
+    margin: 10px;
+    float: left;
+    font-size: 14px;
+    font-family: "思源黑体 CN";
+    color: #888888;
+
+
+}
+
+#left2 {
+    width: 145px;
+    margin-top: 20px;
+    margin: 10px;
+    float: left;
+    font-size: 14px;
+    font-family: "思源黑体 CN";
+    color: #888888;
+
+
+}
+
 .right {
     width: 30px;
     margin-right: 1px;
