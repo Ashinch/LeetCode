@@ -232,8 +232,8 @@ body{
 }
 
 #item {
-	width: 260px;
-	height: 50px; 
+	width: 262px;
+	height: 52px; 
 	margin-bottom: 10px;
 }
 
@@ -242,4 +242,5 @@ body{
 	border: 1.5px solid #8A7154;
 	border-radius: 10px;
 	cursor:pointer;
+	box-sizing:border-box;
 }
