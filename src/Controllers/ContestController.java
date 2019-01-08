@@ -137,6 +137,13 @@ public class ContestController {
 	
 	@RequestMapping(value="/ajaxCheckCode")
 	public void ajaxCheckCode(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		String result = Compiler.get(request.getParameter("interpretId"));
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().print(result);
+	}
+	
+	@RequestMapping(value="/ajaxChangeCode")
+	public void ajaxChangeCode(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		String name = Compiler.get(request.getParameter("codeName"));
 		response.setContentType("text/html;charset=utf-8");
 		response.getWriter().print(codeDao.getAllCodeByName(name).getCode());

@@ -195,9 +195,6 @@ int main()
         });
 
 		editor.setSize("782","475");
-	</script>
-	
-	<script>
 		
 		
 		function itemClick(item) {
@@ -213,7 +210,7 @@ int main()
 		var interpretId = "a";
 		var interval;
 		function runCode(){
-			var code = jQuery("#code").val();
+			var code = editor.getValue();
 			jQuery.post("./ajaxRunCode",{"lang":"cpp","code":code},function(data){
 				interpretId = data;
 				interval = window.setInterval("checkCode()","1000");
