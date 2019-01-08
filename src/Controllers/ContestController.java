@@ -1,11 +1,19 @@
 package Controllers;
 
+import java.io.IOException;
 import java.util.List;
 import javax.jms.Session;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.swing.text.AbstractDocument.Content;
+import net.sf.json.JSONObject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import util.Compiler;
 
 import Dao.PaperDao;
 import Dao.UserDao;
@@ -24,6 +32,8 @@ public class ContestController {
 	private UserDao userDao;
 	@Autowired
 	private PaperDao paperDao;
+	
+	private static List<Paper> mList;
 	
 	
 	/**************************************************
@@ -51,8 +61,10 @@ public class ContestController {
 	 **************************************************/
 	@RequestMapping(value="/answer")
 	public String answer(HttpServletRequest request) {
-		List<Paper> list = paperDao.getAllPaper();
-		request.setAttribute("list", list);
+		if (mList == null) {
+			mList = paperDao.getAllPaper();
+		}
+		request.setAttribute("list", mList);
 		return "answer";
 	}
 	
@@ -99,4 +111,32 @@ public class ContestController {
 		userDao.updateUser(user);
 		return "settlement";
 	}
+	
+	
+	@RequestMapping(value="/ajaxContentByItem")
+	public void ajaxContentByItem(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		if (mList == null) {
+			mList = paperDao.getAllPaper();
+		}
+		int item = Integer.valueOf(request.getParameter("item"));
+		String title = mList.get(item).getTitle();
+		String content = mList.get(item).getContents();
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().print(Integer.toString(item + 1) + " . " + title + "$$" + content);
+	}
+	
+	@RequestMapping(value="/ajaxRunCode")
+	public void ajaxRunCode(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		String interpretId = Compiler.run("cpp", request.getParameter("code"));
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().print(interpretId);
+	}
+	
+	@RequestMapping(value="/ajaxCheckCode")
+	public void ajaxCheckCode(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		String result = Compiler.get(request.getParameter("interpretId"));
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().print(result);
+	}
+	
 }

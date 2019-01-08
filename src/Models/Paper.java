@@ -13,7 +13,8 @@ public class Paper {
 	
 	//  ±ØĞë¸úÊı¾İ¿âË³Ğò×Ö¶ÎÃûÒ»ÖÂ
 	int id;
-	String question;
+	String title;
+	String contents;
 	String code;
 	
 	//  ¶ÁĞ´Æ÷
@@ -23,11 +24,18 @@ public class Paper {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getQuestion() {
-		return question;
+
+	public String getTitle() {
+		return title;
 	}
-	public void setQuestion(String question) {
-		this.question = question;
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getContents() {
+		return contents;
+	}
+	public void setContents(String contents) {
+		this.contents = contents;
 	}
 	public String getCode() {
 		return code;

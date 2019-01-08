@@ -9,32 +9,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'login.jsp' starting page</title>
+    <title>My JSP 'ajax.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	
+	<style>
+	#one{
+		background-color:red;width:100px;height:50px;color:#fff;
+	}
+	#two{
+		background-color:blue;width:100px;height:50px;color:#fff;
+	}
+	</style>
+	
+	
+<script type="text/javascript">
+    $(function(){
+        $("#one").click(function(){
+            $.post("./ajaxSend",{"num":"1"},function(data){
+            	$("#two").html(data)
+            });
+        });
+    });
+</script>
   </head>
   
   <body>
-    
-	   <form method="post" action="loginCheck" name="form1">Login<br><br>
-		   <input type="text" name="username"><br><br>
-		   <input type="text" name="password"><br><br>
-		   <input type="submit" name="button1"><br>
-	   </form>
-	   
-	   
-	   <form name="Form2" action="userface" method="post"  enctype="multipart/form-data">
-			<h1>使用spring mvc提供的类的方法上传文件</h1>
-			<input type="file" name="file"><br/>
-			<input type="submit" value="upload"/>
-		</form>
-   </body>
+    ajax
+    <br>
+    <br>
+    <div id='one'>发送ajax</div>
+    <br>
+    <br>
+    <div id='two'>显示内容</div>
+  </body>
 </html>
