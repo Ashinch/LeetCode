@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@page import="Models.Course"%>
+<%@page import="util.StrFormat"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -32,6 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </script>
   
   <body>
+  	<% List<Course> list = (List<Course>) request.getAttribute("list"); %>
     <div id="top">
 		<ul id="top_nav">
 			<li><a href="./index">主 页</a></li>
@@ -64,14 +67,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div style="height: 1px;"></div>
 		<div id="list">
 		
-		<% for(int i=0;i<100;i++) { %>
+		<% for(int i=0;i<list.size();i++) { %>
 			<div class="listitem">
 				<div class="listtop">
-
+					<img alt="" src="<%= list.get(i).getImage() %>" width="250px" height="160px;">
 				</div>
 				<div class="listbottom">
 					<p class=listtext>
-						士大夫士大夫士大夫士大夫阿士大夫撒旦法
+						<%= StrFormat.maxLength(list.get(i).getTitle(),40) %>
 					</p>
 				</div>
 			</div>

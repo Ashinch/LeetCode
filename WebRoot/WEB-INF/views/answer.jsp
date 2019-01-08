@@ -25,7 +25,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="plugins/codemirror/doc/docs.css">
     <link rel="stylesheet" href="plugins/codemirror/addon/fold/foldgutter.css"/>
 
-    <script src="plugins/codemirror/keymap/sublime.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="plugins/codemirror/keymap/sublime.js"></script>
     <script src="plugins/codemirror/lib/codemirror.js"></script>
     <script src="plugins/codemirror/doc/activebookmark.js"></script>
 
@@ -50,7 +51,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
 	<link rel="stylesheet" type="text/css" href="css/answer.css">
 	<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
-	<script src="js/jquery-3.3.1.min.js"></script>
 	
 	
 	
@@ -194,35 +194,42 @@ int main()
             
         });
 
-        editor.setSize("782","475");
-    </script>
+		editor.setSize("782","475");
+	</script>
+	
 	<script>
-		var interpretId = "";
+		
 		
 		function itemClick(item) {
-            $.post("./ajaxContentByItem",{"item":item},function(data){
+            jQuery.post("./ajaxContentByItem",{"item":item},function(data){
              	var arr=data.split("$$");
-             	$("#title").html(arr[0]);
-            	$("#second2").html(arr[1]);
+             	jQuery("#title").html(arr[0]);
+				 jQuery("#second2").html(arr[1]);
             });
             
-            document.getElementById("code").value;
+            // document.getElementById("code").value;
 		}
 
-		function runCode() {
-			var code = document.getElementById("code").value;
-			$.Post("./ajaxRunCode",{"lang":"cpp","code":code},function(data){
-             	interpretId = data;
+		var interpretId = "a";
+		var interval;
+		function runCode(){
+			var code = jQuery("#code").val();
+			jQuery.post("./ajaxRunCode",{"lang":"cpp","code":code},function(data){
+				interpretId = data;
+				interval = window.setInterval("checkCode()","1000");
 			});
 		}
-		
-		function checkCode() {
-			$.Post("./ajaxCheckCode",{"interpretId":interpretId},function(data){
-				$("#code").html(data);
+
+		function checkCode(){
+			jQuery.post("./ajaxCheckCode",{"interpretId":interpretId},function(data){
+				var arr=data.split("$$");
+				if (arr[0] == "true" || arr[0] == "false") {
+					clearInterval(interval);
+				}
 			});
-			
 		}
-		
+
+
 		function codeChange() {
 			var b = document.getElementById("code").value;
 			console.log(b);
