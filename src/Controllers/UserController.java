@@ -36,6 +36,11 @@ public class UserController {
 		return "login";
 	}
 	
+	@RequestMapping(value="/userinfo")
+	public String goUserInfo() {
+		return "userinfo";
+	}
+	
 	@RequestMapping(value="/loginCheck")
 	public String loginCheck(HttpServletRequest request) {
 		String result = "fail";
@@ -122,7 +127,7 @@ public class UserController {
                 MultipartFile file=multiRequest.getFile(iter.next().toString());
                 if(file!=null){
                 	//文件路径
-                    String path="E:/"+file.getOriginalFilename();
+                    String path="E:/" + file.getOriginalFilename();
                     //上传
                     file.transferTo(new File(path));
                 }
