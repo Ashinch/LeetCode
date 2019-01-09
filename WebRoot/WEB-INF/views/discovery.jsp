@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="css/nav.css" rel="stylesheet" type="text/css" />
 	<link href="css/scroll.css" rel="stylesheet" type="text/css" />
 	<link href="css/discovery.css" rel="stylesheet" type="text/css" />
-
+	<script src="js/jquery-3.3.1.min.js"></script>
   </head>
   <script type="text/javascript">
    document.onreadystatechange = function () {
@@ -59,10 +59,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 
 		<div id="search">
-			<form action="index.html" method="post">
-				<input id="text" type="text" name="" value="" placeholder="搜索…">
-				<input id="but" type="submit" name="" value="" >
-			</form>
+			<input id="text" type="text" name="name" value="" placeholder="搜索…">
+			<input id="but" type="submit" name="" value="" >
+			
 		</div>
 		<div style="height: 1px;"></div>
 		<div id="list">
@@ -81,5 +80,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<% } %>
 		</div>
 	</div>
+	<script>
+		jQuery("#but").click(function () {
+			jQuery.post("./getCourseByName",{"name":jQuery("#text").val()},function (data) {
+				jQuery("#list").html(data);
+			});
+		});
+	</script>
   </body>
 </html>
