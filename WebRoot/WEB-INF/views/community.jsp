@@ -22,6 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="css/nav.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/community.css">
 	<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
+	<script src="js/jquery-3.3.1.min.js"></script>
 
   </head>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
@@ -58,6 +59,11 @@ $(function ($) {
 			$("#tall").fadeOut("fast");
 			$("#mask").css({ display: 'none' });
 		});
+		  $("#dowm3").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+            $("#tall2").fadeOut("fast");
+            $("#mask").css({ display: 'none' });
+        });  
+		
     });
     
 
@@ -92,48 +98,7 @@ $(function ($) {
 	</div>
 	</div>
 	
-	<div id="details">
-	<div id="dd">
-    <div id="title">
-      <img class="left" src="images/community/icon_return.png" />
-      <p>请问爱是分配各工工具？</p>
-      <img class="right" src="images/community/icon_reply.png" />
-    </div>
-    <div id="list">
-      <div id="item">
-        <img src="images/community/icon_face.png" />
-        <p class=name>Ash</p>
-        <p class="level">IV</p>
-        <p class="line"></p>
-        <p class="problem">请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？</p>
-        <p class="storey"># 1</p>
-      </div>
-      <div id="item">
-        <img src="images/community/icon_face.png" />
-        <p class=name>Ash</p>
-        <p class="level">IV</p>
-        <p class="line"></p>
-        <p class="problem">请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？</p>
-        <p class="storey"># 1</p>
-      </div>
-      <div id="item">
-        <img src="images/community/icon_face.png" />
-        <p class=name>Ash</p>
-        <p class="level">IV</p>
-        <p class="line"></p>
-        <p class="problem">请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？</p>
-        <p class="storey"># 1</p>
-      </div>
-      <div id="item">
-        <img src="images/community/icon_face.png" />
-        <p class=name>Ash</p>
-        <p class="level">IV</p>
-        <p class="line"></p>
-        <p class="problem">请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？</p>
-        <p class="storey"># 1</p>
-      </div>
-    </div>
-    </div>
+	
 		
 	<div id="mark">
 	</div>
@@ -144,7 +109,7 @@ $(function ($) {
 		<div id="one">
 			<img src="images/community/icon_face.png" alt="">
 			<ul id="content">
-				<li class="suffix1">${list[0].title }</li>
+				<li class="suffix1" onclick="play()">${list[0].title }</li>
 				<li class="suffix">发布于：${list[0].date } | 最近回复：SOEFN 13分钟前</li>
 			</ul>	
 			<div id="Read">
@@ -277,6 +242,7 @@ $(function ($) {
 			</div>
 		</div>
 	</div>
+	<div id="buttom">
 	<div class="dv-big-page">
 		<div class="dv-margin-left"></div>
 		<div class="dv-page-box">
@@ -301,22 +267,126 @@ $(function ($) {
 	<div id="GO">
 		<p>GO</p>
 	</div>
+	
 	<div id="icon">
 		<img src="images/community/icon_forward.png" alt="">
 	</div>
 	<div id="icon2">
 		<img src="images/community/icon_backward.png" alt="">
 	</div>
+	</div>
 	<div id="btn_publish">
 		<img src="images/community/btn_publish.png" alt="">
 	</div>
-	<div id="tall" style="width: 826px;">
+	<div id="btn_publish">
+		<img src="images/community/btn_reply.png" alt="">
+	</div>
+	<div id="tall" style="width: 826px;z-index:9998;">
 	<div id="dowm"><a id="dowm2">×</a></div>
 	<div id="tiele2"><p id="theme">请输入主题标题</p></div>
 	<div id="content1"><p>请输入内容</p></div>
 	<p id="end">发布</p>
-	</div>	
+	</div>
 	
+	<div id="tall2" style="width: 826px; display:none;z-index:9999;">
+	<div id="dowm3"><a id="dowm4">×</a></div>
+	<div id="tiele1"><p id="theme">主题：请问爱是分配各工工具？</p></div>
+	<div id="content1"><p>请问爱是分配各工工具请问爱是分配各工工具请问爱是分配各工工具请问爱是分配各工工具请问爱是分配各工工具？</p></div>
+	<p id="end">回复</p>
+	</div>
+	
+	
+	
+	
+	 <div id="details1" style="display:none; " >
+    <div id="title">
+      <img id="left" src="images/community/icon_return.png" />
+      <p onclick="play()">请问爱是分配各工工具？</p>
+      <img id="right" onclick="play2()" src="images/community/icon_reply.png" />
+    </div>
+    <div id="list">
+      <div id="item">
+        <img src="images/community/icon_face.png" />
+        <p id=name>Ash</p>
+        <p id="level">IV</p>
+        <p id="line"></p>
+        <p id="problem">请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？</p>
+        <p id="storey"># 1</p>
+      </div>
+      <div id="item">
+        <img src="images/community/icon_face.png" />
+        <p id=name>Ash</p>
+        <p id="level">IV</p>
+        <p id="line"></p>
+        <p id="problem">请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？</p>
+        <p id="storey"># 1</p>
+      </div>
+      <div id="item">
+        <img src="images/community/icon_face.png" />
+        <p id=name>Ash</p>
+        <p id="level">IV</p>
+        <p id="line"></p>
+        <p id="problem">请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？</p>
+        <p id="storey"># 1</p>
+      </div>
+      <div id="item">
+        <img src="images/community/icon_face.png" />
+        <p id=name>Ash</p>
+        <p id="level">IV</p>
+        <p id="line"></p>
+        <p id="problem">请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？</p>
+        <p id="storey"># 1</p>
+      </div>
+    </div>
   </div>
+		
+	<script type="text/javascript">
+		function play(){
+			if (document.getElementById("details1").style.display == "block")
+			 {
+			 
+			 document.getElementById ("details1").style.display = "none" ;
+			 document.getElementById ("content").style.display = "block" ;
+			 document.getElementById("comment").style.display = "block";
+			 document.getElementById("buttom").style.display = "block";
+			 document.getElementById("mark").style.display = "block";
+			
+				
+						
+			}else{
+			
+			document.getElementById("details1").style.display = "block";
+			document.getElementById("content").style.display = "none";
+		    document.getElementById("comment").style.display = "none";
+		    document.getElementById("buttom").style.display = "none";
+		    document.getElementById("mark").style.display = "none";
+		}
+		}
+	</script>
+	
+		
+	<script type="text/javascript">
+		function play2()
+	
+		{
+		
+			
+			
+			
+			
+			document.getElementById ("tall2").style.display = "block" ;
+			document.getElementById("content").style.display = "none";
+		    document.getElementById("comment").style.display = "none";
+		    document.getElementById ("details1").style.display = "block" ;		
+				
+			
+		}
+	</script>
+	
+      
+  
+  
+
+  
 </body>
 </html>

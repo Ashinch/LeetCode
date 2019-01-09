@@ -50,12 +50,12 @@ public class UserController {
 		User user = userDao.getUserByName(username);
 		if (user != null) {
 			if (password.equals(user.getPassword())) {
-				result = "success";
+				request.getSession().setAttribute("user", user);
+				return "success";
 			}
 		}
 		
-		request.setAttribute("result", result + " " + username);
-		return "success";
+		return null;
 	}
 	
 	@RequestMapping(value="/reg")
@@ -127,8 +127,8 @@ public class UserController {
                 MultipartFile file=multiRequest.getFile(iter.next().toString());
                 if(file!=null){
                 	//文件路径
-                    String path="E:/" + file.getOriginalFilename();
-                    //上传
+                    String path=request.getSession().getServletContext().getRealPath("/") + file.getOriginalFilename();
+                    //上传 request.getSession().getServletContext().getContextPath()
                     file.transferTo(new File(path));
                 }
             }

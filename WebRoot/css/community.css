@@ -25,31 +25,75 @@ body{
 	display: none;
 	position: absolute;
 	top: 259px;
-	left: 547px;
+	left: 564px;
 	background-image: url(../images/community/bg_reply.png);
 	background-repeat: no-repeat;
 	width: 826px;
 	height: 563px;
 }
+#tall2
+{
+	display: none;
+	position: absolute;
+	top: 259px;
+	left: 564px;
+	background-image: url(../images/community/bg_reply.png);
+	background-repeat: no-repeat;
+	width: 826px;
+	height: 563px;
+}
+#details1 {
+      position: absolute;
+      top: 269px;
+      left: 140px; 
+      width: 1100px;
+      height: 521px;
+     
+    }
 #dowm
 {
 	position: absolute;
 	top: 20px;
 	left: 763px;
 	
-	
-	
-		
+}
+#dowm:hover {
+    position: absolute;
+	top: 20px;
+	left: 763px;
 }
 #dowm2
 {
 	font-size:40px;
 	color:#606060;
 	list-style-type: none;
-	
-
-
 }
+#dowm2:hover {
+    cursor:pointer;
+}
+#dowm3
+{
+	position: absolute;
+	top: 20px;
+	left: 763px;
+	
+}
+#dowm3:hover {
+    position: absolute;
+	top: 20px;
+	left: 763px;
+}
+#dowm4
+{
+	font-size:40px;
+	color:#606060;
+	list-style-type: none;
+}
+#dowm4:hover {
+    cursor:pointer;
+}
+
+
 #theme
 {
 	position: absolute;
@@ -126,10 +170,12 @@ ul {
 }
 #comment{
 	
-	position: absolute;	
+	float:left;
 	width: 1100px;
 	height: 510px;
-	top:95px;
+	margin-top:183px;
+	margin-left:134px;
+	
 	
 }
 #one{
@@ -217,6 +263,16 @@ ul {
 	font-size: 20px;
 	color:#BBBBBB;
 }
+.suffix1:hover
+{
+	margin-top:20px;
+	margin-left:10px;
+	font-family: "ÊÄùÊ∫êÈªë‰Ωì CN";
+	font-size: 20px;
+	color:#BBBBBB;
+	 cursor:pointer;
+}
+
 .suffix{
 	margin-top: 4px;
 	margin-left: 10px;
@@ -253,11 +309,11 @@ ul {
 
 .dv-big-page{
 	position: absolute;
-	top: 881px;
-	left: 143px;
+	top: 901px;
+	left: 126px;
 	clear:both;
 	width: 280px;
-	height: 30px;
+	
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -338,7 +394,7 @@ ul {
 
 #page{
 	position: absolute;
-	top: 915px;
+	top: 935px;
 	left: 409px;
 	width: 47px;
 	height: 20px;
@@ -352,7 +408,7 @@ ul {
 }
 #GO{
 	position: absolute;
-	top: 915px;
+	top: 935px;
 	left: 456px;
 	width: 47px;
 	height: 20px;
@@ -366,20 +422,21 @@ ul {
 }
 #icon{
 	position: absolute;
-	top: 913px;
+	top: 931px;
 	left: 608px;
 }
 #icon2{
 	position: absolute;
-	top: 913px;
+	top: 931px;
 	left: 665px;
 }
 #btn_publish{
 	position: absolute;
-	top: 913px;
-	left: 1101px;
+	top: 931px;
+	left: 1102px;
 }
-#details {
+
+#details1 {
 	
       position: absolute;
       top: 169px;
@@ -388,24 +445,19 @@ ul {
       height: 713px;
      
     }
-#dd
-{
- display: none;
- width: 826px;
- height: 563px;
-}
-    .right {
+
+    #right {
       position: absolute;
       top: 0px;
       right: 0px;
     }
 
-    .left {
+    #left {
       position: absolute;
       top: 7px;
     }
 
-    #details #title p {
+    #title p {
       position: absolute;
       top: 0px;
       width: 1100px;
@@ -415,7 +467,7 @@ ul {
       text-align: center;
     }
 
-    #details #list {
+     #list {
       position: absolute;
       bottom: 0px;
       width: 1117px;
@@ -423,10 +475,10 @@ ul {
       overflow-y: scroll;
     }
 
-    #details #item {
+    #item {
       position: relative;
       width: 1100px;
-      height: 204px;
+      height: 140px;
       background-color: #1C1C1C;
     }
 
@@ -438,14 +490,14 @@ ul {
       font-family: "Àº‘¥∫⁄ÃÂ CN";
     }
 
-    #item .name {
+    #name {
       font-size: 20px;
       color: #888888;
       width: 190.5px;
       text-align: center;
     }
 
-    #item .level {
+    #level {
       font-size: 10px;
       color: #CFCFCF;
       width: 20px;
@@ -458,7 +510,7 @@ ul {
       margin: 12px 0px 0px 84px;
     }
 
-    #item .line {
+    #line {
       position: absolute;
       top: 27.5px;
       left: 190.5px;
@@ -467,7 +519,8 @@ ul {
       background-color: #353535;
     }
 
-    #item .problem {
+    #problem {
+
       width: 762px;
       height: 123px;
       font-size: 20px;
@@ -478,7 +531,7 @@ ul {
       line-height: 34px;
     }
 
-    #item .storey {
+    #storey {
       position: absolute;
       top: 39px;
       right: 30px;
@@ -489,4 +542,22 @@ ul {
       text-align: right;
       color: #8A7154;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
