@@ -18,6 +18,7 @@ public class Course {
 	String video;
 	String classify;
 	String date;
+	int play;
 	
 	//  ¶ÁÐ´Æ÷
 	public int getId() {
@@ -25,6 +26,13 @@ public class Course {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public int getPlay() {
+		return play;
+	}
+	public void setPlay(int play) {
+		this.play = play;
 	}
 	public String getTitle() {
 		return title;
