@@ -392,7 +392,7 @@ ul {
 	overflow: hidden;
 }
 
-#page{
+#page p{
 	position: absolute;
 	top: 935px;
 	left: 409px;
@@ -406,7 +406,7 @@ ul {
 	text-align: center;
 	line-height:20px;
 }
-#GO{
+#GO p{
 	position: absolute;
 	top: 935px;
 	left: 456px;
@@ -432,7 +432,7 @@ ul {
 }
 #btn_publish{
 	position: absolute;
-	top: 931px;
+	top: 918px;
 	left: 1102px;
 }
 
@@ -451,11 +451,19 @@ ul {
       top: 0px;
       right: 0px;
     }
+   
 
     #left {
       position: absolute;
       top: 7px;
     }
+     img:hover
+    {
+     cursor:pointer;
+    
+    }
+    
+   
 
     #title p {
       position: absolute;
@@ -478,7 +486,7 @@ ul {
     #item {
       position: relative;
       width: 1100px;
-      height: 140px;
+      height: 204px;
       background-color: #1C1C1C;
     }
 
