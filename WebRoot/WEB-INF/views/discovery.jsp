@@ -48,13 +48,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="content">
 		<div id="nav">
 			<ul>
-				<li class="item1" onclick="classify(0)"><a>全 部<span></span></a></li>
-				<li class="item1" onclick="classify(1)"><a>收 藏</a></li>
-				<li class="item1" onclick="classify(2)"><a>字符串</a></li>
-				<li class="item1" onclick="classify(3)"><a>数 组</a></li>
-				<li class="item1" onclick="classify(4)"><a>队列 & 栈</a></li>
-				<li class="item1" onclick="classify(5)"><a>链 表</a></li>
-				<li class="item1" onclick="classify(6)"><a>树 & 图</a></li>
+				<li onclick="classify(0)"><a>全 部<span id="item0" class="visual"></span></a></li>
+				<li onclick="classify(1)"><a>收 藏<span id="item1"></span></a></li>
+				<li onclick="classify(2)"><a>字符串<span id="item2"></span></a></li>
+				<li onclick="classify(3)"><a>数 组<span id="item3"></span></a></li>
+				<li onclick="classify(4)"><a>队列 & 栈<span id="item4"></span></a></li>
+				<li onclick="classify(5)"><a>链 表<span id="item5"></span></a></li>
+				<li onclick="classify(6)"><a>树 & 图<span id="item6"></span></a></li>
 			</ul>
 		</div>
 
@@ -104,37 +104,52 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		function classify(num) {
 			switch (num) {
 				case 0:
-					
+				    identifier(num)
 					break;
 				case 1:
-				
+					identifier(num)
 					break;
 				case 2:
+					identifier(num)
 					goClz("字符串");
 					break;
 				case 3:
+					identifier(num)
 					goClz("数组");
 					break;
 				case 4:
+					identifier(num)
 					goClz("队列栈");
 					break;
 				case 5:
+					identifier(num)
 					goClz("链表");
 					break;
 				case 6:
+					identifier(num)
 					goClz("树图");
 					break;
 				default:
 					break;
 			}
 		}
-
+		
+		function identifier(num){
+			document.getElementById("item" + num).className = "visual";
+			document.getElementById("")
+			for(var i=0; i<7; i++){
+				if(num != i){
+					document.getElementById("item" + i).className = "	";
+				}
+			}
+		}
+		
 		function goClz(name) {
 			jQuery.post("./getCourseByClass",{"classify":name},function (data) {
 				jQuery("#list").html(data);
 			});
 		}
-
+		
 	</script>
   </body>
 </html>
