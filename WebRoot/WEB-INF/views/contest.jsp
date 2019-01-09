@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              var date = new Date();  
              var now = date.getTime();  
              //设置截止时间  
-             var str="2020/5/17 00:00:00";
+             var str="2020/5/17 08:34:05";
              var endDate = new Date(str); 
              var end = endDate.getTime();  
              
@@ -52,7 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              	s = "0" + s;
              }
              document.getElementById("left1").innerHTML = m + " : " + s;
-             str="2020/5/17 08:34:05";
+             str="2020/5/17 00:00:00";
              endDate = new Date(str); 
              end = endDate.getTime();  
              

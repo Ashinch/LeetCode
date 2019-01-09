@@ -268,12 +268,7 @@ $(function ($) {
 		<p>GO</p>
 	</div>
 	
-	<div id="icon">
-		<img src="images/community/icon_forward.png" alt="">
-	</div>
-	<div id="icon2">
-		<img src="images/community/icon_backward.png" alt="">
-	</div>
+	
 	</div>
 	<div id="btn_publish">
 		<img src="images/community/btn_publish.png" alt="">
@@ -300,8 +295,8 @@ $(function ($) {
 	
 	 <div id="details1" style="display:none; " >
     <div id="title">
-      <img id="left" src="images/community/icon_return.png" />
-      <p onclick="play()">请问爱是分配各工工具？</p>
+      <img  id="left" onclick="play()" style="z-index:9997;" src="images/community/icon_return.png" /">
+      <p >请问爱是分配各工工具？</p>
       <img id="right" onclick="play2()" src="images/community/icon_reply.png" />
     </div>
     <div id="list">
@@ -351,6 +346,9 @@ $(function ($) {
 			 document.getElementById("buttom").style.display = "block";
 			 document.getElementById("mark").style.display = "block";
 			
+			 document.getElementById("btn_publish").style.display = "block";
+			
+			
 				
 						
 			}else{
@@ -360,6 +358,8 @@ $(function ($) {
 		    document.getElementById("comment").style.display = "none";
 		    document.getElementById("buttom").style.display = "none";
 		    document.getElementById("mark").style.display = "none";
+		    document.getElementById("btn_publish").style.display = "none";
+		    
 		}
 		}
 	</script>

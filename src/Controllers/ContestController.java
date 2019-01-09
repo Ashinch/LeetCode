@@ -18,6 +18,7 @@ import util.Compiler;
 import Dao.CodeDao;
 import Dao.PaperDao;
 import Dao.UserDao;
+import Models.Code;
 import Models.Paper;
 import Models.User;
 
@@ -82,7 +83,7 @@ public class ContestController {
 	 * @param 	correct		正确答案数量
 	 * @return 	String		跳转settlement.jsp
 	 **************************************************/
-	@RequestMapping(value="/settlement")
+	@RequestMapping(value="/settlement1")
 	public String settlement(HttpServletRequest request, int correct) {
 		int wrong = 10 - correct;
 		User user = (User) request.getSession().getAttribute("user");
@@ -130,7 +131,8 @@ public class ContestController {
 	
 	@RequestMapping(value="/ajaxRunCode")
 	public void ajaxRunCode(HttpServletRequest request,HttpServletResponse response) throws IOException {
-		String interpretId = Compiler.run("cpp", request.getParameter("code"));
+		System.out.println("转义前：" + request.getParameter("code"));
+		String interpretId = Compiler.run(request.getParameter("lang"), request.getParameter("code"));
 		response.setContentType("text/html;charset=utf-8");
 		response.getWriter().print(interpretId);
 	}
@@ -144,9 +146,13 @@ public class ContestController {
 	
 	@RequestMapping(value="/ajaxChangeCode")
 	public void ajaxChangeCode(HttpServletRequest request,HttpServletResponse response) throws IOException {
-		String name = Compiler.get(request.getParameter("codeName"));
+		Code code = codeDao.getAllCodeByName(request.getParameter("lang"));
 		response.setContentType("text/html;charset=utf-8");
-		response.getWriter().print(codeDao.getAllCodeByName(name).getCode());
+		response.getWriter().print(code.getCode());
 	}
 	
+	@RequestMapping(value="/settlement")
+	public String goSettlement() {
+		return "settlement";
+	}
 }
