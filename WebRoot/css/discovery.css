@@ -52,6 +52,10 @@ body {
     padding-right: 80px;
 }
 
+#nav ul li a:hover{
+	cursor:pointer;
+}
+
 #search {
     float: right;
     /* position: absolute;
@@ -85,13 +89,18 @@ body {
     background-color: rgba(0, 0, 0, 0.0);
 }
 
-.item1 span {
-    display: block;
+span {
+   	display: block;
     width: 50px;
     margin-top: 17px;
     border-radius: 2PX;
     height: 4px;
-    background-color: #8A7154;
+    background-color:rgba(0,0,0,0.0);
+    
+}
+
+.visual {
+	background-color: #8A7154;
 }
 
 #nav ul .item1 a {

@@ -157,7 +157,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="third">
 		<p onclick="checkSelect()" class="seach" style="margin-left: 0px ;padding-left: 34px;">Java</p>
 		
-		<lu id="language" style="z-index:999">
+		<ul id="language" style="z-index:999">
 	        <li>C++</li>
 	        <li>Java</li>
 	        <li>Python</li>
@@ -173,7 +173,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        <li>Kotlin</li>
 	        <li>Rust</li>
 	        <li class="bottom">PHP</li>
-   		</lu>
+   		</ul>
    		
 	    <p id="state">编译中-请等待...</p>
 
