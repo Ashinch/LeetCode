@@ -155,31 +155,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 
 	<div id="third">
-		<p onclick="checkSelect()" class="seach" style="margin-left: 0px ;padding-left: 34px;">Java</p>
+		<p onclick="checkSelect()" id="seach" style="margin-left: 0px ;padding-left: 34px;">Java</p>
 		
 		<lu id="language" style="z-index:999">
-	        <li>C++</li>
-	        <li>Java</li>
-	        <li>Python</li>
-	        <li>Python3</li>
-	        <li>C</li>
-	        <li>C#</li>
-	        <li>JavaScript</li>
-	        <li>Ruby</li>
-	        <li>Swift</li>
-	        <li>GO</li>
-	        <li>Bash</li>
-	        <li>Scala</li>
-	        <li>Kotlin</li>
-	        <li>Rust</li>
-	        <li class="bottom">PHP</li>
+	        <li onclick="codeChange('cpp','C++')">C++</li>
+	        <li onclick="codeChange('java','Java')">Java</li>
+	        <li onclick="codeChange('python','Python')">Python</li>
+	        <li onclick="codeChange('python3','Python3')">Python3</li>
+	        <li onclick="codeChange('c','C')">C</li>
+	        <li onclick="codeChange('csharp','C#')">C#</li>
+	        <li onclick="codeChange('javascript','JavaScript')">JavaScript</li>
+	        <li onclick="codeChange('ruby','Ruby')">Ruby</li>
+	        <li onclick="codeChange('swift','Swift')">Swift</li>
+	        <li onclick="codeChange('golang','GO')">GO</li>
+	        <li onclick="codeChange('bash','Bash')">Bash</li>
+	        <li onclick="codeChange('scala','Scala')">Scala</li>
+	        <li onclick="codeChange('kotlin','Kotlin')">Kotlin</li>
+	        <li onclick="codeChange('rust','Rust')">Rust</li>
+	        <li class="bottom" onclick="codeChange('php','PHP')">PHP</li>
    		</lu>
    		
-	    <p id="state">编译中-请等待...</p>
+	    <p id="state">在下方代码框中编写算法...</p>
 
 		<p class="button1" style="margin-left: 0px;">提交</p>
 
-		<p onclick="checkCode()" class="button2" style="margin-left: 0px;" >重置</p>
+		<p onclick="resetCode()" class="button2" style="margin-left: 0px;" >重置</p>
 
 		<p onclick="runCode()" class="button3" style="margin-left: 0px;" >执行</p>
 
@@ -187,27 +187,31 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			<div id="third3">
 				<div class="code">
-        <textarea id="code" onChange="codeChange()">#include <std>
-int main()
-{
-    printf("1");
+        <textarea id="code" onChange="codeChange()">public class Main {
+	public static void main(String[] args) {
+
+		System.out.println(new java.util.Date());
+
+	}
 }</textarea>
     </div>
     
 
     <script>
+		var lang = "java";
         var editor = CodeMirror.fromTextArea(document.getElementById("code"), { //script_once_code为你的textarea的ID号
             lineNumbers: true,     // 显示行号
             indentUnit: 4,         // 缩进单位为4
             styleActiveLine: true, // 当前行背景高亮
-            matchBrackets: false,   // 括号匹配
+            matchBrackets: true,   // 括号匹配
             autoCloseBrackets: true,// 括号补全
             foldGutter:true,
             // mode:"cmake",
             mode: 'python',
             // mode: "text/x-java", //实现Java代码高亮
             theme: 'tomorrow-night-bright',      // 编辑器主题
-            lineWrapping: true, //是否强制换行
+			lineWrapping: true, //是否强制换行
+			textWrapping: true,
             gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
             
         });
@@ -219,7 +223,9 @@ int main()
             jQuery.post("./ajaxContentByItem",{"item":item},function(data){
              	var arr=data.split("$$");
              	jQuery("#title").html(arr[0]);
-				 jQuery("#second2").html(arr[1]);
+				jQuery("#second2").html(arr[1]);
+				jQuery("#state").css("background-image","url(images/answer/icon_compiler_ing.png)");
+				jQuery("#state").html("给定输入：[1,4,6,7]&nbsp;&nbsp;&nbsp;&nbsp;要求输出：[4,6,7,1]");
             });
             
             // document.getElementById("code").value;
@@ -227,38 +233,114 @@ int main()
 
 		var interpretId = "a";
 		var interval;
+		var count = 1;
 		function runCode(){
+			clearInterval(interval);
+			jQuery("#state").html("编译中-请等待...");
+			jQuery("#state").css("background-image","url(images/answer/icon_compiler_ing.png)");
 			var code = editor.getValue();
-			jQuery.post("./ajaxRunCode",{"lang":"cpp","code":code},function(data){
+			
+			jQuery.post("./ajaxRunCode",{"lang":lang,"code":JSON.stringify(code)},function(data){
 				interpretId = data;
+				count = 1;
 				interval = window.setInterval("checkCode()","1000");
 			});
 		}
 
+		function resetCode(){
+			clearInterval(interval);
+			editor.setValue(getCode(lang));
+			
+		}
+
 		function checkCode(){
+			if (count>=10) {
+				jQuery("#state").html("编译超时！");
+				jQuery("#state").css("background-image","url(images/answer/icon_compiler_error.png)");
+				clearInterval(interval);
+				return;
+			}
+			jQuery("#state").html("编译中-请等待..." + count.toString() + "s");
+			
 			jQuery.post("./ajaxCheckCode",{"interpretId":interpretId},function(data){
 				var arr=data.split("$$");
+				console.log("进入");
 				if (arr[0] == "true" || arr[0] == "false") {
-					clearInterval(interval);
+					if (arr[0] == "true") {
+						console.log("正确");
+						jQuery("#state").html("编译完成-用时" + count.toString() + "s：" + eval(arr[1]));
+						jQuery("#state").css("background-image","url(images/answer/icon_compiler_ok.png)");
+						clearInterval(interval);
+						return;
+					}else if (arr[0] == "false") {
+						jQuery("#state").html("编译失败-错误：" + arr[1]);
+						jQuery("#state").css("background-image","url(images/answer/icon_compiler_error.png)");
+						console.log("错误");
+						clearInterval(interval);
+						return;
+					}
 				}
+
+				console.log(arr[0]);
+
 			});
+
+			count++;
 		}
 
 
-		function codeChange() {
-			var b = document.getElementById("code").value;
-			console.log(b);
-			localStorage.setItem('code', b);
+		function codeChange(lang1,lang2) {
+			lang = lang1;
+			jQuery("#seach").html(lang2);
+			jQuery("#language").hide();
+			editor.setValue(getCode(lang1));
+
 		}
 
-		        function checkSelect() {
+		function checkSelect() {
           var language = document.getElementById("language");
           if (language.style.display == "none") {
             language.style.display = "block";
           } else {
             language.style.display = "none";
           }
-        }
+		}
+		
+		function getCode(lang) {
+			if (lang == "cpp") {
+				return "#include <iostream>\nint main() {\n \n    std::cout << \"Hello World!\\n\";\n \n}";
+			}else if (lang == "java") {
+				return "public class Main {\n	public static void main(String[] args) {\n\n		System.out.println(new java.util.Date());\n\n	}\n}";
+			}else if (lang == "python") {
+				return "print \"Hello World!\"";
+			}else if (lang == "python3") {
+				return "print(\"Hello World!\")";
+			}else if (lang == "c") {
+				return "#include <stdio.h>\nint main(void) {\n\n    puts(\"Hello World!\");\n\n    return 0;\n}";
+			}else if (lang == "csharp") {
+				return "class HelloWorld {\n    static void Main() {\n\n        System.Console.WriteLine(\"Hello World!\");\n\n    }\n}";
+			}else if (lang == "javascript") {
+				return "(function main() {\n\n    console.log('Hello World!');\n\n}());";
+			}else if (lang == "ruby") {
+				return "#!/usr/bin/env ruby\n\nputs \"Hello World!\"";
+			}else if (lang == "swift") {
+				return "print(\"Hello World!\")";
+			}else if (lang == "golang") {
+				return "func main() {\n\n    fmt.Printf(\"Hello, World!\")\n\n}";
+			}else if (lang == "bash") {
+				return "echo 'Hello, World!'";
+			}else if (lang == "scala") {
+				return "object Main extends App {\n\n    println(\"Hello, World!\")\n\n}";
+			}else if (lang == "kotlin") {
+				return "fun main(args: Array<String>) {\n\n    println(\"Hello, World!\")\n\n}";
+			}else if (lang == "rust") {
+				return "fn main() {\n\n    println!(\"Hello, World!\");\n\n}";
+			}else if (lang == "php") {
+				return "echo \"Hello world\";";
+			}
+
+			return lang;
+		}
         
 	</script>
 
