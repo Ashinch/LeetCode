@@ -53,12 +53,18 @@ public class DiscoveryController {
 	 * @param 	request		通过链接/getCourseByClass?classify=
 	 * @param 	classify	指定课程视频类别
 	 * @return 	String		跳转到discovery.jsp
+	 * @throws IOException 
 	 **************************************************/
 	@RequestMapping(value="/getCourseByClass")
-	public String getCourseByClass(HttpServletRequest request,String classify) {
-		List<Course> list = courseDao.getAllCourseByClass(classify);
-		request.setAttribute("list", list);
-		return "discovery";
+	public void getCourseByClass(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		List<Course> list = courseDao.getAllCourseByClass(request.getParameter("classify"));
+		String html = "";
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i).getTitle());
+			html += "<div id=\"listitem\"  onclick=\"play()\"><div class=\"listtop\"><img alt=\"\" src=\"" + list.get(i).getImage() + "\" width=\"250px\" height=\"160px;\"></div><div class=\"listbottom\"><p class=listtext>" + StrFormat.maxLength(list.get(i).getTitle(),40) + "</p></div></div>";
+		}
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().print(html);
 	}
 	
 	
@@ -69,7 +75,7 @@ public class DiscoveryController {
 		String html = "";
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).getTitle());
-			html += "<div class=\"listitem\"><div class=\"listtop\"><img alt=\"\" src=\"" + list.get(i).getImage() + "\" width=\"250px\" height=\"160px;\"></div><div class=\"listbottom\"><p class=listtext>" + StrFormat.maxLength(list.get(i).getTitle(),40) + "</p></div></div>";
+			html += "<div id=\"listitem\"  onclick=\"play()\"><div class=\"listtop\"><img alt=\"\" src=\"" + list.get(i).getImage() + "\" width=\"250px\" height=\"160px;\"></div><div class=\"listbottom\"><p class=listtext>" + StrFormat.maxLength(list.get(i).getTitle(),40) + "</p></div></div>";
 		}
 		response.setContentType("text/html;charset=utf-8");
 		response.getWriter().print(html);
