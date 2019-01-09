@@ -1,11 +1,9 @@
 package util;
 
-import java.io.UnsupportedEncodingException;
-
 public class StrFormat {
-	public static String maxLength(String str,int length) throws UnsupportedEncodingException {
-		if (str.length() > length) {
-			
+	public static String maxLength(String str,int length){
+		if (str.getBytes().length >= length) {
+			return str.substring(0,length/2 - 2) + "бн";
 		}
 		
 		return str;

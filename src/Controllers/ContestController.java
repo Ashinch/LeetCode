@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import util.Compiler;
 
+import Dao.CodeDao;
 import Dao.PaperDao;
 import Dao.UserDao;
 import Models.Paper;
@@ -32,6 +33,8 @@ public class ContestController {
 	private UserDao userDao;
 	@Autowired
 	private PaperDao paperDao;
+	@Autowired
+	private CodeDao codeDao;
 	
 	private static List<Paper> mList;
 	
@@ -137,6 +140,13 @@ public class ContestController {
 		String result = Compiler.get(request.getParameter("interpretId"));
 		response.setContentType("text/html;charset=utf-8");
 		response.getWriter().print(result);
+	}
+	
+	@RequestMapping(value="/ajaxChangeCode")
+	public void ajaxChangeCode(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		String name = Compiler.get(request.getParameter("codeName"));
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().print(codeDao.getAllCodeByName(name).getCode());
 	}
 	
 }
