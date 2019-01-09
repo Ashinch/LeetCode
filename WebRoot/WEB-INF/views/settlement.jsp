@@ -134,7 +134,7 @@
 			</div>
 		</div>
 		<div id="big"
-			style="height: 690px; width: 1680px; margin-top: 283px; margin-left: 125px;">
+			style="height: 690px; width: 1680px; margin-top: 203px; margin-left: 125px;">
 			<div id="suspension" style="height: 50px;">
 				<div id="item"
 					style="background-image: url(images/answer/icon_done.png);">
@@ -199,7 +199,7 @@
 			</div>
 			<div id="first"
 				style="width: 425px; height: 590px; margin-top: 50px;">
-				<p id="title1">
+				<p id="title1" style="top: 414px;">
 					5.被围绕的区域
 				</p>
 				<div id="first2">
@@ -224,7 +224,7 @@
 					X O X X&nbsp; X O X X
 				</div>
 			</div>
-			<div id="second" style="width: 435px; height: 590px; top: 100px;">
+			<div id="second" style="width: 435px; height: 590px; top: 383px;">
 				<p id="title2">
 					题目解析
 				</p>
@@ -249,7 +249,7 @@
 					区域正确率：47%
 				</p>
 			</div>
-			<div id="third">
+			<div id="third" style="top:383px;">
 				<p class="seach" style="top: 30px; left: 5px; padding-left: 34px;">
 					Java
 				</p>
@@ -259,8 +259,8 @@
 				<p class="button3" style="margin-left: 0px;">
 					执行
 				</p>
-				<div id="third2"
-					style="margin-top: 90px; margin-left: 25px; width: 635px; height: 475px;">
+				<div id="third2"style="margin-top: 90px; margin-left: 25px; width: 635px; height: 475px;">
+					
 					<div id="third3">
 						<div class="code">
 							<textarea id="code" onChange="codeChange()">#include <std>
@@ -287,5 +287,7 @@ int main()
         editor.setSize("653","475");
     </script>
 	</div>
+	</div>
+	</div></div>
 	</body>
 </html>

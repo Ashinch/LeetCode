@@ -12,7 +12,10 @@ body {
 #big {
 	display: none;
 	opacity: 0px;
-	height: 690px width :   1672px;
+	height: 690px;
+	width: 1672px;
+	margin-top:203px;
+	margin-left: 125px;
 }
 
 .suspension {
