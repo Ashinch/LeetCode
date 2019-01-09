@@ -25,7 +25,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="plugins/codemirror/doc/docs.css">
     <link rel="stylesheet" href="plugins/codemirror/addon/fold/foldgutter.css"/>
 
-    <script src="plugins/codemirror/keymap/sublime.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="plugins/codemirror/keymap/sublime.js"></script>
     <script src="plugins/codemirror/lib/codemirror.js"></script>
     <script src="plugins/codemirror/doc/activebookmark.js"></script>
 
@@ -50,7 +51,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/nav.css">
 	<link rel="stylesheet" type="text/css" href="css/answer.css">
 	<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
-	<script src="js/jquery-3.3.1.min.js"></script>
 	
 	
 	
@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="top">
 		<ul id="top_nav">
 			<li><br></li><li><a href="./index">主 页</a></li>
-			<li><a href="./contest">竞 赛</a></li>
+			<li style="padding-left:0px;"><a href="./contest">竞 赛</a></li>
 			<li><a href="./discovery">探 索</a></li>
 			<li><a href="./community">社 区</a></li>
 			<li><a href="./rank">排 行</a></li>
@@ -155,9 +155,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 
 	<div id="third">
-		<p class="seach" style="margin-left: 0px ;padding-left: 34px;">Java</p>
-
-
+		<p onclick="checkSelect()" class="seach" style="margin-left: 0px ;padding-left: 34px;">Java</p>
+		
+		<lu id="language" style="z-index:999">
+	        <li>C++</li>
+	        <li>Java</li>
+	        <li>Python</li>
+	        <li>Python3</li>
+	        <li>C</li>
+	        <li>C#</li>
+	        <li>JavaScript</li>
+	        <li>Ruby</li>
+	        <li>Swift</li>
+	        <li>GO</li>
+	        <li>Bash</li>
+	        <li>Scala</li>
+	        <li>Kotlin</li>
+	        <li>Rust</li>
+	        <li class="bottom">PHP</li>
+   		</lu>
+   		
+	    <p id="state">编译中-请等待...</p>
 
 		<p class="button1" style="margin-left: 0px;">提交</p>
 
@@ -194,41 +212,55 @@ int main()
             
         });
 
-        editor.setSize("782","475");
-    </script>
-	<script>
-		var interpretId = "";
+		editor.setSize("782","475");
+		
 		
 		function itemClick(item) {
-            $.post("./ajaxContentByItem",{"item":item},function(data){
+            jQuery.post("./ajaxContentByItem",{"item":item},function(data){
              	var arr=data.split("$$");
-             	$("#title").html(arr[0]);
-            	$("#second2").html(arr[1]);
+             	jQuery("#title").html(arr[0]);
+				 jQuery("#second2").html(arr[1]);
             });
             
-            document.getElementById("code").value;
+            // document.getElementById("code").value;
 		}
 
-		function runCode() {
-			var code = document.getElementById("code").value;
-			$.Post("./ajaxRunCode",{"lang":"cpp","code":code},function(data){
-             	interpretId = data;
+		var interpretId = "a";
+		var interval;
+		function runCode(){
+			var code = editor.getValue();
+			jQuery.post("./ajaxRunCode",{"lang":"cpp","code":code},function(data){
+				interpretId = data;
+				interval = window.setInterval("checkCode()","1000");
 			});
 		}
-		
-		function checkCode() {
-			$.Post("./ajaxCheckCode",{"interpretId":interpretId},function(data){
-				$("#code").html(data);
+
+		function checkCode(){
+			jQuery.post("./ajaxCheckCode",{"interpretId":interpretId},function(data){
+				var arr=data.split("$$");
+				if (arr[0] == "true" || arr[0] == "false") {
+					clearInterval(interval);
+				}
 			});
-			
 		}
-		
+
+
 		function codeChange() {
 			var b = document.getElementById("code").value;
 			console.log(b);
 			localStorage.setItem('code', b);
 		}
 
+		        function checkSelect() {
+          var language = document.getElementById("language");
+          if (language.style.display == "none") {
+            language.style.display = "block";
+          } else {
+            language.style.display = "none";
+          }
+        }
+        
 	</script>
+
 </body>
 </html>

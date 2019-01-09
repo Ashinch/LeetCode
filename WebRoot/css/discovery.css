@@ -24,13 +24,14 @@ body {
 #content {
     width: 1718px;
     margin-left: 120px;
-    margin-top: 82px;
+    margin-top: 72px;
 }
 
 #nav {
     float: left;
     height: 47px;
     width: 1000px;
+    margin-top: 10px;
 }
 
 #nav ul {
@@ -106,11 +107,12 @@ body {
     overflow-y: scroll;
 }
 
-.listitem {
+#listitem {
     width: 250px;
     height: 244px;
     margin: 0px 36px 50px 0px;
     display: inline-block;
+    float:left;
 }
 
 .listtop {

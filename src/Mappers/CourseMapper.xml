@@ -10,13 +10,15 @@
 	</select>
 	
 	<select id="getAllCourseByClass" resultType="Models.Course">
-		select classify from tb_course
+		select * from tb_course
 		where classify=#{classify}
 	</select>
 	
+	<select id="getAllCourseByName" resultType="Models.Course">
+		select * from tb_course where title LIKE #{title}
+	</select>
+	
 </mapper>
-
-
 
 
 
