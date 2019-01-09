@@ -83,7 +83,7 @@ public class ContestController {
 	 * @param 	correct		正确答案数量
 	 * @return 	String		跳转settlement.jsp
 	 **************************************************/
-	@RequestMapping(value="/settlement")
+	@RequestMapping(value="/settlement1")
 	public String settlement(HttpServletRequest request, int correct) {
 		int wrong = 10 - correct;
 		User user = (User) request.getSession().getAttribute("user");
@@ -151,4 +151,8 @@ public class ContestController {
 		response.getWriter().print(code.getCode());
 	}
 	
+	@RequestMapping(value="/settlement")
+	public String goSettlement() {
+		return "settlement";
+	}
 }

@@ -177,7 +177,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		
 	    <p id="state">在下方代码框中编写算法...</p>
 
-		<p class="button1" style="margin-left: 0px;">提交</p>
+		<a href="./settlement"><p class="button1" style="margin-left: 0px;">提交</p></a>
 
 		<p onclick="resetCode()" class="button2" style="margin-left: 0px;" >重置</p>
 
