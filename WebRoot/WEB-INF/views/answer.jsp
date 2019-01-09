@@ -155,9 +155,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 
 	<div id="third">
-		<p class="seach" style="margin-left: 0px ;padding-left: 34px;">Java</p>
-
-
+		<p onclick="checkSelect()" class="seach" style="margin-left: 0px ;padding-left: 34px;">Java</p>
+		
+		<lu id="language" style="z-index:999">
+	        <li>C++</li>
+	        <li>Java</li>
+	        <li>Python</li>
+	        <li>Python3</li>
+	        <li>C</li>
+	        <li>C#</li>
+	        <li>JavaScript</li>
+	        <li>Ruby</li>
+	        <li>Swift</li>
+	        <li>GO</li>
+	        <li>Bash</li>
+	        <li>Scala</li>
+	        <li>Kotlin</li>
+	        <li>Rust</li>
+	        <li class="bottom">PHP</li>
+   		</lu>
+   		
+	    <p id="state">编译中-请等待...</p>
 
 		<p class="button1" style="margin-left: 0px;">提交</p>
 
@@ -233,6 +251,16 @@ int main()
 			localStorage.setItem('code', b);
 		}
 
+		        function checkSelect() {
+          var language = document.getElementById("language");
+          if (language.style.display == "none") {
+            language.style.display = "block";
+          } else {
+            language.style.display = "none";
+          }
+        }
+        
 	</script>
+
 </body>
 </html>
