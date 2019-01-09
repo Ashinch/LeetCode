@@ -49,7 +49,7 @@ public class ContestController {
 	 * @return 	String	Ìø×ªµ½contest.jsp
 	 **************************************************/
 	@RequestMapping(value="/contest")
-	public String index() {
+	public String index(HttpServletRequest request) {
 		return "contest";
 	}
 	

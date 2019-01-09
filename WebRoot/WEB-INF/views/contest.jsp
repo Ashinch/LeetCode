@@ -48,6 +48,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                  s = Math.floor(leftTime/1000%60);                     
              }  
              //将倒计时赋值到div中   
+             if (m<10) {
+              	m = "0" + m;
+             }
              if (s<10) {
              	s = "0" + s;
              }
@@ -67,6 +70,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                  s = Math.floor(leftTime/1000%60);                     
              }  
              //将倒计时赋值到div中   
+             if (m<10) {
+              	m = "0" + m;
+             }
              if (s<10) {
              	s = "0" + s;
              }

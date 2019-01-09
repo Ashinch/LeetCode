@@ -51,7 +51,7 @@ public class UserController {
 		if (user != null) {
 			if (password.equals(user.getPassword())) {
 				request.getSession().setAttribute("user", user);
-				return "success";
+				return "index";
 			}
 		}
 		
