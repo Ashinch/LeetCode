@@ -286,6 +286,10 @@ body{
 	cursor:pointer;
 }
 
+#third #language li : hover{
+	color: #8A7154;
+}
+
 #third #language .bottom{
 	border-bottom-width: 0px;
 }
