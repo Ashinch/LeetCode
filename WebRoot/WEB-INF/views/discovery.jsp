@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="css/nav.css" rel="stylesheet" type="text/css" />
 	<link href="css/scroll.css" rel="stylesheet" type="text/css" />
 	<link href="css/discovery.css" rel="stylesheet" type="text/css" />
-
+	<script src="js/jquery-3.3.1.min.js"></script>
   </head>
   <script type="text/javascript">
    document.onreadystatechange = function () {
@@ -57,6 +57,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li><a href="#">树 & 图<span></span></a></li>
 			</ul>
 		</div>
+         
+      <div id="cctv" style="width:900px;height:600px ; position: absolute; top: 240px;left: 510px;display:none; ">
+		<video src="raw/aaa.mp4" width="100%" height="100%"  controls="controls" >
+		</video>
+      </div>
 
 		<div id="search">
 			<form action="index.html" method="post">
@@ -68,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="list">
 		
 		<% for(int i=0;i<list.size();i++) { %>
-			<div class="listitem">
+			<div id="listitem" onclick="play()">
 				<div class="listtop">
 					<img alt="" src="<%= list.get(i).getImage() %>" width="250px" height="160px;">
 				</div>
@@ -81,5 +86,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<% } %>
 		</div>
 	</div>
+	
+	<script type="text/javascript">
+		function play(){
+			if (document.getElementById("cctv").style.display == "block") {
+				document.getElementById("cctv").style.display = "none";
+			}else{
+			
+			document.getElementById("cctv").style.display = "block";
+		}
+		}
+	</script>
   </body>
 </html>
