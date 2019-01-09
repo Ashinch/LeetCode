@@ -47,6 +47,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<div id="mark">
 	</div>
+	
+	<div id="tall" style="width: 826px;">
+	<div id="tiele2"><p id="theme">请输入主题标题</p></div>
+	<div id="content1"><p>请输入内容</p></div>
+	<p id="end">发布</p>
+	
+
+
+	</div>
+	
 	<div id="comment">
 		<div id="one">
 			<img src="images/community/icon_face.png" alt="">

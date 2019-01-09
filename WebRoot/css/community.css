@@ -305,3 +305,57 @@ ul {
 	top: 913px;
 	left: 1101px;
 }
+
+#tall
+{
+	position: absolute;
+	top: 259px;
+	left: 547px;
+	background-image: url(../images/community/bg_reply.png);
+	background-repeat: no-repeat;
+	widows: 826px;
+	height: 563px;
+}
+#theme
+{
+	position: absolute;
+	font-size: 30px;
+	color: #484643;
+
+}
+#tiele2
+{
+	margin-top: 34px;
+	margin-left: 308px;
+	width: 826px;
+	height: 30px;
+}
+#tiele1
+{
+	margin-top: 34px;
+	margin-left: 203px;
+}
+#content1
+{
+	position: absolute;
+	top: 192px;
+	left: 228px;
+	width: 391px;
+	height: 175px;
+
+}
+p
+{
+	color: #888888;
+	font-size: 24px;
+	
+}
+#end
+{
+	position: absolute;
+	top: 500px;
+	left: 370px;
+	width: 86px;
+	height: 30px;
+	color: #888888;
+}
