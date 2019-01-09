@@ -24,6 +24,47 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
 
   </head>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" > 
+$(function ($) {
+		//弹出登录
+		$("#btn_publish").hover(function () {
+			$(this).stop().animate({
+				opacity: '1'
+			}, 600);
+		}, function () {
+			$(this).stop().animate({
+				opacity: '0.6'
+			}, 1000);
+		}).on('click', function () {
+			$("body").append("<div id='mask'></div>");
+			$("#mask").addClass("mask").fadeIn("slow");
+			$("#tall").fadeIn("slow");
+		});
+		$(".suffix1").hover(function () {
+			$(this).stop().animate({
+				opacity: '1'
+			}, 600);
+		}, function () {
+			$(this).stop().animate({
+				opacity: '0.6'
+			}, 1000);
+		}).on('click', function () {
+			$("body").append("<div id='mask'></div>");
+			$("#mask").addClass("mask").fadeIn("slow");
+			$("#dd").fadeIn("slow");
+		});
+		$("#dowm2").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+			$("#tall").fadeOut("fast");
+			$("#mask").css({ display: 'none' });
+		});
+    });
+    
+
+
+
+</script>
+
 <body>
 	<div id="top">
 		<ul id="top_nav">
@@ -34,6 +75,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<li><a href="./rank">排 行</a></li>
 		</ul>
 	</div>
+	
+
+
+	
 	<div id="content">
 	<div id="interior">
 		<ul id="interior_nav">
@@ -45,8 +90,56 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<li><a href="#">其他</a></li>
 		</ul>
 	</div>
+	</div>
+	
+	<div id="details">
+	<div id="dd">
+    <div id="title">
+      <img class="left" src="images/community/icon_return.png" />
+      <p>请问爱是分配各工工具？</p>
+      <img class="right" src="images/community/icon_reply.png" />
+    </div>
+    <div id="list">
+      <div id="item">
+        <img src="images/community/icon_face.png" />
+        <p class=name>Ash</p>
+        <p class="level">IV</p>
+        <p class="line"></p>
+        <p class="problem">请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？</p>
+        <p class="storey"># 1</p>
+      </div>
+      <div id="item">
+        <img src="images/community/icon_face.png" />
+        <p class=name>Ash</p>
+        <p class="level">IV</p>
+        <p class="line"></p>
+        <p class="problem">请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？</p>
+        <p class="storey"># 1</p>
+      </div>
+      <div id="item">
+        <img src="images/community/icon_face.png" />
+        <p class=name>Ash</p>
+        <p class="level">IV</p>
+        <p class="line"></p>
+        <p class="problem">请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？</p>
+        <p class="storey"># 1</p>
+      </div>
+      <div id="item">
+        <img src="images/community/icon_face.png" />
+        <p class=name>Ash</p>
+        <p class="level">IV</p>
+        <p class="line"></p>
+        <p class="problem">请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？请问爱是分配各工工具？</p>
+        <p class="storey"># 1</p>
+      </div>
+    </div>
+    </div>
+		
 	<div id="mark">
 	</div>
+	
+	
+	
 	<div id="comment">
 		<div id="one">
 			<img src="images/community/icon_face.png" alt="">
@@ -217,6 +310,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="btn_publish">
 		<img src="images/community/btn_publish.png" alt="">
 	</div>
-	</div>
+	<div id="tall" style="width: 826px;">
+	<div id="dowm"><a id="dowm2">×</a></div>
+	<div id="tiele2"><p id="theme">请输入主题标题</p></div>
+	<div id="content1"><p>请输入内容</p></div>
+	<p id="end">发布</p>
+	</div>	
+	
+  </div>
 </body>
 </html>

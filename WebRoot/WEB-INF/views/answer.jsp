@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="top">
 		<ul id="top_nav">
 			<li><br></li><li><a href="./index">主 页</a></li>
-			<li><a href="./contest">竞 赛</a></li>
+			<li style="padding-left:0px;"><a href="./contest">竞 赛</a></li>
 			<li><a href="./discovery">探 索</a></li>
 			<li><a href="./community">社 区</a></li>
 			<li><a href="./rank">排 行</a></li>
