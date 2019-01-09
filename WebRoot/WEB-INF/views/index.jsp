@@ -19,17 +19,75 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link href="css/nav.css" rel="stylesheet" type="text/css" />
 	<link href="css/scroll.css" rel="stylesheet" type="text/css" />
 	<link href="css/index.css" rel="stylesheet" type="text/css" />
+  	<link rel="Stylesheet" type="text/css" href="css/loginDialog.css" />
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript">
-	   document.onreadystatechange = function () {
-	       if (document.readyState == "complete") {
-	           document.body.style.display = "block";
-	       } else {
-	           document.body.style.display = "none";
-	       };
-	   };
-        
-        
-       window.onload = function countTime() {  
+	    $(function ($) {
+	    //弹出登录
+	    $("#top_login").hover(function () {
+	      $(this).stop().animate({
+	        opacity: '1'
+	      }, 600);
+	    }, function () {
+	      $(this).stop().animate({
+	        opacity: '0.6'
+	      }, 1000);
+	    }).on('click', function () {
+	      $("body").append("<div id='mask'></div>");
+	      $("#mask").addClass("mask").fadeIn("slow");
+	      $("#LoginBox").fadeIn("slow");
+	    });
+	    //关闭
+	    $(".close_btn").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+	      $("#LoginBox").fadeOut("fast");
+	      $("#mask").css({ display: 'none' });
+	    });
+	        $(".close_btn").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+	            $("#RegBox").fadeOut("fast");
+	            $("#mask").css({ display: 'none' });
+	        });  
+	    });
+    
+        //切换DIV 
+        function showdiv(){
+
+          var reg=document.getElementById("RegBox");
+          var login=document.getElementById("LoginBox");
+
+          if (login.style.display=="block"){
+            login.style.display="none";
+            reg.style.display="block";
+       	  }else if (login.style.display=="none"){
+	            login.style.display="block";
+	            reg.style.display="none";
+	      }
+	    }
+
+
+
+   		document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+                document.body.style.display = "block";
+            } else {
+                document.body.style.display = "none";
+            };
+        };
+
+
+  
+ 
+	    function display(id){  
+	        var traget=document.getElementById(id);  
+	        if(traget.style.display=="none"){  
+	            traget.style.display="";
+	              index_top.style.background="#232323";  
+	        }else{  
+	            traget.style.display="none";
+	            index_top.style.background="none";  
+	      }  
+	   	}  
+
+  		 window.onload = function countTime() {  
              //获取当前时间  
              var date = new Date();  
              var now = date.getTime();  
@@ -50,14 +108,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              }  
              //将倒计时赋值到div中   
              if (s<10) {
-             	s = "0" + s;
+              s = "0" + s;
              }
              document.getElementById("left1").innerHTML = m + " : " + s;
              //递归每秒调用countTime方法，显示动态时间效果  
-             setTimeout(countTime,1000);  
-   
-         }
-  </script>
+             setTimeout(countTime,1000); 
+          }
+</script>
+
   </head>
   
   <body>
@@ -70,6 +128,46 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<li><a href="./community">社 区</a></li>
 			<li><a href="./rank">排 行</a></li>
 		</ul>
+    <div id="index_login">
+      <DIV id="top_login">
+      <img src="images/login/icon_login.png">
+       </DIV>
+      <div id="index_top" style="display: none;">
+        <div id="login" onclick="display('lb')">
+        <img  class="icon_face" src="images/community/icon_face.png"/>
+        <img class="icon_rank4" src="images/login/icon_rank4.png">
+         <img class="icon_spinner" src="images/login/icon_spinner.png">
+        <ul id="login_username">
+          <li class="login_username">Ash</li>
+        </ul>
+       </div>
+     </div>
+
+<div id="lb" style="display:none">
+  <div id="index_middle">
+       <div id="index_left">
+         <img src="images/login/icon_info.png">
+         <p><a href="#">生 涯</a></p>
+       </div>
+              <div id="index_centre">
+         <img src="images/login/icon_history.png">
+         <p><a href="#">历史提交</a></p>
+       </div>
+              <div id="index_right">
+         <img src="images/login/icon_collection.png">
+         <p><a href="#">收 藏</a></p>
+       </div>
+       <div id="index_bottom">
+         <img src="images/login/icon_logout.png">
+         <p><a href="#">注 销</a></p>
+       </div>
+     </div>
+     </div>
+</div>
+
+
+
+
 	</div>
 	<div id="area">
 		<span class="left">2 DAY 18 HOURS</span>
@@ -81,6 +179,72 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<span class="right"><img src="images/index/icon_booking.png" alt="" style="margin-top: 6px;"></span>
 
 	</div>
+  <!--登录-->
+        <div id="LoginBox" >
+            <div  class="row1" >
+                <a class="dl" >登录</a>
+            </div>
+            <div class="djsj">
+                <a  class="zfsj"  onclick="showdiv()">注册</a>
+            </div>
+            <div class="roww">
+                <a  title="关闭窗口" class="close_btn" id="closeBtn">×</a>
+            </div>
+            <div class="row"> 
+                <input type="text" name="username" value="" placeholder="用户名" class="wenb">
+            </div>
+            <div class="row">
+                <input type="text" name="username" value="" placeholder="密码" class="wenb">
+            </div>
+            <div class="row">
+                <input type="text" name="username" value="" placeholder="验证码" class="yanzm">
+            </div>
+            <div id="wjmm">
+                <a href="#" class="wjmmwb">忘记密码？</a>
+            </div>
+            <div id="dla">
+                <a href="loginCheck" class="dlma">立即登录</a>
+            </div>
+        </div>
+        <!--注册-->
+        <div id="RegBox" >
+            <div  class="djsj">
+                <a  class="zfsj"  onclick="showdiv()">登录</a>
+            </div>
+            <div id="bootm2" class="zc2">
+                <a  class="dl"  >注册</a>
+            </div>
+            <div class="roww">
+                <a  title="关闭窗口" class="close_btn" id="closeBtn">×</a>
+            </div>
+            <div class="row"> 
+                <input type="text" name="username" value="" placeholder="用户名" class="yonghu">
+            </div>
+            <div class="row">
+                <input type="text" name="username" value="" placeholder="密码" class="mima">
+            </div>
+            <div class="row">
+                <input type="text" name="username" value="" placeholder="确认密码" class="querenmami">
+            </div>
+            <div class="row">
+                <input type="text" name="username" value="" placeholder="验证码" class="yanzm">
+            </div>
+            <div id="wjmm">
+                <a href="#" class="wjmmwb">手机号注册</a>
+            </div>
+            <div id="dla">
+                <a href="ce.html" class="dlma">立即注册</a>
+            </div>
+        </div>
+
+  <script type="text/javascript">
+    
+    function open(){
+      document.getElementById("index_middle").style.visibility="visible";
+    }
+
+  </script>
+
 
   </body>
 </html>

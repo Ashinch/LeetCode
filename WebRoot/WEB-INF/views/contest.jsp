@@ -27,6 +27,54 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 document.body.style.display = "none";
             };
         };
+        
+        window.onload = function countTime() {  
+             //获取当前时间  
+             var date = new Date();  
+             var now = date.getTime();  
+             //设置截止时间  
+             var str="2020/5/17 00:00:00";
+             var endDate = new Date(str); 
+             var end = endDate.getTime();  
+             
+             //时间差  
+             var leftTime = end-now; 
+             //定义变量 d,h,m,s保存倒计时的时间  
+             var d,h,m,s;  
+             if (leftTime>=0) {  
+                 //d = Math.floor(leftTime/1000/60/60/24);  
+                 //h = Math.floor(leftTime/1000/60/60%24);  
+                 m = Math.floor(leftTime/1000/60%60);  
+                 s = Math.floor(leftTime/1000%60);                     
+             }  
+             //将倒计时赋值到div中   
+             if (s<10) {
+             	s = "0" + s;
+             }
+             document.getElementById("left1").innerHTML = m + " : " + s;
+             str="2020/5/17 08:34:05";
+             endDate = new Date(str); 
+             end = endDate.getTime();  
+             
+             //时间差  
+             leftTime = end-now; 
+             //定义变量 d,h,m,s保存倒计时的时间  
+             d,h,m,s;  
+             if (leftTime>=0) {  
+                 //d = Math.floor(leftTime/1000/60/60/24);  
+                 //h = Math.floor(leftTime/1000/60/60%24);  
+                 m = Math.floor(leftTime/1000/60%60);  
+                 s = Math.floor(leftTime/1000%60);                     
+             }  
+             //将倒计时赋值到div中   
+             if (s<10) {
+             	s = "0" + s;
+             }
+             document.getElementById("left2").innerHTML = m + " : " + s;
+             //递归每秒调用countTime方法，显示动态时间效果  
+             setTimeout(countTime,1000);  
+   
+         }
   </script>
   </head>
   
@@ -64,7 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="incard">
 			<span class="left" style="font-family: "鎬濇簮榛戜綋 CN";">0&nbsp;&nbsp;DAY&nbsp;&nbsp;03&nbsp;&nbsp;HOURS</span>
 			<span class="right" style="font-family: "鎬濇簮榛戜綋 CN";color: green";>已预约</span>
-			<span class="left" style="font-weight:900;font-size: 30px;color: #8A7154;">16&nbsp;:&nbsp;39 </span>
+			<span id="left1" style="font-weight:900;font-size: 30px;color: #8A7154;">16&nbsp;:&nbsp;39 </span>
 			<span class="right"><img src="images/index/icon_booking.png" alt="" style="margin-left: 14px"></span>
 		</div>
 
@@ -73,7 +121,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="incard">
 			<span class="left" style="font-family: "鎬濇簮榛戜綋 CN";">3&nbsp;&nbsp;DAY&nbsp;&nbsp;22&nbsp;&nbsp;HOURS</span>
 			<span class="right" style="font-family: "鎬濇簮榛戜綋 CN";">未预约</span>
-			<span class="left" style="font-weight:900;font-size: 30px;color: #8A7154;">34&nbsp;:&nbsp;04 </span>
+			<span id="left2" style="font-weight:900;font-size: 30px;color: #8A7154;">34&nbsp;:&nbsp;04 </span>
 			<a href="./answer"><span class="right"><img src="images/index/icon_booking.png" alt="" style="margin-left: 14px"></span></a>
 		</div>
 
