@@ -138,61 +138,61 @@
 			<div id="suspension" style="height: 50px;">
 				<div id="item"
 					style="background-image: url(images/answer/icon_done.png);">
-					<p class="item_text" style="padding-left: 50px; padding-top: 17px;">
+					<p class="item_text">
 						单值二叉树
 					</p>
 				</div>
 				<div id="item"
 					style="background-image: url(images/answer/icon_done.png);">
-					<p class="item_text" style="padding-left: 50px; padding-top: 17px;">
+					<p class="item_text">
 						乘积最大…
 					</p>
 				</div>
 				<div id="item"
 					style="background-image: url(images/answer/icon_done.png);">
-					<p class="item_text" style="padding-left: 50px; padding-top: 17px;">
+					<p class="item_text">
 						实现 Trie …
 					</p>
 				</div>
 				<div id="item"
 					style="background-image: url(images/answer/icon_done.png);">
-					<p class="item_text" style="padding-left: 50px; padding-top: 17px;">
+					<p class="item_text">
 						数据流的…
 					</p>
 				</div>
 				<div id="item"
 					style="background-image: url(images/answer/icon_done.png);">
-					<p class="item_text" style="padding-left: 50px; padding-top: 17px;">
+					<p class="item_text">
 						被围绕的…
 					</p>
 				</div>
 				<div id="item"
 					style="background-image: url(images/answer/icon_done.png);">
-					<p class="item_text" style="padding-left: 50px; padding-top: 17px;">
+					<p class="item_text">
 						矩阵中的…
 					</p>
 				</div>
 				<div id="item"
 					style="background-image: url(images/answer/icon_done.png);">
-					<p class="item_text" style="padding-left: 50px; padding-top: 17px;">
+					<p class="item_text">
 						LRU 缓存…
 					</p>
 				</div>
 				<div id="item"
 					style="background-image: url(images/answer/icon_done.png);">
-					<p class="item_text" style="padding-left: 50px; padding-top: 17px;">
+					<p class="item_text">
 						扁平化嵌…
 					</p>
 				</div>
 				<div id="item"
 					style="background-image: url(images/answer/icon_done.png);">
-					<p class="item_text" style="padding-left: 50px; padding-top: 17px;">
+					<p class="item_text">
 						天际线问题
 					</p>
 				</div>
 				<div id="item"
 					style="background-image: url(images/answer/icon_done.png);">
-					<p class="item_text" style="padding-left: 50px; padding-top: 17px;">
+					<p class="item_text">
 						分割回文串
 					</p>
 				</div>
