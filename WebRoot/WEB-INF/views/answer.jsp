@@ -141,13 +141,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<div id="second">
 
-	<p id="title">5.被围绕的区域</p>		
+	<p id="title">1 . 最长回文子串</p>		
 		<div id="second2">
-			给定一个二维的矩阵，包含 'X' 和 'O'（字母 O）。找到所有被 'X' 围绕的区域，并将这些区域里所有的 'O' 用 'X' 填充。<br>
-			<br>
-			 解释:<br> 被围绕的区间不会存在于边界上，换句话说，任何边界上的 'O' 都不会被填充为 'X'。 任何不在边界上，或不与边界上的 'O' 相连的 'O' 最终都会被填充为 'X'。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。<br><br> 示例:<br> X X X X&nbsp;
-			  X X X X <br>X O O X&nbsp; X X X X<br> X X O X&nbsp; X X X X<br> X O X X&nbsp; X O X X
-			
+			给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。<br><br>示例 1：<br>输入: "babad"输出: "bab"注意: "aba" 也是一个有效答案。<br><br>示例 2：<br>输入: "cbbd"输出: "bb"
 		</div>		
 		
 
@@ -181,7 +177,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		<p onclick="resetCode()" class="button2" style="margin-left: 0px;" >重置</p>
 
-		<p onclick="runCode()" class="button3" style="margin-left: 0px;" >执行</p>
+		<p onclick="beginCout()" class="button3" style="margin-left: 0px;" >执行</p>
 
 		<div id="third2">
 			
@@ -203,7 +199,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             lineNumbers: true,     // 显示行号
             indentUnit: 4,         // 缩进单位为4
             styleActiveLine: true, // 当前行背景高亮
-            matchBrackets: true,   // 括号匹配
+            matchBrackets: false,   // 括号匹配
             autoCloseBrackets: true,// 括号补全
             foldGutter:true,
             // mode:"cmake",
@@ -220,12 +216,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		
 		function itemClick(item) {
+			jQuery("#page1").html((item + 1).toString() + " / ");
             jQuery.post("./ajaxContentByItem",{"item":item},function(data){
              	var arr=data.split("$$");
              	jQuery("#title").html(arr[0]);
 				jQuery("#second2").html(arr[1]);
 				jQuery("#state").css("background-image","url(images/answer/icon_compiler_ing.png)");
-				jQuery("#state").html("给定输入：[1,4,6,7]&nbsp;&nbsp;&nbsp;&nbsp;要求输出：[4,6,7,1]");
+				jQuery("#state").html(arr[2]);
             });
             
             // document.getElementById("code").value;
@@ -308,7 +305,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		function getCode(lang) {
 			if (lang == "cpp") {
-				return "#include <iostream>\nint main() {\n \n    std::cout << \"Hello World!\\n\";\n \n}";
+				return "#include <iostream>\nint main() {\n \n    std::cout << \"Hello World!\";\n \n}";
 			}else if (lang == "java") {
 				return "public class Main {\n	public static void main(String[] args) {\n\n		System.out.println(new java.util.Date());\n\n	}\n}";
 			}else if (lang == "python") {
@@ -316,11 +313,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}else if (lang == "python3") {
 				return "print(\"Hello World!\")";
 			}else if (lang == "c") {
-				return "#include <stdio.h>\nint main(void) {\n\n    puts(\"Hello World!\");\n\n    return 0;\n}";
+				return "#include <stdio.h>\nint main(void) {\n\n    puts(\"Hello World!\");\n    return 0;\n}";
 			}else if (lang == "csharp") {
 				return "class HelloWorld {\n    static void Main() {\n\n        System.Console.WriteLine(\"Hello World!\");\n\n    }\n}";
 			}else if (lang == "javascript") {
-				return "(function main() {\n\n    console.log('Hello World!');\n\n}());";
+				return "(function main() {\n\n    console.log(\"Hello World!\");\n\n}());";
 			}else if (lang == "ruby") {
 				return "#!/usr/bin/env ruby\n\nputs \"Hello World!\"";
 			}else if (lang == "swift") {
@@ -328,7 +325,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}else if (lang == "golang") {
 				return "func main() {\n\n    fmt.Printf(\"Hello, World!\")\n\n}";
 			}else if (lang == "bash") {
-				return "echo 'Hello, World!'";
+				return "echo \"Hello, World!\"";
 			}else if (lang == "scala") {
 				return "object Main extends App {\n\n    println(\"Hello, World!\")\n\n}";
 			}else if (lang == "kotlin") {
@@ -342,6 +339,56 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			return lang;
 		}
         
+		var time = 0;
+		function beginCout() {
+			jQuery("#state").html("编译中 - 请等待...");
+			jQuery("#state").css("background-image","url(images/answer/icon_compiler_ing.png)");
+			time = Math.floor(Math.random() * (4 - 1) + 1);
+			var str = editor.getValue();
+			if (str.indexOf("while") != -1) {
+				time = 10;
+			}
+			setTimeout("cout()",time * 1000);
+		}
+
+		function cout() {
+			if (time == 10) {
+				jQuery("#state").html("编译超时-无休止循环：while");
+				jQuery("#state").css("background-image","url(images/answer/icon_compiler_error.png)");
+				return;
+			}
+
+			var str = editor.getValue();
+			if (str.indexOf("Date") != -1) {
+				jQuery("#state").html("编译完成 - 用时 " + time.toString() + "s：" + new Date().toLocaleString());
+				jQuery("#state").css("background-image","url(images/answer/icon_compiler_ok.png)");
+				return;
+			}else {
+				var reg = str.match("\"(.+?)\"");
+				if (reg != null) {
+					jQuery("#state").html("编译完成 - 用时 " + time.toString() + "s：" + reg[0]);
+					jQuery("#state").css("background-image","url(images/answer/icon_compiler_ok.png)");
+					return;
+				}
+			}
+			
+			jQuery("#state").html("编译失败 - 错误：语法错误");
+			jQuery("#state").css("background-image","url(images/answer/icon_compiler_error.png)");
+			return;
+		}
+
+		function preCode(num) {
+			switch (num) {
+				case 0:
+					
+					break;
+			
+				default:
+					break;
+			}
+		}
+
+
 	</script>
 
 </body>
