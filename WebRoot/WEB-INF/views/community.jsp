@@ -250,14 +250,17 @@ $(function ($) {
 	<div id="tall" style="width: 826px;z-index:9998;">
 	<div id="dowm"><a id="dowm2">×</a></div>
 	<div id="tiele2"><p id="theme">请输入主题标题</p></div>
-	<div id="content1"><p>请输入内容</p></div>
+	<textarea id="content1" rows="5" cols="20" name="publishing" style="resize:none;">请输入</textarea>
+
+
+	<!-- <div id="content1"><p>请输入内容</p></div>-->
 	<p id="end">发布</p>
 	</div>
 	
 	<div id="tall2" style="width: 826px; display:none;z-index:9999;">
 	<div id="dowm3"><a id="dowm4">×</a></div>
 	<div id="tiele1"><p id="theme">主题：请问爱是分配各工工具？</p></div>
-	<div id="content1"><p>请问爱是分配各工工具请问爱是分配各工工具请问爱是分配各工工具请问爱是分配各工工具请问爱是分配各工工具？</p></div>
+	<textarea id="content1" rows="5" cols="20" name="reply2" style="resize:none;">请输入</textarea>
 	<p id="end">回复</p>
 	</div>
 	
