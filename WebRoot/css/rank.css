@@ -154,3 +154,164 @@ body {
 #button img{
   margin-left: 60px;
 }
+    #index_login{
+    /*float:right;*/
+    position: absolute;
+    top:0px;
+    right:0px;
+    width: 274px;
+    height: 219px;
+  }
+  ul {
+  list-style-type: none;
+}
+  #index_top{
+    /*background-color:#232323;*/
+    width: 276px;
+    height: 81px;
+  }
+  #login{
+	  margin-top:18px;
+	  margin-right: 50px;
+	  width:174px;
+	  height:44px;
+	  float:right;
+	  background-color:#232323;
+	  border-radius: 25px;
+  }
+  .icon_face{
+  max-height:35px; 
+  max-width:35px; 
+  width:expression(this.width > 35 && this.height < this.width ? 35: true); 
+  height:expression(this.height > 35 ? 35: true);
+  margin-top:5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+  
+.icon_rank4{
+  max-height:35px; 
+  max-width:35px; 
+  width:expression(this.width > 20 && this.height < this.width ? 20: true); 
+  height:expression(this.height > 16 ? 16: true);
+  margin-bottom:14px;
+  margin-top: 14px;
+  margin-left:15px;
+}
+#login_username{
+  float: right;
+  color: #CFCFCF;
+  font-size: 16px;
+  font-family: "思源黑体 CN";
+  margin-right: 26px;
+  margin-bottom:12px;
+  margin-top: 12px;
+  text-decoration: none;
+}
+.icon_spinner{
+  float: right;
+  max-height:35px; 
+  max-width:35px; 
+  width:expression(this.width > 20 && this.height < this.width ? 20: true); 
+  height:expression(this.height > 16 ? 16: true);
+  margin-bottom:19px;
+  margin-top: 19px;
+  margin-right: 16px;
+}
+#index_left{
+  float: left;
+  width: 91px;
+  height: 88px;
+  background-color: #1c1c1c;
+}
+#index_left a{
+  text-decoration: none;
+  line-height: 30px;
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+  color: #888888;
+  font-size: 12px;
+  font-family: "思源黑体 CN";
+}
+#index_left img{
+  margin-top: 20px;
+  margin-left: 31px;
+}
+#index_centre{
+  float: left;
+  width: 92px;
+  height: 88px;
+  background-color: #1c1c1c;
+}
+
+#index_centre a{
+  text-decoration: none;
+  line-height: 30px;
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+  color: #888888;
+  font-size: 12px;
+  font-family: "思源黑体 CN";
+}
+#index_centre img{
+  margin-top: 20px;
+  margin-left: 31px;
+}
+#index_right{
+  float: right;
+  width: 91px;
+  height: 88px;
+  background-color: #1c1c1c;
+}
+#index_right a{
+  text-decoration: none;
+  line-height: 30px;
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+  color: #888888;
+  font-size: 12px;
+  font-family: "思源黑体 CN";
+}
+#index_right img{
+  margin-top: 20px;
+  margin-left: 31px;
+}
+#index_bottom
+{
+  clear: both;
+  background-color:#232323;
+  width: 276px;
+  height: 50px;
+}
+#index_bottom img{
+  margin-left: 114px;
+  margin-top: 18px;
+}
+#index_bottom p{
+  float: right;
+  margin-top: 16px;
+  margin-right: 114px;
+}
+#index_bottom a{
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  color: #888888;
+  font-size: 12px;
+  font-family: "思源黑体 CN";
+}
+#index_middle {
+  /*visibility: hidden;*/
+}
+#top_login{
+  display: block;
+  float: right;
+  width: 174px;
+  height: 44px;
+  border-radius:25px;
+  margin-top: 18px;
+  margin-right: 50px;
+}
