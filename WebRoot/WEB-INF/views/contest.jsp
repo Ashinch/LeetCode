@@ -99,7 +99,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </script>
   </head>
   
-  <body>
+  <body style="overflow-x:hidden">
     
 	<div id="top">
 		<ul id="top_nav">

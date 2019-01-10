@@ -24,22 +24,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript">
 	    $(function ($) {
 	    //弹出登录
-	    $("#top_login").hover(function () {
-	      $(this).stop().animate({
-	        opacity: '1'
-	      }, 600);
-	    }, function () {
-	      $(this).stop().animate({
-	        opacity: '0.6'
-	      }, 1000);
-	    }).on('click', function () {
+	    $("#top_login").on('click', function () {
 	      $("#LoginBox").fadeIn("slow");
 	    });
 	    //关闭
-	    $(".close_btn").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+	    $(".close_btn").on('click', function () {
 	      $("#LoginBox").fadeOut("fast");
 	    });
-	        $(".close_btn").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+	        $(".close_btn").on('click', function () {
 	            $("#RegBox").fadeOut("fast");
 	        });  
 	    });
@@ -205,7 +197,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     border-right-width: 0px;
     border-bottom-width: 0px;
     background-color: #232323;
-    height:60px">
+    height:60px；
+    padding-bottom:40px">
             </div>
             </form>
         </div>
