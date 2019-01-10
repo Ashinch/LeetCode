@@ -218,6 +218,7 @@ span.right
   /*visibility: hidden;*/
 }
 #top_login{
+  display: block;
   float: right;
   width: 174px;
   height: 44px;
