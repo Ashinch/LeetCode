@@ -27,7 +27,7 @@
 	</insert>
 	
 	<select id="getAllTheme" resultType="Models.Theme">
-		select * from tb_theme 
+		select * from tb_theme order by id desc 
 	</select>
 	
 	<select id="getThemeById" resultType="Models.Theme">

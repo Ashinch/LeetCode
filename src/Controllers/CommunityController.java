@@ -12,6 +12,7 @@ import util.Paging;
 
 import Dao.ThemeDao;
 import Models.Theme;
+import Models.User;
 
 /**************************
  * 说明： 社区控制器
@@ -51,6 +52,23 @@ public class CommunityController {
 		}
 		List<Theme> pageList = Paging.ByTheme(mList, 6, currentPage);
 		request.setAttribute("list", pageList);
+		return "community";
+	}
+	
+	@RequestMapping(value = "/addTheme")
+	public String addTheme(HttpServletRequest request) {
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		User user = (User)request.getSession().getAttribute("user"));
+		Theme theme = new Theme();
+		theme.setTitle(title);
+		theme.setContents(content);
+		theme.setSender(user.getId());
+		theme.setWatch(3);
+		theme.setComment(0);
+		theme.setReply_date("刚刚");
+		theme.setDate("2019-1-11");
+		themeDao.addTheme(theme);
 		return "community";
 	}
 	

@@ -165,6 +165,17 @@ body {
   ul {
   list-style-type: none;
 }
+
+#login{
+    /*float:right;*/
+    cursor:pointer;
+}
+
+#login : hover{
+    /*float:right;*/
+    cursor:pointer;
+}
+
   #index_top{
     /*background-color:#232323;*/
     width: 276px;
@@ -223,7 +234,9 @@ body {
   width: 91px;
   height: 88px;
   background-color: #1c1c1c;
+  cursor:pointer;
 }
+
 #index_left a{
   text-decoration: none;
   line-height: 30px;
@@ -243,6 +256,7 @@ body {
   width: 92px;
   height: 88px;
   background-color: #1c1c1c;
+  cursor:pointer;
 }
 
 #index_centre a{
@@ -264,6 +278,7 @@ body {
   width: 91px;
   height: 88px;
   background-color: #1c1c1c;
+  cursor:pointer;
 }
 #index_right a{
   text-decoration: none;

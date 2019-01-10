@@ -55,6 +55,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <li><a href="./rank">排 行</a></li>
     </ul> 
   </div>
+  
+  
   <div id="user">
     <a href="" ></a> 
      <form name="Form1" action="userface" method="post"  enctype="multipart/form-data">

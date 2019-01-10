@@ -14,8 +14,7 @@
 		where id=#{id}
      </select>
 	<select id="getRank500" resultType="Models.User">
-		select * from tb_user where
-		rank&lt;=500 order by rank asc
+		select top 500 * from tb_user order by (rank*1000+points) desc
      </select>
 
 	<insert id="addUser">
