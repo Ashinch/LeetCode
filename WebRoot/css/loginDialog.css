@@ -7,7 +7,7 @@
     top:277px;
     background:#232323;
     width:418px;
-    height:519px;
+    height:409px;
     border:1px solid #8A7154;
     border-radius:10px;
     display: none;
@@ -83,9 +83,11 @@
 .dlma{
     color: #8A7154;
     width: 120px;
-    height: 30px;
+    height:60px;
     font-size: 30px;
     text-decoration: none;
+    background-color: #232323;
+    border: 0px;
 }
 .zfsj{
     text-decoration: none;

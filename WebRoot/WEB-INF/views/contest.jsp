@@ -81,10 +81,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              setTimeout(countTime,1000);  
    
          }
+        function green(){
+        	document.getElementById('reserve').innerHTML = '已预约';
+        	document.getElementById('reserve').style.color = "#56A35E";
+        }
+        
+                 function display(id){  
+	        var traget=document.getElementById(id);  
+	        if(traget.style.display=="none"){  
+	            traget.style.display="";
+	              index_top.style.background="#232323";  
+	        }else{  
+	            traget.style.display="none";
+	            index_top.style.background="none";  
+	      }  
+	   	} 
   </script>
   </head>
   
-  <body>
+  <body style="overflow-x:hidden">
     
 	<div id="top">
 		<ul id="top_nav">
@@ -94,6 +109,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<li><a href="./community">社 区</a></li>
 			<li><a href="./rank">排 行</a></li>
 		</ul>
+		  <div id="index_login" style="z-index:999">
+      <div id="index_top" style="display: block;">
+        <div id="login" onclick="display('lb')">
+        <img  class="icon_face" src="images/community/icon_face.png"/>
+        <img class="icon_rank4" src="images/login/icon_rank4.png">
+         <img class="icon_spinner" src="images/login/icon_spinner.png">
+        <ul id="login_username">
+          <li class="login_username">Ash</li>
+        </ul>
+       </div>
+     </div>
+
+<div id="lb" style="display:none;">
+  <div id="index_middle">
+       <div id="index_left">
+         <img src="images/login/icon_info.png">
+         <p><a href="#">生 涯</a></p>
+       </div>
+              <div id="index_centre">
+         <img src="images/login/icon_history.png">
+         <p><a href="#">历史提交</a></p>
+       </div>
+              <div id="index_right">
+         <img src="images/login/icon_collection.png">
+         <p><a href="#">收 藏</a></p>
+       </div>
+       <div id="index_bottom">
+         <img src="images/login/icon_logout.png">
+         <p><a href="#">注 销</a></p>
+       </div>
+     </div>
+     </div>
+</div>
 	</div>
 	<div id="content">
 	<div class="card1">
@@ -117,9 +165,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="card3">
 		<div class="incard">
 			<span class="left" style="font-family: "鎬濇簮榛戜綋 CN";">0&nbsp;&nbsp;DAY&nbsp;&nbsp;03&nbsp;&nbsp;HOURS</span>
-			<span class="right" style="font-family: "鎬濇簮榛戜綋 CN";color: green";>已预约</span>
+			<span id="reserve" class="right" style="font-family: "鎬濇簮榛戜綋 CN";color: green";>未预约</span>
 			<span id="left1" style="font-weight:900;font-size: 30px;color: #8A7154;">16&nbsp;:&nbsp;39 </span>
-			<span class="right"><img src="images/index/icon_booking.png" alt="" style="margin-left: 14px"></span>
+			<span onclick="green()" class="right"><img src="images/index/icon_booking.png" alt="" style="margin-left: 14px"></span>
 		</div>
 
 	</div>
