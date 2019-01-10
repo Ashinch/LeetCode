@@ -107,6 +107,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                  s = Math.floor(leftTime/1000%60);                     
              }  
              //将倒计时赋值到div中   
+             if (m<10) {
+              m = "0" + m;
+             }
              if (s<10) {
               s = "0" + s;
              }
@@ -181,6 +184,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
   <!--登录-->
         <div id="LoginBox" >
+        <form action="./loginCheck" method="post">
             <div  class="row1" >
                 <a class="dl" >登录</a>
             </div>
@@ -194,17 +198,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <input type="text" name="username" value="" placeholder="用户名" class="wenb">
             </div>
             <div class="row">
-                <input type="text" name="username" value="" placeholder="密码" class="wenb">
-            </div>
-            <div class="row">
-                <input type="text" name="username" value="" placeholder="验证码" class="yanzm">
+                <input type="text" name="password" value="" placeholder="密码" class="wenb">
             </div>
             <div id="wjmm">
                 <a href="#" class="wjmmwb">忘记密码？</a>
             </div>
             <div id="dla">
-                <a href="loginCheck" class="dlma">立即登录</a>
+            	<input type="submit" value="立即登录" class="dlma">
             </div>
+            </form>
         </div>
         <!--注册-->
         <div id="RegBox" >
