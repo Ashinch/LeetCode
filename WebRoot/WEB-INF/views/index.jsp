@@ -62,7 +62,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	            reg.style.display="none";
 	      }
 	    }
+	    function djdl() {
+		// body...
+		var dlzc=document.getElementsByTagName('LoginBox');
+		var toplogin = document.getElementsByTagName('top_login');
+		var indextop = document.getElementsByTagName('index_top');
 
+		dlzc.style.display="none";
+		toplogin.style.display="none";
+		indextop.style.display="block";
+	}
 
 
    		document.onreadystatechange = function () {
@@ -86,6 +95,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	            index_top.style.background="none";  
 	      }  
 	   	}  
+
+
 
   		 window.onload = function countTime() {  
              //获取当前时间  
@@ -204,7 +215,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <a href="#" class="wjmmwb">忘记密码？</a>
             </div>
             <div id="dla">
-            	<input type="submit" value="立即登录" class="dlma">
+            	<input type="submit" value="立即登录" class="dlma" onclick="djdl()">
             </div>
             </form>
         </div>
