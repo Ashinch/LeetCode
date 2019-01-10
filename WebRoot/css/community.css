@@ -96,15 +96,20 @@ body{
 
 #theme
 {
+	width: 420px;
+	height: 30px;
 	position: absolute;
 	font-size: 30px;
-	color: #484643;
+	color: #8A7154;
+	overflow:hidden;
+	border: none;
+    background-color: #1d1d1d;
 
 }
 #tiele2
 {
 	margin-top: 34px;
-	margin-left: 308px;
+	margin-left: 208px;
 	width: 826px;
 	height: 30px;
 }
@@ -519,7 +524,7 @@ ul {
       height: 16px;
       text-align: center;
       line-height: 17px;
-      background-color: #8A7154;
+      background-color: #3c362f;
       border: 1px solid #FFCE97;
       border-radius: 4px;
       margin: 12px 0px 0px 84px;
