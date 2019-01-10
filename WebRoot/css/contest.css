@@ -73,7 +73,11 @@ body {
     clear: both;
     position: relative;
 }
-
+img:hover
+    {
+     cursor:pointer;
+    
+    }
 .left {
     width: 145px;
     margin-top: 20px;
