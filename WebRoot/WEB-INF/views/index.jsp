@@ -191,16 +191,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <a  title="关闭窗口" class="close_btn" id="closeBtn">×</a>
             </div>
             <div class="row"> 
-                <input type="text" name="username" value="" placeholder="用户名" class="wenb">
+                <input type="text" name="username" value="" placeholder="用户名" class="wenb" style="outline:none;">
             </div>
             <div class="row">
-                <input type="text" name="password" value="" placeholder="密码" class="wenb">
+                <input type="text" name="password" value="" placeholder="密码" class="wenb" style="outline:none;">
             </div>
             <div id="wjmm">
                 <a href="#" class="wjmmwb">忘记密码？</a>
             </div>
             <div id="dla">
-            	<input type="submit" value="立即登录" class="dlma">
+            	<input type="submit" value="立即登录" class="dlma" style="border-left-width: 0px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    background-color: #232323;
+    height:60px">
             </div>
             </form>
         </div>
@@ -216,16 +221,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <a  title="关闭窗口" class="close_btn" id="closeBtn">×</a>
             </div>
             <div class="row"> 
-                <input type="text" name="username" value="" placeholder="用户名" class="yonghu">
+                <input type="text" name="username" value="" placeholder="用户名" class="yonghu" style="outline:none;">
             </div>
             <div class="row">
-                <input type="text" name="username" value="" placeholder="密码" class="mima">
+                <input type="text" name="username" value="" placeholder="密码" class="mima" style="outline:none;">
             </div>
             <div class="row">
-                <input type="text" name="username" value="" placeholder="确认密码" class="querenmami">
+                <input type="text" name="username" value="" placeholder="确认密码" class="querenmami" style="outline:none;">
             </div>
             <div class="row">
-                <input type="text" name="username" value="" placeholder="验证码" class="yanzm">
+                <input type="text" name="username" value="" placeholder="验证码" class="yanzm" style="outline:none;">
             </div>
             <div id="wjmm">
                 <a href="#" class="wjmmwb">手机号注册</a>
