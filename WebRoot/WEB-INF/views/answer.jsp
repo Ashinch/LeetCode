@@ -341,6 +341,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			return lang;
 		}
+
+		function printResult() {
+			
+		}
         
 	</script>
 

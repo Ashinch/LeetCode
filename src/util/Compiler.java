@@ -20,6 +20,7 @@ import org.apache.commons.io.IOUtils;
 public class Compiler {
 	public static String run(String language, String code) {
 		try {
+			System.setProperty("javax.net.debug", "all");
 			URL url = new URL("https://leetcode-cn.com/playground/api/runcode");
 			HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
 			conn.setHostnameVerifier(new CustomizedHostnameVerifier());
@@ -78,6 +79,7 @@ public class Compiler {
         
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 		}
 		
 		return "exception";
