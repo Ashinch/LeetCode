@@ -120,6 +120,11 @@ body{
 	left: 228px;
 	width: 391px;
 	height: 175px;
+	background-color: #232323;
+	border: none;
+	font-size: 24px;
+	font-family: "思源黑体 CN";
+	color: #555555;
 
 }
 p
@@ -478,14 +483,14 @@ ul {
      #list {
       position: absolute;
       bottom: 0px;
-      width: 1117px;
+      width: 1100px;
       height: 612px;
       overflow-y: scroll;
     }
 
     #item {
       position: relative;
-      width: 1100px;
+      width: 1083px;
       height: 204px;
       background-color: #1C1C1C;
     }

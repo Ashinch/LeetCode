@@ -81,6 +81,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              setTimeout(countTime,1000);  
    
          }
+        function green(){
+        	document.getElementById('reserve').innerHTML = '以预约';
+        	document.getElementById('reserve').style.color = "#56A35E";
+        }
   </script>
   </head>
   
@@ -117,9 +121,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="card3">
 		<div class="incard">
 			<span class="left" style="font-family: "鎬濇簮榛戜綋 CN";">0&nbsp;&nbsp;DAY&nbsp;&nbsp;03&nbsp;&nbsp;HOURS</span>
-			<span class="right" style="font-family: "鎬濇簮榛戜綋 CN";color: green";>已预约</span>
+			<span id="reserve" class="right" style="font-family: "鎬濇簮榛戜綋 CN";color: green";>未预约</span>
 			<span id="left1" style="font-weight:900;font-size: 30px;color: #8A7154;">16&nbsp;:&nbsp;39 </span>
-			<span class="right"><img src="images/index/icon_booking.png" alt="" style="margin-left: 14px"></span>
+			<span onclick="green()" class="right"><img src="images/index/icon_booking.png" alt="" style="margin-left: 14px"></span>
 		</div>
 
 	</div>
