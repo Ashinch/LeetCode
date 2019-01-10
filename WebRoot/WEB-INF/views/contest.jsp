@@ -82,7 +82,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    
          }
         function green(){
-        	document.getElementById('reserve').innerHTML = '以预约';
+        	document.getElementById('reserve').innerHTML = '已预约';
         	document.getElementById('reserve').style.color = "#56A35E";
         }
         
