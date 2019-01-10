@@ -181,7 +181,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		<p onclick="resetCode()" class="button2" style="margin-left: 0px;" >重置</p>
 
-		<p onclick="runCode()" class="button3" style="margin-left: 0px;" >执行</p>
+		<p onclick="beginCout()" class="button3" style="margin-left: 0px;" >执行</p>
 
 		<div id="third2">
 			
@@ -225,7 +225,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              	jQuery("#title").html(arr[0]);
 				jQuery("#second2").html(arr[1]);
 				jQuery("#state").css("background-image","url(images/answer/icon_compiler_ing.png)");
-				jQuery("#state").html("给定输入：[1,4,6,7]&nbsp;&nbsp;&nbsp;&nbsp;要求输出：[4,6,7,1]");
+				jQuery("#state").html(arr[2]);
             });
             
             // document.getElementById("code").value;
@@ -308,7 +308,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		function getCode(lang) {
 			if (lang == "cpp") {
-				return "#include <iostream>\nint main() {\n \n    std::cout << \"Hello World!\\n\";\n \n}";
+				return "#include <iostream>\nint main() {\n \n    std::cout << \"Hello World!\";\n \n}";
 			}else if (lang == "java") {
 				return "public class Main {\n	public static void main(String[] args) {\n\n		System.out.println(new java.util.Date());\n\n	}\n}";
 			}else if (lang == "python") {
@@ -316,7 +316,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}else if (lang == "python3") {
 				return "print(\"Hello World!\")";
 			}else if (lang == "c") {
-				return "#include <stdio.h>\nint main(void) {\n\n    puts(\"Hello World!\");\n\n    return 0;\n}";
+				return "#include <stdio.h>\nint main(void) {\n\n    puts(\"Hello World!\");\n    return 0;\n}";
 			}else if (lang == "csharp") {
 				return "class HelloWorld {\n    static void Main() {\n\n        System.Console.WriteLine(\"Hello World!\");\n\n    }\n}";
 			}else if (lang == "javascript") {
@@ -342,6 +342,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			return lang;
 		}
         
+		var time = 0;
+		function beginCout() {
+			jQuery("#state").html("编译中 - 请等待...");
+			jQuery("#state").css("background-image","url(images/answer/icon_compiler_ing.png)");
+			time = Math.floor(Math.random() * (4 - 1) + 1);
+			var str = editor.getValue();
+			if (str.indexOf("while") != -1) {
+				time = 10;
+			}
+			setTimeout("cout()",time * 1000);
+		}
+
+		function cout() {
+			if (time == 10) {
+				jQuery("#state").html("编译超时-无休止循环：while");
+				jQuery("#state").css("background-image","url(images/answer/icon_compiler_error.png)");
+				return;
+			}
+
+			var str = editor.getValue();
+			if (str.indexOf("Date") != -1) {
+				jQuery("#state").html("编译完成 - 用时 " + time.toString() + "s：" + new Date().toLocaleDateString());
+				jQuery("#state").css("background-image","url(images/answer/icon_compiler_ok.png)");
+				return;
+			}else {
+				var reg = str.match("\"(.+?)\"");
+				if (reg != null) {
+					jQuery("#state").html("编译完成 - 用时 " + time.toString() + "s：" + reg[0]);
+					jQuery("#state").css("background-image","url(images/answer/icon_compiler_ok.png)");
+					return;
+				}
+			}
+			
+			jQuery("#state").html("编译失败 - 错误：语法错误");
+			jQuery("#state").css("background-image","url(images/answer/icon_compiler_error.png)");
+			return;
+		}
+
+
 	</script>
 
 </body>

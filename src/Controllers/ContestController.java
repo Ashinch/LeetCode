@@ -125,8 +125,45 @@ public class ContestController {
 		int item = Integer.valueOf(request.getParameter("item"));
 		String title = mList.get(item).getTitle();
 		String content = mList.get(item).getContents();
+		String trips = "";
+		switch (item) {
+			case 0:
+			trips = "给定输入：[\"babad\"]&nbsp;&nbsp;&nbsp;&nbsp;要求输出：[\"bab\"] or [\"aba\"]";
+			break;
+			case 1:
+				trips = "给定输入：[1,4,6,7]&nbsp;&nbsp;&nbsp;&nbsp;要求输出：[4,6,7,1]";
+				break;
+			case 2:
+				trips = "给定输入：[2,3,-2,4]&nbsp;&nbsp;&nbsp;&nbsp;要求输出：[6]";
+				break;
+			case 3:
+				trips = "给定输入：[无]&nbsp;&nbsp;&nbsp;&nbsp;要求输出：[Trie三种操作]";
+				break;
+			case 4:
+				trips = "给定输入：[2,3,4]&nbsp;&nbsp;&nbsp;&nbsp;要求输出：[3]";
+				break;
+			case 5:
+				trips = "给定输入：[[X,X,X,X][X,O,O,X][X,X,O,X][X,X,X,X]]";
+				break;
+			case 6:
+				trips = "给定输入：[cache.put(2, 2)]&nbsp;&nbsp;&nbsp;&nbsp;要求输出：[1]";
+				break;
+			case 7:
+				trips = "给定输入：[[1,1],2,[1,1]]&nbsp;&nbsp;&nbsp;&nbsp;要求输出：[1,1,2,1,1]";
+				break;
+			case 8:
+				trips = "给定输入：[[2,10],[3,15],[7,12]]&nbsp;&nbsp;&nbsp;&nbsp;要求输出：[12,0]";
+				break;
+			case 9:
+				trips = "给定输入：[\"aab\"]&nbsp;&nbsp;&nbsp;&nbsp;要求输出：[[\"aa\",\"b\"],[\"a\",\"a\",\"b\"]]";
+				break;
+		default:
+			break;
+		}
+		
+		
 		response.setContentType("text/html;charset=utf-8");
-		response.getWriter().print(Integer.toString(item + 1) + " . " + title + "$$" + content);
+		response.getWriter().print(Integer.toString(item + 1) + " . " + title + "$$" + content + "$$" + trips);
 	}
 	
 	@RequestMapping(value="/ajaxRunCode")
