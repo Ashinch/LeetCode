@@ -1,5 +1,6 @@
 body {
 	position: relative;
+	background-color: rgb(26, 26, 26);
 	background-image: url(../images/settlement/bg_settlement.png);
 	background-repeat: no-repeat;
 	height: 797px;
@@ -101,9 +102,10 @@ body {
 	float: left;
 	/*width: 385px;*/
 	width: 385px;
-	height: 244px;
+	height: 380px;
 	background-color: #232323;
 	color: #606060;
+	margin-bottom: 20px;
 }
 
 .button2 {
@@ -163,7 +165,8 @@ body {
 	left: 1095px;
 	width: 709px;
 	height: 590px;
-	background-color: #232323;
+	background-image: url("../images/settlement/bg_editor.png");
+	background-repeat: no-repeat;
 }
 
 #third2 {

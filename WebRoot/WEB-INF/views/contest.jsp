@@ -113,7 +113,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <div id="index_top" style="display: block;">
         <div id="login" onclick="display('lb')">
         <img  class="icon_face" src="images/community/icon_face.png"/>
-        <img class="icon_rank4" src="images/login/icon_rank4.png">
+        <img class="icon_rank4" src="images/login/icon_rank6.png">
          <img class="icon_spinner" src="images/login/icon_spinner.png">
         <ul id="login_username">
           <li class="login_username">Ash</li>

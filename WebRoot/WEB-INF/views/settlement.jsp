@@ -21,37 +21,8 @@
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
 
-		<link rel="stylesheet" href="plugins/codemirror/lib/codemirror.css">
-		<link rel="stylesheet" href="plugins/codemirror/theme/dracula.css">
-		<link rel="stylesheet" href="plugins/codemirror/theme/tomorrow-night-bright.css">
-		<link rel="stylesheet" href="plugins/codemirror/doc/docs.css">
-		<link rel="stylesheet" href="plugins/codemirror/addon/fold/foldgutter.css" />
+		
 		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-		<script src="plugins/codemirror/keymap/sublime.js"></script>
-		<script src="plugins/codemirror/lib/codemirror.js"></script>
-		<script src="plugins/codemirror/doc/activebookmark.js"></script>
-
-		<script src="plugins/codemirror/mode/cmake/cmake.js"></script>
-		<script src="plugins/codemirror/mode/r/r.js"></script>
-		<script src="plugins/codemirror/mode/go/go.js"></script>
-		<script src="plugins/codemirror/mode/python/python.js"></script>
-		<script src="plugins/codemirror/mode/javascript/javascript.js"></script>
-		<script src="plugins/codemirror/mode/css/css.js"></script>
-		<script src="plugins/codemirror/mode/xml/xml.js"></script>
-		<script src="plugins/codemirror/mode/clike/clike.js"></script>
-
-		<script src="plugins/codemirror/addon/edit/matchbrackets.js"></script>
-		<script src="plugins/codemirror/addon/edit/closebrackets.js"></script>
-		<script src="plugins/codemirror/addon/selection/active-line.js"></script>
-		<script src="plugins/codemirror/addon/edit/matchtags.js"></script>
-		<script src="plugins/codemirror/addon/fold/foldcode.js"></script>
-		<script src="plugins/codemirror/addon/fold/foldgutter.js"></script>
-		<script src="plugins/codemirror/addon/fold/brace-fold.js"></script>
-		<script src="plugins/codemirror/addon/fold/comment-fold.js"></script>
-		<script src="plugins/codemirror/addon/fold/xml-fold.js"></script>
-
-
-
 
 		<link rel="stylesheet" type="text/css" href="css/nav.css">
 		<link rel="stylesheet" type="text/css" href="css/scroll.css" />
@@ -139,7 +110,7 @@
 				<div id="item"
 					style="background-image: url(images/answer/icon_done.png);">
 					<p class="item_text">
-						单值二叉树
+						最长回文子串
 					</p>
 				</div>
 				<div id="item"
@@ -200,28 +171,10 @@
 			<div id="first"
 				style="width: 425px; height: 590px; margin-top: 50px;">
 				<p id="title1" style="top: 414px;">
-					5.被围绕的区域
+					1 . 最长回文子串
 				</p>
 				<div id="first2">
-					给定一个二维的矩阵，包含 'X' 和 'O'（字母 O）。找到所有被 'X' 围绕的区域，并将这些区域里所有的 'O' 用 'X'
-					填充。
-					<br>
-					<br>
-					解释:
-					<br>
-					被围绕的区间不会存在于边界上，换句话说，任何边界上的 'O' 都不会被填充为 'X'。 任何不在边界上，或不与边界上的 'O' 相连的
-					'O' 最终都会被填充为 'X'。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。
-					<br>
-					<br>
-					示例:
-					<br>
-					X X X X&nbsp; X X X X
-					<br>
-					X O O X&nbsp; X X X X
-					<br>
-					X X O X&nbsp; X X X X
-					<br>
-					X O X X&nbsp; X O X X
+					给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。<br><br>示例 1：<br>输入: "babad"输出: "bab"注意: "aba" 也是一个有效答案。<br><br>示例 2：<br>输入: "cbbd"输出: "bb"
 				</div>
 			</div>
 			<div id="second" style="width: 435px; height: 590px; top: 383px;">
@@ -229,63 +182,23 @@
 					题目解析
 				</p>
 				<div id="second2">
-					给定一个二维的矩阵，包含 'X' 和 'O'（字母 O）。找到所有被 'X' 围绕的区域，并将这些区域里所有的 'O' 用 'X'
-					填充。
-					<br>
-					<br>
-					解释:
-					<br>
-					被围绕的区间不会存在于边界上，换句话说，任何边界上的 'O' 都不会被填充为 'X'。 任何不在边界上，或不与边界上的 'O' 相连的
-					'O' 最终都会被填充为 'X'。如果两个元素在水平或垂直方向相邻，则称它们是“相连”的。示例: X X X X X X X X X
-					O O X X X X X X X O X X X X X X O X X X O X X
-					<br>
-					<br>
-					<br>
+					1.将子串分为单核和双核的情况，单核即指子串长度为奇数，双核则为偶数。<br><br>
+2.遍历每个除最后一个位置的字符index(字符位置)，单核：初始low = 初始high = index，low和high均不超过原字符串的下限和上限；判断low和high处的字符是否相等，相等则low++、high++（双核：初始high = 初始low+1 = index + 1）。<br><br>
+3.每次low与high处的字符相等时，都将当前最长的回文子串长度与high-low+1比较。后者大时，将最长的回文子串改为low与high之间的。<br><br>
+4.重复执行 2 、3 ，直至high-low+1 等于原字符串长度或者遍历到最后一个字符，取当前截取到的回文子串，该子串即为最长的回文子串。
 				</div>
-				<p style="margin-left: 25px; margin-top: 385px;">
-					全球正确率：47%
+				<p style="margin-left: 25px; margin-top: 385px;font-size: 16px;color: rgb(70, 70, 70);">
+					全球正确率：53%
 				</p>
-				<p style="margin-left: 25px; margin-top: 13px;">
-					区域正确率：47%
+				<p style="margin-left: 25px; margin-top: 13px;font-size: 16px;color: rgb(70, 70, 70);">
+					区域正确率：58%
 				</p>
 			</div>
 			<div id="third" style="top:383px;">
-				<p class="seach" style="top: 30px; left: 5px; padding-left: 34px;">
-					Java
-				</p>
-				<p class="button2" style="margin-left: 0px;">
-					重置
-				</p>
-				<p class="button3" style="margin-left: 0px;">
-					执行
-				</p>
-				<div id="third2"style="margin-top: 90px; margin-left: 25px; width: 635px; height: 475px;">
-					
-					<div id="third3">
-						<div class="code">
-							<textarea id="code" onChange="codeChange()">#include <std>
-int main()
-{
-    printf("1");
-}</textarea>
+				
+							
 	</div>
-	<script>
-        var editor = CodeMirror.fromTextArea(document.getElementById("code"), { //script_once_code为你的textarea的ID号
-            lineNumbers: true,     // 显示行号
-            indentUnit: 4,         // 缩进单位为4
-            styleActiveLine: true, // 当前行背景高亮
-            matchBrackets: false,   // 括号匹配
-            autoCloseBrackets: true,// 括号补全
-            foldGutter:true,
-            // mode:"cmake",
-            mode: 'python',
-            // mode: "text/x-java", //实现Java代码高亮
-            theme: 'tomorrow-night-bright',      // 编辑器主题
-            lineWrapping: true, //是否强制换行
-            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],      
-        });
-        editor.setSize("653","475");
-    </script>
+	
 	</div>
 	</div>
 	</div></div>

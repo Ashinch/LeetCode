@@ -76,57 +76,57 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="item" onclick="itemClick(0)" style="background-image: url(images/answer/item_1.png);">
 			<p class="item_text"><%= StrFormat.maxLength(list.get(0).getTitle(),14) %></p>
 			
-			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 304px; left: 345px;">
+			<img id="itemImg0" src="images/answer/icon_undone.png" style="display:block;margin-bottom: 10px;position: absolute;top: 304px; left: 345px;">
 		</div>
 		<div id="item" onclick="itemClick(1)" style="width: 260px;height: 50px; background-image: url(images/answer/item_2.png);margin-bottom: 10px;">
 			<p class="item_text"><%= StrFormat.maxLength(list.get(1).getTitle(),14) %></p>
 			
-			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 364px; left: 345px;">
+			<img id="itemImg1" src="images/answer/icon_undone.png" style="display:block;margin-bottom: 10px;position: absolute;top: 364px; left: 345px;">
 		</div>
 		<div id="item" onclick="itemClick(2)" style="width: 260px;height: 50px; background-image: url(images/answer/item_3.png);margin-bottom: 10px;">
 			<p class="item_text"><%= StrFormat.maxLength(list.get(2).getTitle(),14) %></p>
 			
-			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 424px; left: 345px;">
+			<img id="itemImg2" src="images/answer/icon_undone.png" style="display:block;margin-bottom: 10px;position: absolute;top: 424px; left: 345px;">
 		</div>
 		<div id="item" onclick="itemClick(3)" style="width: 260px;height: 50px; background-image: url(images/answer/item_4.png);margin-bottom: 10px;">
 			<p class="item_text"><%= StrFormat.maxLength(list.get(3).getTitle(),14) %></p>
 			
-			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 484px; left: 345px;">
+			<img id="itemImg3" src="images/answer/icon_undone.png" style="display:block;margin-bottom: 10px;position: absolute;top: 484px; left: 345px;">
 		</div>
 		<div id="item" onclick="itemClick(4)" style="width: 260px;height: 50px; background-image: url(images/answer/item_5.png);margin-bottom: 10px;">
 			<p class="item_text"><%= StrFormat.maxLength(list.get(4).getTitle(),14) %></p>
 			
-			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 544px; left: 345px;">
+			<img id="itemImg4" src="images/answer/icon_undone.png" style="display:block;margin-bottom: 10px;position: absolute;top: 544px; left: 345px;">
 		</div>
 		<div id="item" onclick="itemClick(5)" style="width: 260px;height: 50px; background-image: url(images/answer/item_6.png);margin-bottom: 10px;">
 			<p class="item_text"><%= StrFormat.maxLength(list.get(5).getTitle(),14) %></p>
 			
-			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 604px; left: 345px;">
+			<img id="itemImg5" src="images/answer/icon_undone.png" style="display:block;margin-bottom: 10px;position: absolute;top: 604px; left: 345px;">
 		</div>
 		<div id="item" onclick="itemClick(6)" style="width: 260px;height: 50px; background-image: url(images/answer/item_7.png);margin-bottom: 10px;">
 			<p class="item_text"><%= StrFormat.maxLength(list.get(6).getTitle(),14) %></p>
 			
-			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 664px; left: 345px;">
+			<img id="itemImg6" src="images/answer/icon_undone.png" style="display:block;margin-bottom: 10px;position: absolute;top: 664px; left: 345px;">
 		</div>
 		<div id="item" onclick="itemClick(7)" style="width: 260px;height: 50px; background-image: url(images/answer/item_8.png);margin-bottom: 10px;">
 			<p class="item_text"><%= StrFormat.maxLength(list.get(7).getTitle(),14) %></p>
 			
-			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 724px; left: 345px;">
+			<img id="itemImg7" src="images/answer/icon_undone.png" style="display:block;margin-bottom: 10px;position: absolute;top: 724px; left: 345px;">
 		</div>
 		<div id="item" onclick="itemClick(8)" style="width: 260px;height: 50px; background-image: url(images/answer/item_9.png);margin-bottom: 10px;">
 			<p class="item_text"><%= StrFormat.maxLength(list.get(8).getTitle(),14) %></p>
 			
-			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 784px; left: 345px;">
+			<img id="itemImg8" src="images/answer/icon_undone.png" style="display:block;margin-bottom: 10px;position: absolute;top: 784px; left: 345px;">
 		</div>
 		<div id="item" onclick="itemClick(9)" style="width: 260px;height: 50px; background-image: url(images/answer/item_10.png);margin-bottom: 10px;">
 			<p class="item_text"><%= StrFormat.maxLength(list.get(9).getTitle(),14) %></p>
 			
-			<img src="images/answer/icon_done.png" style="display:block;margin-bottom: 10px;position: absolute;top: 844px; left: 345px;">
+			<img id="itemImg9" src="images/answer/icon_undone.png" style="display:block;margin-bottom: 10px;position: absolute;top: 844px; left: 345px;">
 		</div>
 		
 		<div>
-				<img src="images/answer/icon_time.png" alt="" style="margin-top: 75px;">
-				<p class="timep">16 : 39</p>
+			<img src="images/answer/icon_time.png" alt="" style="margin-top: 75px;">
+			<p class="timep">16 : 39</p>
 				
 			</div>
 			<div>
@@ -151,7 +151,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 
 	<div id="third">
-		<p onclick="checkSelect()" id="seach" style="margin-left: 0px ;padding-left: 34px;">Java</p>
+		<p onclick="checkSelect()" id="seach" style="margin-left: 0px ;padding-left: 34px;">Python3</p>
 		
 		<lu id="language" style="z-index:999">
 	        <li onclick="codeChange('cpp','C++')">C++</li>
@@ -173,7 +173,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    		
 	    <p id="state">在下方代码框中编写算法...</p>
 
-		<a href="./settlement"><p class="button1" style="margin-left: 0px;">提交</p></a>
+		<a onclick="firm()"><p class="button1" style="margin-left: 0px;">提交</p></a>
 
 		<p onclick="resetCode()" class="button2" style="margin-left: 0px;" >重置</p>
 
@@ -183,18 +183,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			<div id="third3">
 				<div class="code">
-        <textarea id="code" onChange="codeChange()">public class Main {
-	public static void main(String[] args) {
-
-		System.out.println(new java.util.Date());
-
-	}
-}</textarea>
+        <textarea id="code" onChange="codeChange()">print("Hello World!")</textarea>
     </div>
     
 
     <script>
-		var lang = "java";
+		var lang = "Python3";
         var editor = CodeMirror.fromTextArea(document.getElementById("code"), { //script_once_code为你的textarea的ID号
             lineNumbers: true,     // 显示行号
             indentUnit: 4,         // 缩进单位为4
@@ -216,6 +210,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		
 		function itemClick(item) {
+			if (item != 0) {
+				var html = jQuery("#itemImg" + item.toString()).attr("src");
+				jQuery("#itemImg" + item.toString()).attr("src",html.replace("undone","done"));
+				preCode(item);
+			}
+
+			if (item == 9) {
+				jQuery("#page1").css("left","1700");
+			}
 			jQuery("#page1").html((item + 1).toString() + " / ");
             jQuery.post("./ajaxContentByItem",{"item":item},function(data){
              	var arr=data.split("$$");
@@ -349,10 +352,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			jQuery("#state").css("background-image","url(images/answer/icon_compiler_ing.png)");
 			time = Math.floor(Math.random() * (4 - 1) + 1);
 			var str = editor.getValue();
-			if (str.indexOf("while") != -1) {
+			if (str.indexOf("while") != -1 && str.indexOf("longestPalindrome") == -1) {
 				time = 10;
 			}
+			var html = jQuery("#itemImg0").attr("src");
+			jQuery("#itemImg0").attr("src",html.replace("undone","done"));
 			setTimeout("cout()",time * 1000);
+			
 		}
 
 		function cout() {
@@ -363,6 +369,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}
 
 			var str = editor.getValue();
+
+			if (str.indexOf("longestPalindrome")) {
+				jQuery("#state").html("编译完成 - 用时 " + time.toString() + "s：" + "\"aba\"");
+				jQuery("#state").css("background-image","url(images/answer/icon_compiler_ok.png)");
+				return;
+			}
 			if (str.indexOf("Date") != -1) {
 				jQuery("#state").html("编译完成 - 用时 " + time.toString() + "s：" + new Date().toLocaleString());
 				jQuery("#state").css("background-image","url(images/answer/icon_compiler_ok.png)");
@@ -384,15 +396,54 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		function preCode(num) {
 			switch (num) {
 				case 0:
-					
+					editor.setValue("class Solution:\n    def longestPalindrome(self, s):\n        lenS = len(s)\n        if lenS <= 1: return s\n        minStart, maxLen, i = 0, 1, 0\n        while i < lenS:\n        if lenS - i <= maxLen / 2: break\n        j, k = i, i\n        while k < lenS - 1 and s[k] == s[k + 1]: k += 1\n        i = k + 1\n        while k < lenS - 1 and j and s[k + 1] == s[j - 1]:  k, j = k + 1, j - 1\n        if k - j + 1 > maxLen: minStart, maxLen = j, k - j + 1\n        return s[minStart: minStart + maxLen]");
 					break;
-			
+				case 1:
+					editor.setValue("class Solution:\n    def maxProduct(self, nums):\n        if(len(nums)==1):return nums[0]\n        posmax,negmax=0,0\n        result=nums[0]\n        for i in range(len(nums)):\n            tempPosmax=posmax\n            tempNegmax=negmax\n            posmax=max(nums[i],max(nums[i]*tempPosmax,nums[i]*tempNegmax))\n            negmax=min(nums[i],min(nums[i]*tempPosmax,nums[i]*tempNegmax))\n            result=max(result,posmax)\n        return result");	
+					break;
+				case 2:
+					editor.setValue("class Trie:\n    root = {}\n    END = '/'\n    def add(self, word):\n        node = self.root\n        for c in word:\n            node=node.setdefault(c,{})\n        node[self.END] = None\n\n    def find(self, word):\n        node = self.root\n        for c in word:\n            if c not in node:\n                return False\n            node = node[c]\n        return self.END in node");
+					break;
+				case 3:
+					editor.setValue("class Solution:\n    def __init__(self):\n        self.arr=[]\n    def Insert(self, num):\n        self.arr.append(num)\n        self.arr.sort()\n    def GetMedian(self,fuck):\n        length=len(self.arr)\n        return self.arr[length//2] if length%2==1 else (self.arr[length//2]+self.arr[length//2-1])/2.0");
+					break;
+				case 4:
+					editor.setValue("class Solution(object):\n    __row = None\n    __col = None\n    def solve(self, board):\n        if not board or not board[0]:\n            return\n        self.__row = len(board)\n        self.__col = len(board[0])\n        for j in range(self.__row):\n            self.dfs(board, j, 0)\n            self.dfs(board, j, self.__col-1)\n        for i in range(self.__col):\n            self.dfs(board, 0, i)\n            self.dfs(board, self.__row-1, i)\n        for j in range(self.__row):\n            for i in range(self.__col):\n                if board[j][i] == 'O':\n                    board[j][i] = 'X'\n                if board[j][i] == '-':\n                    board[j][i] = 'O'\n        return board");
+					break;
+				case 5:
+					editor.setValue("");
+					break;
+				case 6:
+					editor.setValue("class Solution:\n    def __init__(self, size=3):\n        self.cache = {}\n        self.keys = []\n        self.size = size\n\n    def get(self, key):\n        if key in self.cache:\n            self.keys.remove(key)\n            self.keys.insert(0, key)\n            return self.cache[key]\n        else:\n            return None\n\n    def set(self, key, value):\n        if key in self.cache:\n            self.keys.remove(key)\n            self.keys.insert(0, key)\n            self.cache[key] = value\n        elif len(self.keys) == self.size:\n            old = self.keys.pop()\n            self.cache.pop(old)\n            self.keys.insert(0, key)\n            self.cache[key] = value\n        else:\n            self.keys.insert(0, key)\n            self.cache[key] = value");
+					break;
+				case 7:
+					editor.setValue("class Solution:\n    def flatten(l):\n    for el in l:\n        if hasattr(el, \"__iter__\") and not isinstance(el, basestring):\n            for sub in flatten(el):\n                yield sub\n        else:\n            yield el");
+					break;
+				case 8:
+					editor.setValue("class Solution:\n    def heap_sort(L):\n        L_length = len(L) - 1\n        first_sort_count = int(L_length / 2 )\n        for i in range(first_sort_count):\n            heap_adjust(L, first_sort_count - i, L_length)\n        return [L[i] for i in range(1, len(L))]\n\n    def swap_param(L, i, j):\n        L[i], L[j] = L[j], L[i]\n        return L\n\n    def heap_adjust(L, start, end):\n        temp = L[start]\n        i = start\n        j = 2 * i\n        while j <= end:\n            if (j < end) and (L[j] < L[j + 1]):\n                j += 1\n            if temp < L[j]:\n                L[i] = L[j]\n                i = j\n                j = 2 * i\n            else:\n                break\n        L[i] = temp");
+					break;
+				case 9:
+					resetCode();
 				default:
 					break;
 			}
 		}
 
+		function firm() {
+			if (confirm("还有未作答题目，提交后将结束竞赛，是否确定？")) {  
+				window.location.href="http://localhost:8080/LeetCode/settlement";
+			}  
+			else {
 
+			}
+		}
+		
+		document.onkeydown=function(event){
+			var e = event || window.event || arguments.callee.caller.arguments[0];
+			if(e && e.keyCode==113){ // 按 F2 
+				preCode(0);
+			}
+		}; 
 	</script>
 
 </body>

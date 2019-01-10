@@ -66,7 +66,7 @@ $(function ($) {
       <div id="index_top" style="display: block;">
         <div id="login" onclick="display('lb')">
         <img  class="icon_face" src="images/community/icon_face.png"/>
-        <img class="icon_rank4" src="images/login/icon_rank4.png">
+        <img class="icon_rank4" src="images/login/icon_rank7.png">
          <img class="icon_spinner" src="images/login/icon_spinner.png">
         <ul id="login_username">
           <li class="login_username">Ash</li>
@@ -293,8 +293,8 @@ $(function ($) {
 	</div>
 	<div id="tall" style="width: 826px;z-index:9998;">
 	<div id="dowm"><a id="dowm2">×</a></div>
-	<div id="tiele2"><p id="theme">请输入主题标题</p></div>
-	<textarea id="content1" rows="5" cols="20" name="publishing" style="resize:none; outline:none;" placeholder="请输入" ></textarea>
+	<div id="tiele2"><textarea id="theme" rows="1" cols="20" name="publishing" style="resize:none; outline:none;" placeholder="请输入主题标题" ></textarea></div>
+	<textarea id="content1" rows="5" cols="20" name="publishing" style="resize:none; outline:none;" placeholder="请输入内容..." ></textarea>
 
 
 	<!-- <div id="content1"><p>请输入内容</p></div>-->
@@ -304,7 +304,7 @@ $(function ($) {
 	<div id="tall2" style="width: 826px; display:none;z-index:9999;">
 	<div id="dowm3"><a id="dowm4">×</a></div>
 	<div id="tiele1"><p id="theme">主题：请问爱是分配各工工具？</p></div>
-	<textarea id="content1" rows="5" cols="20" name="reply2" style="resize:none; outline:none;" placeholder="请输入"></textarea>
+	<textarea id="content1" rows="5" cols="20" name="reply2" style="resize:none; outline:none;" placeholder="请输入内容..."></textarea>
 	<p id="end">回复</p>
 	</div>
 	
