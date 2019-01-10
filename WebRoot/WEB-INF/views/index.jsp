@@ -33,18 +33,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        opacity: '0.6'
 	      }, 1000);
 	    }).on('click', function () {
-	      $("body").append("<div id='mask'></div>");
-	      $("#mask").addClass("mask").fadeIn("slow");
 	      $("#LoginBox").fadeIn("slow");
 	    });
 	    //关闭
 	    $(".close_btn").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
 	      $("#LoginBox").fadeOut("fast");
-	      $("#mask").css({ display: 'none' });
 	    });
 	        $(".close_btn").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
 	            $("#RegBox").fadeOut("fast");
-	            $("#mask").css({ display: 'none' });
 	        });  
 	    });
     

@@ -28,49 +28,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" > 
 $(function ($) {
-		//弹出登录
-		$("#btn_publish").hover(function () {
-			$(this).stop().animate({
-				opacity: '1'
-			}, 600);
-		}, function () {
-			$(this).stop().animate({
-				opacity: '0.6'
-			}, 1000);
-		}).on('click', function () {
-			$("body").append("<div id='mask'></div>");
-			$("#mask").addClass("mask").fadeIn("slow");
-			$("#tall").fadeIn("slow");
+		$("#btn_publish").on('click', function () {
+			$("#tall").fadeIn("fast");
 		});
-		$(".suffix1").hover(function () {
-			$(this).stop().animate({
-				opacity: '1'
-			}, 600);
-		}, function () {
-			$(this).stop().animate({
-				opacity: '0.6'
-			}, 1000);
-		}).on('click', function () {
-			$("body").append("<div id='mask'></div>");
-			$("#mask").addClass("mask").fadeIn("slow");
-			$("#dd").fadeIn("slow");
+		$(".suffix1").on('click', function () {
+			$("#dd").fadeIn("fast");
 		});
-		$("#dowm2").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+		$("#dowm2").on('click', function () {
 			$("#tall").fadeOut("fast");
-			$("#mask").css({ display: 'none' });
 		});
-		  $("#dowm3").hover(function () { $(this).css({ color: 'black' }) }, function () { $(this).css({ color: '#999' }) }).on('click', function () {
+		  $("#dowm3").on('click', function () {
             $("#tall2").fadeOut("fast");
-            $("#mask").css({ display: 'none' });
         });  
-		
     });
-    
-
-
-
 </script>
-
 <body>
 	<div id="top">
 		<ul id="top_nav">
@@ -134,7 +105,7 @@ $(function ($) {
 		<div id="two">
 			<img src="images/community/icon_face.png" alt="">
 			<ul id="content">
-				<li class="suffix1">${list[1].title }</li>
+				<li class="suffix1" onclick="play()">${list[1].title }</li>
 				<li class="suffix">发布于：${list[1].date } | 最近回复：SOEFN 13分钟前</li>
 			</ul>	
 			<div id="Read">
@@ -156,7 +127,7 @@ $(function ($) {
 		<div id="three">
 			<img src="images/community/icon_face.png" alt="">
 			<ul id="content">
-				<li class="suffix1">${list[2].title }</li>
+				<li class="suffix1" onclick="play()">${list[2].title }</li>
 				<li class="suffix">发布于：${list[2].date } | 最近回复：SOEFN 13分钟前</li>
 			</ul>	
 			<div id="Read">
@@ -178,7 +149,7 @@ $(function ($) {
 		<div id="one2">
 			<img src="images/community/icon_face.png" alt="">
 			<ul id="content">
-				<li class="suffix1">${list[3].title }</li>
+				<li class="suffix1" onclick="play()">${list[3].title }</li>
 				<li class="suffix">发布于：${list[3].date } | 最近回复：SOEFN 13分钟前</li>
 			</ul>	
 			<div id="Read">
@@ -200,7 +171,7 @@ $(function ($) {
 		<div id="two3">
 			<img src="images/community/icon_face.png" alt="">
 			<ul id="content">
-				<li class="suffix1">${list[4].title }</li>
+				<li class="suffix1" onclick="play()">${list[4].title }</li>
 				<li class="suffix">发布于：${list[4].date } | 最近回复：SOEFN 13分钟前</li>
 			</ul>	
 			<div id="Read">
@@ -222,7 +193,7 @@ $(function ($) {
 		<div id="four">
 			<img src="images/community/icon_face.png" alt="">
 			<ul id="content">
-				<li class="suffix1">${list[5].title }</li>
+				<li class="suffix1" onclick="play()">${list[5].title }</li>
 				<li class="suffix">发布于：${list[5].date } | 最近回复：SOEFN 13分钟前</li>
 			</ul>	
 			<div id="Read">
@@ -338,28 +309,32 @@ $(function ($) {
 	<script type="text/javascript">
 		function play(){
 			if (document.getElementById("details1").style.display == "block")
-			 {
-			 
+			 {	 
+			 jQuery("#details1").fadeIn("fast");
+			 jQuery("#content").fadeIn("fast");
+			 jQuery("#comment").fadeIn("fast");
+			 jQuery("#buttom").fadeIn("fast");
+			 jQuery("#mark").fadeIn("fast");
+			 jQuery("#btn_publish").fadeIn("fast");
 			 document.getElementById ("details1").style.display = "none" ;
 			 document.getElementById ("content").style.display = "block" ;
 			 document.getElementById("comment").style.display = "block";
 			 document.getElementById("buttom").style.display = "block";
 			 document.getElementById("mark").style.display = "block";
-			
-			 document.getElementById("btn_publish").style.display = "block";
-			
-			
-				
-						
+			 document.getElementById("btn_publish").style.display = "block";			
 			}else{
-			
+			jQuery("#details1").fadeIn("fast");
+			 jQuery("#content").fadeIn("fast");
+			 jQuery("#comment").fadeIn("fast");
+			 jQuery("#buttom").fadeIn("fast");
+			 jQuery("#mark").fadeIn("fast");
+			 jQuery("#btn_publish").fadeIn("fast");
 			document.getElementById("details1").style.display = "block";
 			document.getElementById("content").style.display = "none";
 		    document.getElementById("comment").style.display = "none";
 		    document.getElementById("buttom").style.display = "none";
 		    document.getElementById("mark").style.display = "none";
 		    document.getElementById("btn_publish").style.display = "none";
-		    
 		}
 		}
 	</script>
@@ -367,19 +342,15 @@ $(function ($) {
 		
 	<script type="text/javascript">
 		function play2()
-	
 		{
-		
-			
-			
-			
-			
-			document.getElementById ("tall2").style.display = "block" ;
+			jQuery("#tall2").fadeIn("fast");
+			jQuery("#content").fadeIn("fast");
+		    jQuery("#comment").fadeIn("fast");
+		    jQuery("#details1").fadeIn("fast") ;
+		    document.getElementById ("tall2").style.display = "block" ;
 			document.getElementById("content").style.display = "none";
 		    document.getElementById("comment").style.display = "none";
-		    document.getElementById ("details1").style.display = "block" ;		
-				
-			
+		    document.getElementById ("details1").style.display = "block" ;
 		}
 	</script>
 	
