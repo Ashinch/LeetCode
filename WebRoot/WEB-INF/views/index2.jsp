@@ -128,13 +128,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<li><a href="./rank">排 行</a></li>
 		</ul>
     <div id="index_login">
-      <DIV id="top_login">
-      <img src="images/login/icon_login.png">
-       </DIV>
-      <div id="index_top" style="display: none;">
+      <div id="index_top">
         <div id="login" onclick="display('lb')">
         <img  class="icon_face" src="images/community/icon_face.png"/>
-        <img class="icon_rank4" src="images/login/icon_rank4.png">
+        <img class="icon_rank4" src="images/login/icon_rank6.png">
          <img class="icon_spinner" src="images/login/icon_spinner.png">
         <ul id="login_username">
           <li class="login_username">Ash</li>

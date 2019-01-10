@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page import="Models.*" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -18,7 +19,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
 	<link href="css/nav.css" rel="stylesheet" type="text/css" />
 	<link href="css/scroll.css" rel="stylesheet" type="text/css" />
-	<link href="css/rank.css" rel="stylesheet" type="text/css" />
+  <link href="css/rank.css" rel="stylesheet" type="text/css" />
+  <script src="js/jquery-3.3.1.min.js"></script>
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -73,7 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div id="index_middle">
        <div id="index_left">
          <img src="images/login/icon_info.png">
-         <p><a href="#">生 涯</a></p>
+         <p><a href="./userinfo">生 涯</a></p>
        </div>
               <div id="index_centre">
          <img src="images/login/icon_history.png">
@@ -98,8 +100,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <li class="left"><img src="images/rank/icon_left.png" /></li>
         <li><img src="images/rank/icon_country2.png" /></li>
         <li><img src="images/rank/icon_country3.png" /></li>
-        <li><img src="images/rank/icon_country4.png" /></li>
-        <li class="centre"><img src="images/rank/icon_country1.png" /></li>
+        <li><img onclick="getCountry()" src="images/rank/icon_country4.png" /></li>
+        <li class="centre"><img onclick="sort(1)" src="images/rank/icon_country1.png" /></li>
         <li><img src="images/rank/icon_country5.png" /></li>
         <li><img src="images/rank/icon_country6.png" /></li>
         <li><img src="images/rank/icon_country7.png" /></li>
@@ -109,14 +111,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="contenttable">
       <table id="tableheader" border="0" cellpadding="0" cellspacing="0">
         <tr>
+          <% List<User> list = (List<User>) request.getAttribute("list"); %>
           <th id="reduce" class="superscript">#</th>
           <th>用户名</th>
           <th>国家地区</th>
-          <th class="superscript">段位</th>
-          <th class="superscript">积分</th>
-          <th class="superscript">胜利</th>
-          <th class="superscript">失败</th>
-          <th class="superscript">场次</th>
+          <th class="superscript" onclick="sort(1)">段位</th>
+          <th class="superscript" onclick="sort(2)">积分</th>
+          <th class="superscript" onclick="sort(3)">胜利</th>
+          <th class="superscript" onclick="sort(4)">失败</th>
+          <th class="superscript" onclick="sort(5)">场次</th>
         </tr>
       </table>
       <table id="tablemain" border="0" cellpadding="0" cellspacing="0">
@@ -131,14 +134,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       		}
       %>
       	<tr class="<%=str %>">
-          <td id="reduce">1</td>
-          <td>DNEGR</td>
-          <td>美国</td>
-          <td>VII</td>
-          <td>97</td>
-          <td>693</td>
-          <td>204</td>
-          <td>897</td>
+          <td id="reduce"><%= i + 1%></td>
+          <td id="item1"><%= list.get(i).getUsername() %></td>
+          <td id="item2"><%= list.get(i).getCountry() %></td>
+          <td id="item3"><%= list.get(i).getRank() %></td>
+          <td id="item4"><%= list.get(i).getPoints() %></td>
+          <td id="item5"><%= list.get(i).getWeekly_win() %></td>
+          <td id="item6"><%= list.get(i).getWeekly_count() - list.get(i).getWeekly_win() %></td>
+          <td id="item7"><%= list.get(i).getWeekly_count() %></td>
         </tr>
       <% } %>
       </table>
@@ -154,7 +157,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <li>50</li>
       </ul>
       <div id="jump">
-        <p class="left">50</p>
+        <p class="left">1</p>
         <p class="right">GO</p>
       </div>
       <div id="button">
@@ -163,6 +166,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       </div>
     </div>
   </div>
+
+  <script>
+    function sort(item) {
+      jQuery.post("./ajaxSort",{"method":item},function (data) {
+        jQuery("#tablemain").html(data);
+      });
+    }
+  
+    function getCountry() {
+      jQuery.post("./ajaxGetCountry",function (data) {
+        jQuery("#tablemain").html(data);
+      });
+    }
+
+
+  </script>
 
   </body>
 </html>

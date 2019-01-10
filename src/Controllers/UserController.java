@@ -1,9 +1,11 @@
 package Controllers;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +53,7 @@ public class UserController {
 		if (user != null) {
 			if (password.equals(user.getPassword())) {
 				request.getSession().setAttribute("user", user);
-				return "index";
+				return "index2";
 			}
 		}
 		
@@ -135,4 +137,13 @@ public class UserController {
         }
         return "success"; 
     }
+	
+	@RequestMapping(value="/uploadFace")
+	public void uploadFace(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		User user = (User) request.getSession().getAttribute("user");
+		user.setFace("images/face/1.png");
+		userDao.updateUser(user);
+		response.setContentType("text/html;charset=utf-8");
+		response.getWriter().print("ok");
+	}
 }

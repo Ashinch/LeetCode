@@ -7,7 +7,7 @@
 <mapper namespace="Dao.ReplyDao">
 	<select id="getAllReplyByThemeId" resultType="Models.Reply">
 		select * from tb_reply 
-		where theme=#{id}
+		where theme=#{id} order by sequence
 	</select>
 	
 	<insert id="addReply">

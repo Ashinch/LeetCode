@@ -106,6 +106,19 @@ body{
     background-color: #1d1d1d;
 
 }
+
+#theme1
+{
+	width: 420px;
+	height: 30px;
+	position: absolute;
+	font-size: 30px;
+	color: #8A7154;
+	overflow:hidden;
+	border: none;
+    background-color: #1d1d1d;
+
+}
 #tiele2
 {
 	margin-top: 34px;
@@ -119,6 +132,22 @@ body{
 	margin-left: 203px;
 }
 #content1
+{
+	position: absolute;
+	top: 192px;
+	left: 228px;
+	width: 391px;
+	height: 175px;
+	background-color: #232323;
+	border: none;
+	outline: none;
+	font-size: 24px;
+	font-family: "思源黑体 CN";
+	color: #555555;
+
+}
+
+#content2
 {
 	position: absolute;
 	top: 192px;

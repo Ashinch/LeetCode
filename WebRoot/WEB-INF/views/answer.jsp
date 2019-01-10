@@ -52,7 +52,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/answer.css">
 	<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
 	
-	
+	<script>
+		var minute = "200";
+		var second = 59;
+		setInterval(function() {
+			second--;
+			if(second == 00 && minute == 00) {
+				minute = 29;
+				second = 59;
+			}; //当分钟和秒钟都为00时，重新给值
+			if(second == 00) {
+				second = 59;
+				minute--;
+				if(minute < 10) minute = "0" + minute;
+			}; //当秒钟为00时，秒数重新给值
+			if(second < 10) second = "0" + second;
+			jQuery("#time100").text(minute + " : " + second);
+		}, 1000);
+	</script>
 	
   </head>
   
@@ -126,7 +143,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		<div>
 			<img src="images/answer/icon_time.png" alt="" style="margin-top: 75px;">
-			<p class="timep">16 : 39</p>
+			<p id="time100" class="timep" >200 : 59</p>
 				
 			</div>
 			<div>
@@ -188,7 +205,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
 
     <script>
-		var lang = "Python3";
+		var lang = "python3";
         var editor = CodeMirror.fromTextArea(document.getElementById("code"), { //script_once_code为你的textarea的ID号
             lineNumbers: true,     // 显示行号
             indentUnit: 4,         // 缩进单位为4
@@ -210,7 +227,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		
 		function itemClick(item) {
-			if (item != 0) {
+			resetCode(lang);
+			if (item != 0 && item != 9) {
 				var html = jQuery("#itemImg" + item.toString()).attr("src");
 				jQuery("#itemImg" + item.toString()).attr("src",html.replace("undone","done"));
 				preCode(item);
@@ -293,7 +311,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			lang = lang1;
 			jQuery("#seach").html(lang2);
 			jQuery("#language").hide();
-			editor.setValue(getCode(lang1));
+			editor.setValue(getCode(lang));
 
 		}
 
@@ -444,6 +462,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				preCode(0);
 			}
 		}; 
+
+		
 	</script>
 
 </body>

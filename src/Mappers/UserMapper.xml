@@ -9,12 +9,19 @@
 		select * from tb_user
 		where username=#{name}
      </select>
+     <select id="getFaceById" resultType="String">
+		select face from tb_user where id=#{id}
+     </select>
 	<select id="getUserById" resultType="Models.User">
 		select * from tb_user
 		where id=#{id}
      </select>
 	<select id="getRank500" resultType="Models.User">
 		select top 500 * from tb_user order by (rank*1000+points) desc
+     </select>
+     
+     <select id="getRank10FromChina" resultType="Models.User">
+		select top 10 * from tb_user where country='中国' order by (rank*1000+points) desc
      </select>
 
 	<insert id="addUser">

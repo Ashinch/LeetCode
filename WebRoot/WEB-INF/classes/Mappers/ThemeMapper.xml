@@ -23,7 +23,7 @@
 		#{date},
 		#{reply_date},
 		#{watch},
-		#{comment},)
+		#{comment})
 	</insert>
 	
 	<select id="getAllTheme" resultType="Models.Theme">
