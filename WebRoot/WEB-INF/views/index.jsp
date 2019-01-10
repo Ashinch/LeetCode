@@ -200,12 +200,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <a href="#" class="wjmmwb">忘记密码？</a>
             </div>
             <div id="dla">
-            	<input type="submit" value="立即登录" class="dlma" style="border-left-width: 0px;
-    border-top-width: 0px;
-    border-right-width: 0px;
-    border-bottom-width: 0px;
-    background-color: #232323;
-    height:60px">
+            	<input type="submit" value="立即登录" class="dlma" >
             </div>
             </form>
         </div>
