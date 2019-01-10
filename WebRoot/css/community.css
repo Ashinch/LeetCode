@@ -122,6 +122,7 @@ body{
 	height: 175px;
 	background-color: #232323;
 	border: none;
+	outline: none;
 	font-size: 24px;
 	font-family: "思源黑体 CN";
 	color: #555555;
