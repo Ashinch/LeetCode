@@ -147,7 +147,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 			</div>
 			<div>
-				<p id="page1">5&nbsp;/</p>
+				<p id="page1">1&nbsp;/</p>
 			</div>
 			<div>
 				<p id="page2">&nbsp;&nbsp;10</p>
@@ -388,7 +388,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			var str = editor.getValue();
 
-			if (str.indexOf("longestPalindrome")) {
+			if (str.indexOf("longestPalindrome") != -1) {
 				jQuery("#state").html("编译完成 - 用时 " + time.toString() + "s：" + "\"aba\"");
 				jQuery("#state").css("background-image","url(images/answer/icon_compiler_ok.png)");
 				return;

@@ -129,7 +129,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</ul>
     <div id="index_login">
       <DIV id="top_login">
-      <img src="images/login/icon_login.png">
+      <img src="images/login/icon_login.png" style="cursor:pointer;">
        </DIV>
       <div id="index_top" style="display: none;">
         <div id="login" onclick="display('lb')">
@@ -200,7 +200,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <a href="#" class="wjmmwb">忘记密码？</a>
             </div>
             <div id="dla">
-            	<a href="./loginCheck"><input type="submit" value="立即登录" class="dlma" ></a>
+            	<a href="./loginCheck"><input type="submit" value="立即登录" class="dlma" style="cursor:pointer;"></a>
             </div>
             </form>
         </div>

@@ -553,8 +553,8 @@ ul {
       height: 16px;
       text-align: center;
       line-height: 17px;
-      background-color: #3c362f;
-      border: 1px solid #FFCE97;
+      background-color: rgb(59,53,46);
+      border: 1px solid rgb(88,76,63);
       border-radius: 4px;
       margin: 12px 0px 0px 84px;
     }

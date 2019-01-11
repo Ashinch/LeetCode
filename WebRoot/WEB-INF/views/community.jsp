@@ -293,19 +293,19 @@ $(function ($) {
 	</div>
 	<div id="tall" style="width: 826px;z-index:9998;">
 	<div id="dowm"><a id="dowm2">×</a></div>
-	<div id="tiele2"><textarea id="theme" rows="1" cols="20" name="title" style="resize:none; outline:none;" placeholder="请输入主题标题" ></textarea></div>
+	<div id="tiele2"><textarea id="theme" rows="1" cols="20" name="title" style="font-family:思源黑体 CN;resize:none;outline:none;height: 40px;background-color: rgb(26,26,26);" placeholder="请输入主题标题" ></textarea></div>
 	<textarea id="content1" rows="5" cols="20" name="content" style="resize:none; outline:none;" placeholder="请输入内容..." ></textarea>
 
 
 	<!-- <div id="content1"><p>请输入内容</p></div>-->
-	<p id="end" onclick="send()">发布</p></a>
+	<p id="end" style="cursor:pointer;" onclick="send()">发布</p></a>
 	</div>
 	
 	<div id="tall2" style="width: 826px; display:none;z-index:9999;">
 	<div id="dowm3"><a id="dowm4">×</a></div>
-	<div id="tiele1"><textarea id="theme1" rows="1" cols="20" name="publishing" style="resize:none; outline:none;" placeholder="请输入主题标题" ></textarea></div>
+	<div id="tiele1"><textarea id="theme1" rows="1" cols="20" name="publishing" style="font-family:思源黑体 CN;resize:none;outline:none;height: 40px;background-color: rgb(26,26,26);" placeholder="请输入主题标题" ></textarea></div>
 	<textarea id="content2" rows="5" cols="20" name="reply2" style="resize:none; outline:none;" placeholder="请输入内容..."></textarea>
-	<p id="end" onclick="reply()">回复</p>
+	<p id="end" style="cursor:pointer;" onclick="reply()">回复</p>
 	</div>
 	
 	

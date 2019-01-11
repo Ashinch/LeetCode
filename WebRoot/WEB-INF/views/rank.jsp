@@ -100,8 +100,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <li class="left"><img src="images/rank/icon_left.png" /></li>
         <li><img src="images/rank/icon_country2.png" /></li>
         <li><img src="images/rank/icon_country3.png" /></li>
-        <li><img onclick="getCountry()" src="images/rank/icon_country4.png" /></li>
-        <li class="centre"><img onclick="sort(1)" src="images/rank/icon_country1.png" /></li>
+        <li><img onclick="getCountry()" src="images/rank/icon_country4.png" style="cursor:pointer;"/></li>
+        <li class="centre"><img onclick="sort(1)" src="images/rank/icon_country1.png"  style="cursor:pointer;"/></li>
         <li><img src="images/rank/icon_country5.png" /></li>
         <li><img src="images/rank/icon_country6.png" /></li>
         <li><img src="images/rank/icon_country7.png" /></li>
@@ -115,11 +115,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <th id="reduce" class="superscript">#</th>
           <th>用户名</th>
           <th>国家地区</th>
-          <th class="superscript" onclick="sort(1)">段位</th>
-          <th class="superscript" onclick="sort(2)">积分</th>
-          <th class="superscript" onclick="sort(3)">胜利</th>
-          <th class="superscript" onclick="sort(4)">失败</th>
-          <th class="superscript" onclick="sort(5)">场次</th>
+          <th class="superscript" onclick="sort(1)" style="cursor:pointer;">段位</th>
+          <th class="superscript" onclick="sort(2)" style="cursor:pointer;">积分</th>
+          <th class="superscript" onclick="sort(3)" style="cursor:pointer;">胜利</th>
+          <th class="superscript" onclick="sort(4)" style="cursor:pointer;">失败</th>
+          <th class="superscript" onclick="sort(5)" style="cursor:pointer;">场次</th>
         </tr>
       </table>
       <table id="tablemain" border="0" cellpadding="0" cellspacing="0">

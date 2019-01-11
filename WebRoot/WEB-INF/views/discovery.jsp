@@ -109,7 +109,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		<div id="search">
 			<input id="text" type="text" name="name" value="" placeholder="搜索…">
-			<input id="but" type="submit" name="" value="" >
+			<input id="but" style="cursor:pointer;" type="submit" name="" value="" >
 			
 		</div>
 		<div style="height: 1px;"></div>

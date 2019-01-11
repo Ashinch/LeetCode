@@ -101,7 +101,7 @@ public class CommunityController {
 		String themeTitle = themeDao.getThemeById(themeId).getTitle();
 		
 		String html = "<div id=\"item\">" +
-					  "<img src=\"" + userDao.getFaceById(senderId) + "\" />" + 
+					  "<img src=\"" + userDao.getFaceById(senderId) + "\" style=\" height:50px;width:50px; \" />" + 
 					  "<p id=name>" + senderName + "</p>" + 
 					  "<p id=\"level\">VII</p>" + 
 					  "<p id=\"line\"></p>" + 
@@ -111,7 +111,7 @@ public class CommunityController {
 		
 		for (int i = 0; i < list.size(); i++) {
 			html += "<div id=\"item\">" +
-					"<img src=\"" + userDao.getFaceById(list.get(i).getSender()) + "\" />" + 
+					"<img src=\"" + userDao.getFaceById(list.get(i).getSender()) + "\" style=\" height:50px;width:50px; \" />" + 
 					"<p id=name>" + userDao.getUserById(list.get(i).getSender()).getUsername() + "</p>" + 
 					"<p id=\"level\">VII</p>" + 
 					"<p id=\"line\"></p>" + 
@@ -148,7 +148,7 @@ public class CommunityController {
 		String themeTitle = themeDao.getThemeById(themeId).getTitle();
 		
 		String html = "<div id=\"item\">" +
-					  "<img src=\"" + userDao.getFaceById(senderId) + "\" />" + 
+					  "<img src=\"" + userDao.getFaceById(senderId) + "\" style=\" height:50px;width:50px; \"/>" + 
 					  "<p id=name>" + senderName + "</p>" + 
 					  "<p id=\"level\">VII</p>" + 
 					  "<p id=\"line\"></p>" + 
@@ -158,7 +158,7 @@ public class CommunityController {
 		
 		for (int i = 0; i < list.size(); i++) {
 			html += "<div id=\"item\">" +
-					"<img src=\"" + userDao.getFaceById(list.get(i).getSender()) + "\" />" + 
+					"<img src=\"" + userDao.getFaceById(list.get(i).getSender()) + "\"  style=\" height:50px;width:50px; \" />" + 
 					"<p id=name>" + userDao.getUserById(list.get(i).getSender()).getUsername() + "</p>" + 
 					"<p id=\"level\">VII</p>" + 
 					"<p id=\"line\"></p>" + 

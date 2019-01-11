@@ -162,8 +162,8 @@
 					</p>
 				</div>
 				<div id="item"
-					style="background-image: url(images/answer/icon_done.png);">
-					<p class="item_text">
+					style="background-image: url(images/answer/icon_undone.png);">
+					<p class="item_text" style="color: #888888;">
 						分割回文串
 					</p>
 				</div>
