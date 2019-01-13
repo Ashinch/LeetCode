@@ -45,7 +45,7 @@ public class Compiler {
 //	        String code1 = code0.replaceAll("\n", "\\\\n");
 //	        String code2 = code1.replaceAll("\"", "\\\\\"");
 //	        String code3 = code2.replaceAll("\\\\n", "\\\\\\\\n");
-	        System.out.println("×ªÒåºó£º" + code);
+	        System.out.println("×ªï¿½ï¿½ï¿½" + code);
 	        code = code.substring(0,code.length() - 1);
 	        code = code.substring(1,code.length());
 	        String data = "{\"lang\":\"" + language +"\",\"typed_code\":\""+ code +"\",\"data_input\":\"\"}";
@@ -54,7 +54,7 @@ public class Compiler {
 	        os.write(data.getBytes());
 	        os.flush();
 	        //System.out.print(data);
-	        System.out.print("ÏìÓ¦Âë£º" + conn.getResponseCode());
+	        System.out.print("ï¿½ï¿½Ó¦ï¿½ë£º" + conn.getResponseCode());
 	        switch (conn.getResponseCode()) {
 	        	case 200:
 	        		InputStream is = conn.getInputStream();
