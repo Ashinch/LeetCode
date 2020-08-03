@@ -3,7 +3,7 @@
 
 #### 介绍
 
-校内实训网站学习作品，以[LeetCode](https://leetcode.com/)网站为主要参考，加以想法重新设计了网站界面和新增功能。
+校内学习实训作品，以[LeetCode](https://leetcode.com/)网站为主要参考，加以想法重新设计了网站界面和新增功能。
 
 #### 软件环境
 
@@ -12,8 +12,7 @@
 * MS SQL SERVER 2008 R2
 
 #### 项目架构
-* jsp
-* spring+springmvc+mybatis (SSM) 框架
+* spring+springmvc+mybatis
 
 #### 运行截图
 
